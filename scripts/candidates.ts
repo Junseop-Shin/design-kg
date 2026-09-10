@@ -13,7 +13,7 @@ for (const c of ruleCandidates(kg.cases, min)) {
     ? `${c.measured.values.join(",")}${c.measured.unit ?? ""} ${c.measured.agree ? "일치" : "불일치"}`
     : "-";
   console.log(
-    `| ${c.key} | ${c.videos.length} | ${c.stance.PRESCRIPTIVE}/${c.stance.PREFERRED}/${c.stance.OPTION} | ${c.destination} | ${m} | ${c.grade ?? "-"} | ${c.cases.join(" ")} |`,
+    `| ${c.key.replaceAll("|", "\\|")} | ${c.videos.length} | ${c.stance.PRESCRIPTIVE}/${c.stance.PREFERRED}/${c.stance.OPTION} | ${c.destination} | ${m} | ${c.grade ?? "-"} | ${c.cases.join(" ")} |`,
   );
 }
 
