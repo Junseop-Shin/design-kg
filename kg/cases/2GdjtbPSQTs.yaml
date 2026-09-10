@@ -1,0 +1,215 @@
+- id: case-401
+  source: { video: 2GdjtbPSQTs, t: "3:27" }
+  scope:
+    component: nav
+    platform: web
+    size: any
+    variant: any
+    context: nav
+  property: density
+  direction: down
+  problem: "GNB 메뉴(메인홈/특가상품/이벤트/기획전/주문조회/반품 및 환불/배송안내/고객센터) 항목마다 앞에 작은 아이콘이 하나씩 붙어 있다."
+  fix: "메뉴 아이콘을 없앤다."
+  rationale: "아이콘 때문인지 전체적으로 디자인이 복잡해 보인다"
+  stance: OPTION
+  quote: "저는 이 아이콘이 굳이 필요한가 싶습니다. 약간 이 아이콘 때문에 그런지 모르겠지만 전체적으로 좀 디자인이 복잡해 보이긴 하거든요."
+  qualities: []
+  evidence: .evidence/2GdjtbPSQTs/327.png
+
+- id: case-402
+  source: { video: 2GdjtbPSQTs, t: "3:39" }
+  scope:
+    component: nav
+    platform: web
+    size: any
+    variant: any
+    context: nav
+  property: structure
+  direction: other
+  problem: "GNB가 로고·검색창·아이콘이 있는 윗단과 메뉴 탭(메인홈/특가상품 등)이 있는 아랫단, 이렇게 두 층(1단·2단)으로 나뉘어 있다."
+  fix: "1단과 2단을 나누지 말고 하나로 합친다."
+  rationale: ""
+  stance: OPTION
+  quote: "이 검색창이 길게 해서 굳이 두 단으로 나눌 필요가 있을까? 이 이 두 단이 뭐냐면 여기가 지금 1단, 여기가 2단이 되는 거예요. 이 1단, 2단을 나누지 말고 이 두 개를 제가 볼 땐 그냥 합치셔도 될 거 같습니다."
+  qualities: []
+  evidence: .evidence/2GdjtbPSQTs/341.png
+
+- id: case-403
+  source: { video: 2GdjtbPSQTs, t: "4:21" }
+  scope:
+    component: hero
+    platform: web
+    size: any
+    variant: any
+    context: hero
+  property: structure
+  direction: other
+  problem: "프로모션 배너(Xiaomi·Apple 타일)의 상품 이미지 뒤에 평평한 단색 배경이 그대로 깔려 있다."
+  fix: "배경을 걷어낸다."
+  rationale: "요즘 프로모션 배너는 상품 이미지가 배경 밖으로 살짝 튀어나오는 공간감을 살리는 경우가 많아, 배경을 잘라내 상품을 부각시키면 좋다"
+  stance: PRESCRIPTIVE
+  quote: "그레이 백그라운드도 제가 볼 때 걷어내야 될 거 같아요."
+  qualities: []
+  evidence: .evidence/2GdjtbPSQTs/422.png
+
+- id: case-404
+  source: { video: 2GdjtbPSQTs, t: "5:51" }
+  scope:
+    component: hero
+    platform: web
+    size: any
+    variant: any
+    context: hero
+  property: whitespace
+  direction: up
+  problem: "배너 영역의 시작선이 카테고리 메뉴 폭 전체(왼쪽 끝)에 맞춰져 있어 좌우에 여백이 없다."
+  fix: "배너의 시작선을 안쪽으로 살짝 옮겨 전체적으로 밀어 준다."
+  rationale: ""
+  stance: OPTION
+  quote: "스타트 라인을 여기서 이렇게 끊죠. 그러면 어떻게 되겠어? 배너가 전체적으로 이렇게 밀리겠지. 지금 위치 하나 살짝 옮겼는데 훨씬 답답함이 사라졌잖아요. 여백이 생기다 보니까 사이트가 훨씬 더 가벼워 보이거든요."
+  qualities: ["답답한→가벼운"]
+  evidence: .evidence/2GdjtbPSQTs/555.png
+
+- id: case-405
+  source: { video: 2GdjtbPSQTs, t: "6:14" }
+  scope:
+    component: typo
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: affordance
+  direction: other
+  problem: "카테고리 타이틀(전자기기/피트니스/하드웨어 등) 텍스트마다 밑줄(언더라인)이 붙어 있다."
+  fix: "언더라인을 없앤다."
+  rationale: ""
+  stance: OPTION
+  quote: "타이틀에 언더라인이 왜 들어가 있을까? 이게 설마 클릭이 된다고 인지시키기 위해서 언더라인이 들어간 건가? 없어도 됩니다."
+  qualities: []
+  evidence: .evidence/2GdjtbPSQTs/616.png
+
+- id: case-406
+  source: { video: 2GdjtbPSQTs, t: "10:25" }
+  scope:
+    component: layout
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "띠배너 안에서 브랜드 타이틀(Apple iPhone)과 로고, 인물·상품 이미지가 하나의 정렬 축 없이 애매하게 배치되어 있다."
+  fix: "타이틀과 로고를 묶어 가운데로 보내고, 우측에는 인물(상품) 이미지를 배치해 가운데 정렬로 간다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "이거 좀 애매해. 이 디자인을 이 두 개를 묶어. 이 두 개를 일로 보내. 이쪽 끝으로 보내. 여기로 보내. 이 타이틀과 로고를요 가운데로 와. 가운데 우측에는요 인물이 배치가 될 거야. 그렇게 해서 가운데 정렬로 그냥 가시는게 맞을 거 같고요."
+  qualities: []
+  evidence: .evidence/2GdjtbPSQTs/1025.png
+
+- id: case-407
+  source: { video: 2GdjtbPSQTs, t: "12:20" }
+  scope:
+    component: nav
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: structure
+  direction: other
+  problem: "'베스트 셀러 엄선 상품' 코너 밑의 카테고리 탭(전체/전자기기/피트니스 등)이 하나하나 개별 박스로 쪼개진 카드형 버튼으로 되어 있어, 같은 코너 안의 카드 디자인과 부딪힌다."
+  fix: "카드 같은 느낌의 박스형 탭 버튼은 쓰지 않는다."
+  rationale: "탭을 카드처럼 하나하나 박스로 쪼개면 코너 안 상품 카드와 스타일이 부딪혀 복잡해질 수밖에 없다"
+  stance: PREFERRED
+  quote: "이 밑에도 지금 타 이렇게 하나 둘 타 이렇게 개별로 다 쪼개 놨잖아요 지금. 그렇죠? 탭도 지금 다 박스 쳐서 다 쪼개 놨죠. 복잡할 수밖에 없는 거예요. 내가 만약에 이렇게 카드로 다 쪼갠다면 요런 탭 디자인 버튼형을 여러 개 나열하는요 카드 같은 느낌의요 버튼은 안 쓰시는게 좋아요."
+  qualities: []
+  evidence: .evidence/2GdjtbPSQTs/1220.png
+
+- id: case-408
+  source: { video: 2GdjtbPSQTs, t: "12:45" }
+  scope:
+    component: button
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: alignment
+  direction: other
+  problem: "'상품 전체보기' 버튼이 카테고리 탭과 같은 줄(라인)에 놓여 있다."
+  fix: "이 버튼을 탭 라인에서 빼서 코너 맨 아래(바닥)로 내린다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "여기에 이제 상품 전체 보기가 있는데 아 지금 이게 이 탭과 같은 라인에 있는 거는 저는 좀 이 버튼을 여기 밑으로 내리세요. 그냥 여기 바닥으로 내리는 걸 좀 추천드릴게요."
+  qualities: []
+  evidence: .evidence/2GdjtbPSQTs/1250.png
+
+- id: case-409
+  source: { video: 2GdjtbPSQTs, t: "13:12" }
+  scope:
+    component: card
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: contrast
+  direction: other
+  problem: "상품 카드의 '새 상품'·'S급 리퍼상품'·'A급 리퍼상품' 딱지(칩)가 전부 같은 빨간색이라 한눈에 구분이 안 된다."
+  fix: "리퍼 등급(S급·A급) 상품 딱지끼리는 묶어 같은 색으로 가져가고, '새 상품' 딱지는 다른 색으로 구분한다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "여긴 지금 새 상품 여긴 지금 S급 리퍼 상품 이렇게 나와 있는데 칩의 색깔이 다 빨간색이다 보니까 다 똑같아 보여요. 한 눈에 판단이 잘 안 되거든. 그래서 지금 보면은 새 상품과 S급 리퍼 상품과 A급 리퍼 상품 이렇게 총 세 가지 항목이 있는 거 같은데 이 리퍼 상품끼리는 묶어 주고요. 새 상품은 다른 색깔로 가져가는게 좋을 것 같아."
+  qualities: []
+  evidence: .evidence/2GdjtbPSQTs/1314.png
+
+- id: case-410
+  source: { video: 2GdjtbPSQTs, t: "14:05" }
+  scope:
+    component: image
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: structure
+  direction: other
+  problem: "상품 카드 썸네일이 243x200으로 정사각형이 아니다."
+  fix: "썸네일을 정사각형 비율로 바꾼다."
+  rationale: "썸네일은 정사각형이 정석이다"
+  stance: PRESCRIPTIVE
+  quote: "그다음에 지금 썸네일이 정사각형이 아니야. 243에 200이잖아요. 정사각형으로 바꾸시죠. 썸네일은 정사각형이 정석이야."
+  qualities: []
+  evidence: .evidence/2GdjtbPSQTs/1408.png
+
+- id: case-411
+  source: { video: 2GdjtbPSQTs, t: "17:39" }
+  scope:
+    component: image
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: structure
+  direction: other
+  problem: "위 코너에서는 가로형(243x200) 썸네일을 썼는데, 아래 코너에서는 갑자기 세로형 썸네일이 나와 비율이 서로 다르다."
+  fix: "썸네일 비율을 한 가지 기준으로 통일하고, 사이즈만 조절한다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "밑에 코너를 또 보면요. 지금 썸네일이 갑자기 세로가 나왔네. 썸네일 세로가 왜 나왔어? 이 가로 썸네일 썼잖아. 243에 200짜리요. 근데 갑자기 이 세로 썸네일이 나오면 안 되지. 커머스에서 썸네일은 한 가지로 그냥 기준 잡고 통일시켜서 비율은 유지하되 사이즈만 조절하는게 가장 베스트입니다."
+  qualities: []
+  evidence: .evidence/2GdjtbPSQTs/1745.png
+
+- id: case-412
+  source: { video: 2GdjtbPSQTs, t: "21:24" }
+  scope:
+    component: layout
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "푸터의 링크 항목들(카테고리/주문 조회/회사 소개 등)이 3x3 격자 배열로 나뉘어 있다."
+  fix: "격자로 나누지 말고 한 줄로 나열한다."
+  rationale: ""
+  stance: OPTION
+  quote: "지금 여기가 조금 이 격자 배열이라 그러나? 이게 조금 애매하네. 요거 그냥 여기다 이렇게 한 줄로 이렇게 깔면 안 되나? 요렇게 많이 하거든요."
+  qualities: []
+  evidence: .evidence/2GdjtbPSQTs/2128.png

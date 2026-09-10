@@ -1,0 +1,215 @@
+- id: case-501
+  source: { video: A7krPWdx6us, t: "2:36" }
+  scope:
+    component: icon
+    platform: mobile
+    size: any
+    variant: any
+    context: nav
+  property: spacing
+  direction: up
+  problem: "GNB 우측의 메뉴·검색 아이콘이 원형 버튼 안에서 아이콘과 원 사이 여백이 너무 타이트해 버튼 자체가 빡빡해 보인다. 원 사이즈가 32로 작다."
+  fix: "원형 버튼 사이즈를 확실히 키운다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "그다음에 여기 아이콘 있잖아요. 이거 작아요. 이렇게 동그라미로 버튼형처럼 가신 것까지는 뭐 그럴 수 있는데 원형 자체 사이즈 이 사이즈 자체가 좀 작아 보입니다. 조금 더 확실히 키워 주시는게 좋아요. 왜냐면 지금 이 원형 자체에서 이런 여백들 있죠? 여백 여백 여백이 너무 타이트해. 너무 촘촘하고 이 버튼 자체가 빡빡하거든요."
+  qualities: ["타이트한→?"]
+  evidence: .evidence/A7krPWdx6us/236.png
+
+- id: case-502
+  source: { video: A7krPWdx6us, t: "3:11" }
+  scope:
+    component: typo
+    platform: mobile
+    size: any
+    variant: any
+    context: hero
+  property: affordance
+  direction: other
+  problem: "합산 계좌 잔액 카드에서 수익 금액(3,220,500원(28.64%))에 상승·하락을 나타내는 기호나 아이콘이 없어, 오른 건지 내린 건지 직관적으로 판단이 안 된다."
+  fix: "금액 앞에 플러스 기호를 붙이거나, 상승을 나타내는 아이콘을 붙인다."
+  rationale: ""
+  stance: OPTION
+  quote: "어, 좀 직관적이지 않은데 이럴 거면 앞에 플러스가 붙던가 아니면은 뭐 이런 아이콘 있잖아요. 뭔가 내가 상승했다라는 아이콘이 붙던가?"
+  qualities: []
+  evidence: .evidence/A7krPWdx6us/312.png
+
+- id: case-503
+  source: { video: A7krPWdx6us, t: "4:07" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: hero
+  property: hierarchy
+  direction: down
+  problem: "잔액 카드 주변에 장식용 원형 오브젝트, 블랙 배지 레이어, 라운드 GNB 레이어 등이 겹겹이 깔려 있어 시선이 분산되고 가격 자체를 방해한다."
+  fix: "장식용 오브젝트와 레이어를 걷어낸다."
+  rationale: "흰 바탕에 검정 글씨로 가격을 크게 쓰는 디자인이 가격을 가장 잘 보이게 한다"
+  stance: PRESCRIPTIVE
+  quote: "이런 오브젝트들 때문에 사실은 시선이 분산되잖아. 지금 여기에 시선 분산되지? 여기도 시선 분산되지. 그리고 지금 카드로 프레임까지 그려 놓으셨지. 이 가격 자체를 방해하는 요소가 주변에 너무 많은 거예요. 지금 여기를 블랙으로 삐지를 깔고 상단 GNB 여기 라인 있죠? 라운드로 해서 레이어를 한 겹쳤잖아요. 사실 이런 거 다 불필요합니다. 없어도 되는 디자인 효과입니다. 불필요해요."
+  qualities: []
+  evidence: .evidence/A7krPWdx6us/426.png
+
+- id: case-504
+  source: { video: A7krPWdx6us, t: "4:33" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: contrast
+  direction: down
+  problem: "'이번달 내 점수' 그래프 카드의 배경색이 그래프 막대보다 더 강하게 보여, 이 카드의 주인공이 그래프가 아니라 배경인 것처럼 착각하게 만든다."
+  fix: "배경에 색을 넣고 싶다면 더 연하게 뺀다."
+  rationale: ""
+  stance: OPTION
+  quote: "그래프보다 이 백그라운드가 더 강하게 보이죠? 주 목적이 그래프가 아니고 마치 백그라운드에 있다라고 우리가 착각을 불러일으킬 것 같거든요. 아, 개인적으로 내가 백그라운드 색깔을 좀 넣고 싶다면 연하게 빼시는게 어떤가 싶습니다."
+  qualities: []
+  evidence: .evidence/A7krPWdx6us/444.png
+
+- id: case-505
+  source: { video: A7krPWdx6us, t: "4:50" }
+  scope:
+    component: any
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: alignment
+  direction: other
+  problem: "'이번달 내 점수' 막대 그래프에서 +57/+85/+26 수치가 막대 위에 붕 떠 있는 것처럼 쓰여 있어 무게 중심이 안 맞아 보인다."
+  fix: "수치 표기 방식과 배치를 다시 잡는다."
+  rationale: ""
+  stance: OPTION
+  quote: "이 그래프 디자인 이게 좀 뭔가 엉성하다. 여기 숫자가 띵 위에 이렇게 써져 있는 것도 뭔가 무게 중심이 좀 안 맞는 거 같고."
+  qualities: ["엉성한→?"]
+  evidence: .evidence/A7krPWdx6us/452.png
+
+- id: case-506
+  source: { video: A7krPWdx6us, t: "5:22" }
+  scope:
+    component: icon
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: labeling
+  direction: other
+  problem: "'스캔인증' 메뉴의 아이콘이 실제로는 QR 코드 모양 아이콘으로 되어 있어, 라벨(스캔인증)과 아이콘 모양이 서로 맞지 않는다."
+  fix: "내용에 맞는 스캔 아이콘으로 교체한다."
+  rationale: ""
+  stance: OPTION
+  quote: "이 아이콘이 좀 직관적이진 않네. 이거는 스캔이 아니고 QR 아닌가? QR. 요 아이콘 자체도 사실은 이 내용과 좀 맞진 않는 거 같아요."
+  qualities: []
+  evidence: .evidence/A7krPWdx6us/526.png
+
+- id: case-507
+  source: { video: A7krPWdx6us, t: "7:01" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "핀테크 앱 화면 곳곳(잔액, 카드 목록, 거래 내역 등)에 카드 UI가 반복적으로 쓰여 있다."
+  fix: "다른 사이트가 카드 UI를 쓴다고 해서 꼭 그대로 따라갈 필요는 없다. 디자인 방향과 기준이 명확하다면 카드 UI가 아닌 형태로 가도 된다."
+  rationale: "카드 디자인 자체가 깔끔한 디자인은 아니며, 디자이너가 힘을 줄 때 주로 쓰는 스타일이다"
+  stance: PRESCRIPTIVE
+  quote: "뭔가 우리가 벤치마킹을 하는 것도 중요하긴 하지만 다른 사이트들이 하고 있다고 해서 그게 꼭 정답은 아니에요. 내가 하고자 하는 디자인의 방향과 기준이 명확하다면 다른 사이트들이 카드 디자인을 한다고 해서 꼭 그대로 따라가실 필요는 없습니다. 카드가 정답은 아니에요. 절대로."
+  qualities: []
+  evidence: .evidence/A7krPWdx6us/718.png
+
+- id: case-508
+  source: { video: A7krPWdx6us, t: "14:29" }
+  scope:
+    component: list
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: density
+  direction: down
+  problem: "'최근 등록 카드' 섹션에 등록된 카드 8개가 한 화면에 전부 나열되어 있다."
+  fix: "최근에 등록한 카드 1~3개 정도만 보여주고, 나머지는 슬라이드나 '더보기' 같은 별도 경로로 제공한다."
+  rationale: "사용자는 보통 가장 최근에 등록한 카드 몇 개만 보고 싶어 하고, 옛날 것까지 다 볼 필요는 없다"
+  stance: OPTION
+  quote: "내가 이걸 한 번에 여덟 개 다 볼 필요가 있을까? 어, 옛날의 것까지 등록한 카드를 지금 다 보여 주고 있는 거잖아. 굳이 그럴 필요가 있을까? 보통 내가 이제 최근에 등록한 카드를 보고 싶은 사람들은 보통 가장 최근에 등록한 카드 한 1, 2, 3 정도가 아마 가장 보고 싶은 카드일 겁니다. 그럼 나머지는 굳이 볼 필요는 없지. 필요하다면 보여 줄 수 있는 루트를 제공하면 돼요."
+  qualities: []
+  evidence: .evidence/A7krPWdx6us/1440.png
+
+- id: case-509
+  source: { video: A7krPWdx6us, t: "17:48" }
+  scope:
+    component: nav
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: structure
+  direction: other
+  problem: "'최근 거래 내역' 헤더에서 '모든 카드 사용 내역' 드롭다운 셀렉터와 정렬·필터 아이콘이 한 컨트롤 그룹처럼 나란히 묶여 있다."
+  fix: "셀렉터와 필터는 시각적으로는 합칠 수 있어 보여도, 서로 기능이 다른 항목이므로 사용성 기준으로는 하나로 합칠 항목이 아니다."
+  rationale: "디자인 그림으로 보면 합칠 수 있어 보이지만 사용성으로 보면 서로 다른 기능이라 합칠 수 있는 개념이 아니다"
+  stance: PRESCRIPTIVE
+  quote: "근데 중요한게 뭐냐면 이 두 개는 뭐 합칠 수 있다고 치는데 이 셀렉이랑 이거랑 이 두 개를 합친다는게 저는 개념상 이해가 잘 안 돼요. 왜냐면 이건 다른 거예요. 합칠 수 있는 그 개념이 아니고 그냥 다른 거 다른 거. 시각적인 디자인 그림으로 본다면 가능하지만 사용성으로 본다면은 이거는 합칠 수 있는 항목 자체가 아니에요."
+  qualities: []
+  evidence: .evidence/A7krPWdx6us/1750.png
+
+- id: case-510
+  source: { video: A7krPWdx6us, t: "18:29" }
+  scope:
+    component: typo
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: hierarchy
+  direction: up
+  problem: "거래 내역 카드에서 가맹점 타이틀과 결제 가격의 폰트 사이즈가 비슷해, 얼마를 썼는지가 명확하게 보이지 않는다."
+  fix: "가격 사이즈를 타이틀보다 키운다."
+  rationale: "어디서 썼는지도 중요하지만 얼마 썼는지가 더 중요하다"
+  stance: PRESCRIPTIVE
+  quote: "사실은 여기도 되게 중요한게 뭐냐면 내가 얼마 썼는지 명확하게 보여야 되는데 잘 안 보여요. 왜 그런가 봤더니 이 타이틀과 가격에 대한 사이즈가 비슷합니다."
+  qualities: []
+  evidence: .evidence/A7krPWdx6us/1836.png
+
+- id: case-511
+  source: { video: A7krPWdx6us, t: "19:16" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: labeling
+  direction: other
+  problem: "5월·4월·3월 거래 내역 그룹에 월 구분을 나타내는 텍스트 라벨이 없어, 위쪽 필터를 거슬러 올라가야만 몇 월인지 알 수 있다."
+  fix: "각 월 구간에 '3월', '4월', '5월'처럼 월을 직접 써준다."
+  rationale: "앞의 필터를 보면 알 수 있지만 그렇게 확인하는 건 불편하다"
+  stance: PREFERRED
+  quote: "월단위에 대한 구분이 없어요. 5월 달. 그다음 밑에 카드는 4월 달. 여기는 이제 3월 달인데 개인적으로는요 앞에 월을 보면 되잖아요. 할 수 있지만 불편하잖아요. 여기다 그냥 대놓고 이렇게 3월 이렇게 써주시는게 맞죠."
+  qualities: []
+  evidence: .evidence/A7krPWdx6us/1930.png
+
+- id: case-512
+  source: { video: A7krPWdx6us, t: "19:50" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: structure
+  direction: other
+  problem: "정렬·필터 컨트롤이 '5월' 거래 내역 카드(첫 번째 월 그룹) 안에 포함되어 있어, 이 필터를 조정하면 아래의 4월·3월 카드까지 같이 바뀐다는 게 인지되지 않는다."
+  fix: "타이틀과 필터를 월 카드 밖으로 빼서, 5월·4월·3월을 한꺼번에 컨트롤한다는 것을 알 수 있게 한다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "5월에 이렇게 필터가 다 묶여 있어. 여기를 조정한다고 해서 이 밑에 것들이 변한다고 인지를 할까? 아니지. 인지가 안 되지. 이 디자인이 이렇게 되면 안 되지. 이 필터 같은 경우 이 타이틀이랑 필터는 여기 5월 달 카드 안에 포함되는게 아니고 이 밖으로 빠져야지 밖에서 컨트롤을 해야지 이 5월과 4월과 3월이 다 컨트롤이 된다고 이해를 하겠죠. 디자인에 그렇게 하셔야죠."
+  qualities: []
+  evidence: .evidence/A7krPWdx6us/2005.png

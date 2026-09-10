@@ -1,0 +1,125 @@
+- id: case-301
+  source: { video: y4dzWrby5cI, t: "5:53" }
+  scope:
+    component: button
+    platform: web
+    size: any
+    variant: any
+    context: nav
+  property: size
+  direction: down
+  problem: "상단 네비게이션의 버튼(예: Subscribe 등)이 실제 웹 디자인 표준 기준으로 보면 과도하게 큰 사이즈로 그려져 있다."
+  fix: "버튼과 폰트 사이즈를 웹 디자인 표준 사이즈로 전반적으로 맞춘다."
+  rationale: ""
+  stance: OPTION
+  quote: "지금이 버튼 사이즈죠. 상단의 버튼 사이즈. 이거 실제로 웹 디자인으로 했다고 치고 사용하면 되게 큰 버튼이거든요. 사이즈 표준 사이즈로 좀 다 바꾸고."
+  qualities: []
+  evidence: .evidence/y4dzWrby5cI/555.png
+
+- id: case-302
+  source: { video: y4dzWrby5cI, t: "6:41" }
+  scope:
+    component: image
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: structure
+  direction: other
+  problem: "추천 상품 썸네일이 세로로 넓은 비율로, 이미지 위에 텍스트가 세로로 쌓이는 구조로 되어 있다."
+  fix: "썸네일을 정사각형으로 바꾸고, 썸네일이 옆에 있고 내용이 나란히 붙는 가로 형태 구조로 바꾼다."
+  rationale: ""
+  stance: OPTION
+  quote: "여기 썸네일 가로가 이렇게 넓잖아. 정사각형으로 바꿔 주고 구조가 어때? 이렇게 세로로 돼 있죠. 세로로. 썸네일이 여기 이렇게 있고 여기 옆에 이렇게 내용이 달려 있는 이런 가루 형태로 한번 바꿔 보도록 하겠습니다."
+  qualities: []
+  evidence: .evidence/y4dzWrby5cI/645.png
+
+- id: case-303
+  source: { video: y4dzWrby5cI, t: "7:26" }
+  scope:
+    component: card
+    platform: web
+    size: any
+    variant: any
+    context: hero
+  property: structure
+  direction: other
+  problem: "히어로 상품 이미지 위에 'Read Reviews' 배지 아래로 바코드/QR을 보여주는 'Scan to unlock your exclusive offer' 패널이 사이즈가 크게, 위치도 애매하게 떠 있다."
+  fix: "이 레이어를 아래로 내리고 사이즈를 확 줄인다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "얘는 왜 이렇게 애매하게 떠 있어? 이 상품에 대한 뭔가 바코드나 그런 것들을 보여주는 레이어 같은 느낌이고 얘는 제가 볼 때는이 밑으로 내려야 돼. 이 밑으로 내리고 지금 요거 사이즈 있지? 요거요 사이즈가 너무 커요. 요거 사이즈를 확 줄여야 돼."
+  qualities: []
+  evidence: .evidence/y4dzWrby5cI/725.png
+
+- id: case-304
+  source: { video: y4dzWrby5cI, t: "8:23" }
+  scope:
+    component: layout
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: whitespace
+  direction: up
+  problem: "좁은 카드 영역 안에 사이즈 큰 요소들이 몰려 있어 카드 안에 여백이 거의 보이지 않는다."
+  fix: "요소 사이즈를 줄이면 그만큼 여백이 확보된다."
+  rationale: ""
+  stance: OPTION
+  quote: "여기도 다 커 보이는데 사이즈만 줄여도 이거 여백 있게 들어가겠구만."
+  qualities: []
+  evidence: .evidence/y4dzWrby5cI/824.png
+
+- id: case-305
+  source: { video: y4dzWrby5cI, t: "8:59" }
+  scope:
+    component: layout
+    platform: web
+    size: any
+    variant: any
+    context: hero
+  property: structure
+  direction: other
+  problem: "히어로 이미지를 가운데 두고 그 좌우로 정보(리뷰 배지, 바코드 패널, Best Sellers, Product Details 등)가 그룹 없이 복잡하게 흩어져 있다."
+  fix: "이미지(1번)와 정보(2·3번)를 각각 하나의 그룹으로 묶어 배치한다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "이미지를 가운데 두고 좌우로 지금 정보가 복잡하게 뿌려져 있으니까 더 복잡해 보여요. 그래서 제 개인적으로는요 1번 썸네일 부분을 이쪽으로 옮겨. 여기가 이제 뭐야? 이미지. 여기는 정보. 여기도 정보 해서 1번 2번 3번. 요 계층의 그룹으로 가면은 조금 더 낫지 않을까 싶어요."
+  qualities: []
+  evidence: .evidence/y4dzWrby5cI/900.png
+
+- id: case-306
+  source: { video: y4dzWrby5cI, t: "9:30" }
+  scope:
+    component: card
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: shadow
+  direction: other
+  problem: "히어로 이미지, Best Sellers 카드, Product Details 카드 등이 전체적으로 비슷한 높낮이(입체감)로 평평하게 놓여 있어 카드 간 계층이 약하다."
+  fix: "어차피 실제 화면이 아니라 JPG로 들어가는 컨셉 보드이므로, 눌릴 요소는 확실히 누르고 띄울 요소는 확실히 띄워 높낮이 계층을 과감하게 잡는다."
+  rationale: "컨셉 보드는 실제 사용성과 무관하게 JPG 한 장으로 들어가는 것이므로 디자인 스타일을 과감하게 잡아도 된다"
+  stance: OPTION
+  quote: "이게 디자인 스타일을 조금 더 과감하게 잡아 줘도 될 거 같아. 지금 전체적으로 카드 디자인이거든, 이거. 약간 바닥에 눌릴 거는 좀 확실하게 눌러 주고 띄울 거는 좀 확실하게 띄우고 해서 높낮지에 대한 계층을 조금 확실하게 잡아 주시는 것도 하나의 포인트인 것 같다."
+  qualities: ["?→과감한"]
+  evidence: .evidence/y4dzWrby5cI/930.png
+
+- id: case-307
+  source: { video: y4dzWrby5cI, t: "13:20" }
+  scope:
+    component: typo
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: hierarchy
+  direction: down
+  problem: "히어로 이미지의 메인 타이틀('Radiance Renewal Botanical Serum')은 굉장히 크게 키운 반면, 그 옆 코너의 카드형 정보(Best Sellers, Product Details 등) 타이틀은 아직 비슷한 굵기·크기로 남아 있어 전체가 다 세 보인다."
+  fix: "코너 쪽 타이틀들은 사이즈를 조금씩 줄이고 굵기(볼드)를 레귤러로 낮춰 힘을 뺀다."
+  rationale: "시각적 포인트라 해도 전체를 다 세게 잡으면 다 세져서 깔끔한 느낌이 나지 않는다"
+  stance: OPTION
+  quote: "당연히 이미지 쪽은 타이틀을 굉장히 키웠지만 그 옆에 코너부터는 타이틀 사이즈를 조금씩 줄이고 힘을 좀 뺄게요. 제가 항상 말하지만 이게 뭐 아무리 시각적인 포인트라고 해도 사용성 상관없다고 해도 전체를 세게 하면 다 세지니까 안 그러면 이게 깔끔한 느낌이 안 날 거 같은데 사이즈 줄이고 레귤러로 바꿨습니다."
+  qualities: []
+  evidence: .evidence/y4dzWrby5cI/930.png

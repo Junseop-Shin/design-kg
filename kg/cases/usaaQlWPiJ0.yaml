@@ -1,0 +1,233 @@
+- id: case-601
+  source: { video: usaaQlWPiJ0, t: "0:57" }
+  scope:
+    component: button
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: structure
+  direction: other
+  problem: "검색 페이지 상단에서 진한 색의 별도 버튼이 검색 인풋과 분리되어 나란히 놓여 있다."
+  fix: "이 버튼을 검색 인풋 단 안으로 넣는다."
+  rationale: ""
+  stance: OPTION
+  quote: "일단 이쪽 좌측부터 한번 보면은 여기 버튼이 이렇게 강할 필요가 있을까? 그리고 얘도 그냥 여기다 넣어 버려요. 아까 우리 검색했던 것처럼 이 버튼을 저 인풋단에 넣으셔도 충분히 될 거 같고요."
+  qualities: []
+  evidence: .evidence/usaaQlWPiJ0/052.png
+
+- id: case-602
+  source: { video: usaaQlWPiJ0, t: "1:55" }
+  scope:
+    component: input
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: affordance
+  direction: other
+  problem: "검색어를 입력 중인 인풋 필드에 입력값을 지우는 X(클리어) 아이콘이 없고, 필드 색상도 비활성 상태의 회색 그대로다."
+  fix: "원 안에 X 아이콘을 넣고, 입력 중일 때는 비활성 그레이가 아니라 활성화된 컬러로 바꾼다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "그럼 뭐 들어와야 돼? 여기 그거 들어와야지. 동그라미에서 X 이 아이콘 들어와야 되는 거고요. 그다음에 입력 중인 거면은 지금 여기 부분이 비활성화 컬러 같은 그레이 컬러가 아니고 활성화된 컬러가 들어와야겠죠."
+  qualities: []
+  evidence: .evidence/usaaQlWPiJ0/158.png
+
+- id: case-603
+  source: { video: usaaQlWPiJ0, t: "2:16" }
+  scope:
+    component: list
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: structure
+  direction: other
+  problem: "인기 검색어 목록에서 각 항목의 위치 핀 아이콘이 텍스트에서 멀리 떨어진 맨 오른쪽 끝에 있어, 텍스트와 한 묶음으로 보이지 않는다."
+  fix: "아이콘을 텍스트 앞쪽에 붙이거나, 이렇게 떨어뜨려 넣을 거면 차라리 아이콘을 다 뺀다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "그다음에 여기 텍스트랑 여기 아이콘 있잖아요. 이게 너무 이렇게 동떨어져 있지 않아요? 묶여 보이지가 않는데 아이콘 들어가고 싶으면 앞으로 와야지. 이만 못해. 이렇게 넣을 거면 그냥 여기 다 빼 버리는게 나아요."
+  qualities: []
+  evidence: .evidence/usaaQlWPiJ0/220.png
+
+- id: case-604
+  source: { video: usaaQlWPiJ0, t: "2:28" }
+  scope:
+    component: any
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: color
+  direction: other
+  problem: "시안에 그려 넣은 키보드가 브랜드 컬러로 스타일링되어 있다."
+  fix: "키보드는 색을 입히지 말고 시스템 기본 키보드 형태로 넣는다."
+  rationale: "일반적으로 이런 색 입힌 키보드는 잘 쓰지 않는다"
+  stance: PRESCRIPTIVE
+  quote: "이 키보드 이거 뭐야? 이거 갑자기 키보드까지 이런 거 색깔 면 안 돼. 이거 기본적인 거로 넣으세요. 기본적인 거로 이런 거 넣지 말고."
+  qualities: []
+  evidence: .evidence/usaaQlWPiJ0/230.png
+
+- id: case-605
+  source: { video: usaaQlWPiJ0, t: "4:39" }
+  scope:
+    component: layout
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: whitespace
+  direction: other
+  problem: "상세 페이지(제목·태그·설명·가격·평점·버튼)에서 요소 사이 여백이 제각각이라 어디까지가 한 그룹인지 정리가 안 돼 있다."
+  fix: "뭉칠 요소는 여백을 좁혀 뭉치고 벌릴 요소는 여백을 넓혀서, 여백 자체로 그룹의 계층이 보이게 만든다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "여기 여백이 왜 이렇게 다 왜 이래? 여기 여백이 다 여백이 정리가 하나도 안 돼 있어요. 다 이게 뭔가 벙벙해. 이렇게 뭉칠 건 뭉치고 벌릴 건 벌리고 이렇게 여백에 대한 계층이 좀 잡혀서 그룹이 좀 형성이 돼 보여야 되거든요."
+  qualities: ["벙벙한→?"]
+  evidence: .evidence/usaaQlWPiJ0/442.png
+
+- id: case-606
+  source: { video: usaaQlWPiJ0, t: "5:56" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: whitespace
+  direction: up
+  problem: "여러 정보를 테두리 하나로 감싸 묶은 카드 안에서 시작과 끝의 여백이 좁아 정보가 빡빡하게 묶여 답답해 보인다."
+  fix: "이렇게 하나로 묶어서 갈 거면 카드 시작과 끝의 여백을 과감하게 넓히고, 그게 아니면 개별 카드로 쪼갠다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "그리고 중요한 거 여기 라인이 이렇게 있는데 이 되게 답답해 보이지 않나요? 요거 딱 보면요 안에서 빡하게 정보가 묶여 있는 거 같아. 차라리 이렇게 할 거면 여기 여백들 있죠? 이 시작과 끝에 여백들 더 널널하게 뛰셨어야죠. 이 여백이 너무 좁아. 여기보다 이렇게 하지 말고 그냥 개별로 가세요. 개별로 카드로 쪼개세요. 만약에 그렇게 갈 거면 여백을 진짜 과감하게 벌려야 돼요."
+  qualities: ["답답한→?"]
+  evidence: .evidence/usaaQlWPiJ0/605.png
+
+- id: case-607
+  source: { video: usaaQlWPiJ0, t: "7:44" }
+  scope:
+    component: any
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "여러 페이지에서 반복되는 공통 컴포넌트(태그 칩 등)를 페이지마다 다시 그리면서 스타일이 조금씩 달라지고 있다."
+  fix: "공통 컴포넌트는 페이지마다 다르게 가지 말고 반드시 똑같이 가져간다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "이거는 아까 우리 했던 거 그냥 그대로 쓸까? 이거 굳이 다시 할 필요가 있나? 이거 이거였던 거 같은데. 어, 이거 공통이라 다르게 가면 안 돼요. 이런 것들은 반드시 똑같이 가야 됩니다."
+  qualities: []
+  evidence: .evidence/usaaQlWPiJ0/746.png
+
+- id: case-608
+  source: { video: usaaQlWPiJ0, t: "10:19" }
+  scope:
+    component: typo
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: alignment
+  direction: other
+  problem: "상세 페이지에서 이미지·제목·부제처럼 폭이 서로 다른 요소들을 계속 가운데 정렬로 맞추다 보니, 요소마다 좌우 여백이 들쭉날쭉해 시선이 지그재그로 흐른다."
+  fix: "계속 가운데 정렬을 고수할 필요는 없다."
+  rationale: ""
+  stance: OPTION
+  quote: "계속 가운데 정렬을 고수하실 필요는 없을 것 같은데 이게 가운데 정렬을 자꾸 고수하시니까 이게 자꾸 이렇게 보여. 심지어 이미지부터 본다 치면 시선이 약간 이런 식으로 보인단 말이야. 이렇게 자꾸 시선이 꼬불랑 길이 자꾸 보이거든요. 시각적으로도 그렇게까지 정렬이나 밸런스가 좋아 보이지도 않고."
+  qualities: []
+  evidence: .evidence/usaaQlWPiJ0/1025.png
+
+- id: case-609
+  source: { video: usaaQlWPiJ0, t: "10:38" }
+  scope:
+    component: button
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: labeling
+  direction: other
+  problem: "상세 페이지 상단에 시스템 뒤로가기와는 별도로 '이전' 버튼이 하나 더 있는데, 시스템 뒤로가기와 다른 기능인지 화면 안에 아무 설명이 없다."
+  fix: "같은 기능이면 없애고, 다른 기능이면 그 내용을 명시한다."
+  rationale: ""
+  stance: OPTION
+  quote: "이전이 왜 있지? 이게 왜 있을까요? 이전 뒤로 가기잖아. 이거 이거 있잖아요. 다른 건가? 저건 좀 잘 모르겠네. 왜 있는지 모르겠다. 같은 기능이면 없어도 됩니다."
+  qualities: []
+  evidence: .evidence/usaaQlWPiJ0/1042.png
+
+- id: case-610
+  source: { video: usaaQlWPiJ0, t: "14:16" }
+  scope:
+    component: modal
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: interaction
+  direction: other
+  problem: "날짜·인원 선택 바텀시트를 열면 딤드(어둡게 처리된) 오버레이가 깔리고 배경 스크롤이 막힌다."
+  fix: "딤드 오버레이를 깔지 않고, 배경이 그대로 보이면서 스크롤도 막지 않는다."
+  rationale: "총 결제 금액을 보면서 선택이 맞는지 확인하려면 시트를 껐다 켰다 할 필요 없이 스크롤이 풀려 있는 게 더 편하다"
+  stance: OPTION
+  quote: "이 딤들을 깔아야 될까? 이 바텀을 바텀 딤드 깔 필요가 있나? 깔 수 있거든요. 근데 저는 안 깔아도 되는 거 같아요. 저는 그냥 바닥에 보이면서 스크롤 풀어 놔도 될 거 같아요. 굳이 막을 필요가 있나? 왜냐면 이거 뭐 막을 이유가 없거든요."
+  qualities: []
+  evidence: .evidence/usaaQlWPiJ0/1420.png
+
+- id: case-611
+  source: { video: usaaQlWPiJ0, t: "15:52" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: shadow
+  direction: other
+  problem: "총 결제 금액과 '결제로 이동하기' 버튼이 담긴 하단 요약 카드가 배경과 잘 구분되지 않아, 스크롤하는 동안 얼마를 선택했는지 알아보기 어렵다."
+  fix: "요약 카드에 배경 블러와 은은한 그림자(오퍼시티 16 정도)를 줘서 떠 보이게 한다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "여기 오퍼시티 흐리게 아니다. 너무 흐리면 또 안 보이니까 16 정도 올리면 탁 이렇게 떠 가지고 여기서 보면 되는 거 아닌가? 이렇게. 아, 얼마 선택했구나. 얼마 선택했구나. 밑에 더 내려서 더 내려갈 거 아니야? 그럼 이렇게. 아, 이렇게 선택했구나. 결제 이 로직으로 가는게 맞는 거 같습니다."
+  qualities: []
+  evidence: .evidence/usaaQlWPiJ0/1600.png
+
+- id: case-612
+  source: { video: usaaQlWPiJ0, t: "20:56" }
+  scope:
+    component: layout
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: density
+  direction: down
+  problem: "결제 완료 화면의 예약 정보(이름/대상/방문 날짜/방문 시간/인원 수/연락처)가 칸마다 구분선이 그어진 테이블 형태로 되어 있다."
+  fix: "구분선을 다 걷어내고 영수증처럼 심플하게 디자인한다."
+  rationale: "테이블 구조를 자꾸 가져가면 시스템적인 느낌이 난다"
+  stance: PREFERRED
+  quote: "일단 여기 라인이 너무 많아요. 테이블에서. 여기도 라인 라인 라인 라인은 다 걷어내야 될 거 같습니다. 이 결제 완료는 사실은 영수증처럼 디자인 나와야 된다고 제가 예전부터 유튜브에서 계속 강조하고 강조하고 강조하고 말했는데 이 자꾸 이런 뭔가 꾸밈 요소라고 해야 되나 뭔가 이런 테이블 구조를 자꾸 가져가시면 되게 시스템적인 느낌 나잖아요. 좀 심플하게 가시는게 맞을 것 같고."
+  qualities: []
+  evidence: .evidence/usaaQlWPiJ0/2048.png
+
+- id: case-613
+  source: { video: usaaQlWPiJ0, t: "22:40" }
+  scope:
+    component: list
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: density
+  direction: down
+  problem: "설정 페이지에서 항목(언어 설정/거리 표시/콘텐츠 재생/경고/화면 모드/알림)마다 개별 카드로 테두리를 두르고, 각각 색깔 있는 장식용 아이콘 배지를 달아 놓았다."
+  fix: "카드 테두리와 장식용 아이콘을 다 빼고, 유튜브 설정처럼 단순한 리스트 형태로 간다."
+  rationale: ""
+  stance: OPTION
+  quote: "여기서는 이렇게까지 따다닥 갈 필요가 없어요. 복잡해 보여. 카드 카드 카드 카드 카드 이러니까 여기도 지금 불러 들어간 요거 이쁘장한 아이콘들 있죠? 이 다 복잡해. 이거 다 없어도 되는 어떤 느낌이냐면 이렇게 유튜브처럼 가면 될 거 같아."
+  qualities: []
+  evidence: .evidence/usaaQlWPiJ0/2250.png
