@@ -1,5 +1,6 @@
 # 동의어 묶기와 문턱 판정은 kg/promotion-log.md, 정규화 규칙은 docs/schema.md
 # 이번 라운드 승격분은 전부 polarity: problem 이다. target 형용사는 영상 3개 문턱을 넘은 조합이 없다.
+# realized_by.direction: other 는 "수치를 올리고 내리는 게 아니라 구조를 바꾼다"는 뜻이다.
 - id: quality-oversized
   label: 큰
   aliases: [부담스러운]
@@ -51,3 +52,13 @@
       weight: 4
       cases: [case-1004, case-1010, case-805, case-908]
   opposes: quality-cramped
+
+- id: quality-cluttered
+  label: 복잡한
+  aliases: [혼란스러운]
+  polarity: problem
+  realized_by:
+    - property: structure
+      direction: other
+      weight: 5
+      cases: [case-407, case-1513, case-1704, case-305, case-901]

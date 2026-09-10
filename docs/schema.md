@@ -115,8 +115,10 @@ Case 수로는 90건, 전체의 37%다. 승격은 되지만 `promoted coverage` 
 없었다. `hierarchy`는 그 목록에 없어서 up · down이 3건 섞여 있는데, 셋 다 "위계를 낮춘다/높인다"라는
 서술이지 수치가 아니다. 다음 라운드에서 `hierarchy`도 JUDGMENT 전용으로 넣을지 정해야 한다.
 
-`direction`이 `other`인 Case가 140건, 전체의 58%다. `other`는 승격에서 두 번 걸린다 — CHECKABLE이
-못 되고, `Quality.realized_by`에도 못 들어간다.
+`direction`이 `other`인 Case가 140건, 전체의 58%다. `other`인 Case는 CHECKABLE Rule이 될 수 없다.
+`Quality.realized_by`에는 들어갈 수 있다(2026-09-11 스키마 변경). 구조를 바꾸라는 조언도 형용사가
+가리키는 실체이므로, 방향이 없다는 이유로 버리면 이 코퍼스에서 형용사가 가장 많이 달리는 지적을
+통째로 버리게 된다.
 
 규격 Rule 전용으로 `focus` 하나를 더 쓴다(rule-003). 코퍼스에는 없는 property다.
 
@@ -157,10 +159,13 @@ Case 수로는 90건, 전체의 37%다. 승격은 되지만 `promoted coverage` 
   (예: "심플하게, 깔끔하게") 하나만 남긴다. case-612에서 `?→깔끔한`을 빼고 `?→심플한`만 남긴 것이 이 경우다
 - 동의어 묶기는 승격 단계에서 한다. Case에는 화자가 쓴 말을 그대로 두고, `Quality.label`과
   `aliases`로 대표어를 정한다. 이번 라운드의 병합은 `부담스러운→큰`,
-  `빡빡한 · 타이트한 · 촘촘한→답답한`, `벙벙한→넓은`이다
-- `Quality.realized_by[].direction`은 `up | down | set`만 받는다. `other`가 없다. 형용사가
-  `structure` · `hierarchy` 같은 property에 붙으면 항목으로 만들 수 없다. 이번 라운드에서 이 제약에
-  막힌 후보가 여섯이다
+  `빡빡한 · 타이트한 · 촘촘한→답답한`, `벙벙한→넓은`, `혼란스러운→복잡한`이다
+- `Quality.realized_by[].direction`은 `up | down | set | other`다. `other`는 "수치를 올리고 내리는
+  게 아니라 구조를 바꾼다"는 뜻이고, `structure` · `hierarchy` · `alignment` 계열 형용사가 여기 들어온다.
+  `set`일 때만 `value`가 필수인 것은 그대로다. 1차 승격에서는 `other`가 없어 `복잡한\|structure`
+  같은 후보가 막혔고, 2차에서 열었다
+- `other` 항목을 읽는 쪽(에이전트)은 "어느 방향으로 얼마나"가 아니라 근거 Case의 `fix`를 봐야 한다.
+  `design_qualities`가 `cases`를 같이 돌려주는 이유다
 
 ## 승격 게이트 — 실제로 적용한 형태
 
@@ -221,13 +226,18 @@ Case 수로는 90건, 전체의 37%다. 승격은 되지만 `promoted coverage` 
 맡고, 이 채널은 `Option`과 `Quality` 공급원이다. 6단계 이행률 지표는 Quality로 재고, 기본기 지표는
 규격 Rule로 잰다. 둘의 출처가 분리돼 있는 편이 오히려 판정에 낫다.
 
-**Quality 문턱은 미달이다.** 노드 4개, 그중 `realized_by` 2개 이상은 2개다(조건은 5개 · 각 2개).
-숫자를 채우려면 근거 없는 항목을 지어내야 해서 채우지 않았다. 원인은 영상 수가 아니라 형용사가
-붙는 지점이다. 형용사가 가장 많이 달린 property는 `structure`(Case 60건)인데 `structure`는
-`direction: other`이고, `realized_by.direction`은 `other`를 받지 않는다. 문턱을 영상 2개로 낮춰도
-`realized_by` 2개 이상인 노드는 3개까지밖에 안 늘어난다. 선택지는 셋이다 — 스키마에
-`direction: other`(또는 `restructure`)를 허용하거나, `structure` 지적을 더 잘게 쪼개 수치 방향이
-있는 property로 다시 적거나, 코퍼스 선별 기준을 고쳐 수치·방향을 말하는 영상을 더 넣는 것이다.
+**Quality 문턱은 절반만 넘었다.** 노드는 5개로 조건을 채웠고, `realized_by` 2개 이상은 2개로
+조건(각 2개)에 못 미친다. cramped · loose · cluttered가 각 1항목이다. 숫자를 채우려면 근거 없는
+항목을 지어내야 해서 채우지 않았다.
+
+1차에서는 노드가 4개였다. `realized_by.direction`이 `other`를 안 받아 영상 4개짜리
+`복잡한\|structure\|other`가 통째로 막혔기 때문인데, 2026-09-11에 스키마를 고쳐 열었고
+quality-cluttered가 승격됐다. 남은 미달은 스키마가 아니라 근거 수다 — cramped의 두 번째 조합은
+`spacing\|up`(영상 2개), cluttered의 두 번째 조합은 `density\|down`(영상 2개)으로 각각 하나가
+모자란다. 항목 문턱을 영상 2개로 낮춰도 `realized_by` 2개 이상인 노드는 4개까지만 는다.
+
+다음 라운드에서 이 조건을 넘기려면 `structure` 지적을 더 잘게 쪼개 수치 방향이 있는 property로
+같이 적거나, 코퍼스 선별 기준을 고쳐 수치·방향을 말하는 영상을 더 넣어야 한다.
 
 **승격된 형용사는 전부 problem 쪽이다.** target 형용사는 어느 `(property, direction)`도 영상 3개를
 못 넘었다. 화자는 무엇이 잘못됐는지는 같은 말로 반복해서 지적하지만("크다" 7개 영상, "답답하다"

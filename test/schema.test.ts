@@ -83,6 +83,16 @@ describe("Quality", () => {
     expect(Quality.parse({ id: "quality-big", label: "큰", polarity: "problem" }).polarity).toBe("problem");
   });
 
+  it("accepts direction other for structure-type advice", () => {
+    const q = Quality.parse({
+      id: "quality-cluttered",
+      label: "복잡한",
+      polarity: "problem",
+      realized_by: [{ property: "structure", direction: "other", weight: 2, cases: ["case-001"] }],
+    });
+    expect(q.realized_by[0].direction).toBe("other");
+  });
+
   it("requires value when direction is set", () => {
     expect(() => Quality.parse({
       id: "quality-x", label: "x",

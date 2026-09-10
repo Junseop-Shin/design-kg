@@ -80,7 +80,8 @@ export const Option = z.object({
 const RealizedBy = z
   .object({
     property: z.string(),
-    direction: z.enum(["up", "down", "set"]),
+    // other = 수치 방향이 아니라 구조를 바꾼다. structure·hierarchy 계열 형용사가 여기 들어온다
+    direction: z.enum(["up", "down", "set", "other"]),
     value: z.union([z.number(), z.string()]).optional(),
     scope: Scope.optional(),
     weight: z.number().int().positive(),

@@ -4,6 +4,10 @@ Task 8(4단계) 1차 승격. 후보 표는 `.evidence/candidates.md`(영상 3개
 `.evidence/candidates-min2.md`(2개 이상, 아깝게 못 넘은 것 확인용)이다.
 게이트는 `docs/plan.md`의 승격 게이트 절을 따랐고, 실제로 적용한 형태는 `docs/schema.md`에 적었다.
 
+2026-09-11 2차: `RealizedBy.direction`이 `other`를 받도록 스키마를 고쳤다(컨트롤러 판정).
+`structure` 계열 조언도 Quality 지식이라는 이유다. 이 변경으로만 달라진 행은 아래 Quality 표에
+"2차"로 표시했다. Rule · Option 결정은 그대로다.
+
 이번 라운드는 사람 확정 없이 실행 에이전트가 게이트 규칙대로 판정했다. 행마다 이유를 남겼으니
 검수자가 뒤집을 수 있다. 애매하면 Rule보다 Option, Option보다 보류로 내렸다.
 
@@ -59,19 +63,27 @@ CHECKABLE은 아예 나올 수 없었다 — 영상 3개 이상 후보 가운데
 | 2026-09-11 | problem 답답한\|whitespace\|up | 승격 | quality-cramped · realized_by[0] | 영상 5개, weight 7. `빡빡한` · `타이트한` · `촘촘한`을 묶어 영상 6개 · weight 11이 됐다 |
 | 2026-09-11 | problem 타이트한\|whitespace\|up | 병합 | quality-cramped | 영상 3개(1509 1901 701)로 단독 승격도 가능했지만 `답답한`과 같은 뜻·같은 (property, direction)이라 한 노드로 합쳤다. 나누면 뜻이 같은 노드가 둘이 된다 |
 | 2026-09-11 | problem 빡빡한 · 촘촘한 (whitespace\|up) | 병합 | quality-cramped | 각각 영상 1개였다. 병합으로 1906 · 1908이 추가됐다 |
-| 2026-09-11 | problem 빡빡한\|structure\|other | 보류 | - | 영상 2개인 데다 `realized_by.direction`이 up/down/set만 받아 `other`를 담을 수 없다 |
+| 2026-09-11 | problem 빡빡한\|structure\|other | 보류 | - | 영상 2개(case-1607 · case-2101)로 문턱 미달. 2차 스키마 변경 뒤에도 수가 그대로다. `빡빡한`은 quality-cramped의 alias라 그쪽에 항목을 붙이려 해도 영상 2개다 |
 | 2026-09-11 | problem 넓은\|whitespace\|down | 승격 | quality-loose · realized_by[0] | 영상 3개, weight 4. `벙벙한`(605)은 alias로만 넣었다 — direction이 `other`라 항목이 못 된다 |
-| 2026-09-11 | problem 복잡한\|structure\|other | 보류 | - | 영상 4개, weight 4로 문턱은 넘었으나 `realized_by.direction`에 `other`가 없어 노드를 만들어도 항목이 0개다. `복잡한\|density\|down`은 영상 2개라 대체가 안 된다. 스키마 제약이지 근거 부족이 아니다 |
-| 2026-09-11 | target 깔끔한 · 심플한 · 간결한 · 단순한 | 보류 | - | 병합을 검토했다. 묶어도 `hierarchy\|down` 2개(503 307), `color` 2개(910은 down · 2001은 other로 방향도 다름), `size\|down` 1개, `density\|down` 1개, `shadow\|down` 1개, `structure\|other` 1개로 어느 (property, direction)도 영상 3개를 못 넘는다. 형용사는 겹치는데 손대는 속성이 매번 달라서 병합이 수를 못 늘렸다 |
-| 2026-09-11 | target 과감한 · 통일된 · 균형 잡힌 · 타이트한 | 보류 | - | 각각 영상 2개. `통일된\|structure\|other` · `균형 잡힌\|alignment\|other`는 direction 제약에도 걸린다 |
+| 2026-09-11 (2차) | problem 복잡한\|structure\|other | 승격 | quality-cluttered · realized_by[0] | 영상 4개, weight 4. 1차에서는 `realized_by.direction`에 `other`가 없어 보류했다. 스키마가 `other`를 받게 되어 승격했다. `혼란스러운`을 묶어 영상 5개 · weight 5 |
+| 2026-09-11 (2차) | problem 혼란스러운\|structure\|other | 병합 | quality-cluttered | case-901("오브젝트가 산만하게 떠 있다 → 걷어내고 하나만 남긴다")이 요소를 줄여 구조를 단순화하는 같은 주장이다. 같은 Case의 `약한`은 "힘이 있어 보여야 하는데"라는 다른 읽기라 묶지 않았다. `불분명한`(case-1704)은 이미 같은 Case가 들어와 있어 alias로도 넣지 않았다 |
+| 2026-09-11 (2차) | problem 복잡한\|density\|down | 보류 | - | 영상 2개(case-401 · case-613). 방향이 `down`이라 스키마 제약과는 무관하게 문턱 미달이다. 넘겼으면 quality-cluttered가 항목 2개가 됐을 자리다 |
+| 2026-09-11 (2차) | target 깔끔한 · 심플한 · 간결한 · 단순한 | 보류 | - | 병합을 검토했다. 묶어도 `hierarchy\|down` 2개(503 307), `color` 2개(910은 down · 2001은 other로 방향도 다름), `size\|down` 1개, `density\|down` 1개, `shadow\|down` 1개, `structure\|other` 1개로 어느 (property, direction)도 영상 3개를 못 넘는다. 형용사는 겹치는데 손대는 속성이 매번 달라서 병합이 수를 못 늘렸다 |
+| 2026-09-11 (2차) | target 과감한 · 통일된 · 균형 잡힌 · 타이트한 | 보류 | - | 각각 영상 2개. 1차에서 `통일된\|structure\|other` · `균형 잡힌\|alignment\|other`는 direction 제약에도 걸렸는데, 그 제약이 풀린 뒤에도 영상 수가 모자라 그대로 보류다 |
 | 2026-09-11 | problem 강조된 · 두꺼운 · 복잡한(density) | 보류 | - | 각각 영상 2개 |
+
+위 표에서 `깔끔한` 계열은 2차에서 다시 셌다. `other`가 풀리면서 `깔끔한\|alignment\|other`(1) ·
+`깔끔한\|structure\|other`(1) · `심플한 · 간결한\|color\|other`(1) · `단순한\|weight\|other`(1)이
+후보로 들어왔지만 전부 영상 1개라 결론은 그대로다. `복잡한 ↔ 심플한/깔끔한`이 자연스러운 반대 쌍인데
+target 쪽 노드가 없어 quality-cluttered에는 `opposes`를 달지 못했다.
 
 `강한 · 센` 병합은 대상이 없었다. `센`은 saturation·weight에 각 1건, `강한`은 contrast·radius에 각
 1건으로 전부 영상 1개이고 (property, direction)도 서로 달라, 묶어도 어떤 항목도 문턱을 못 넘는다.
 
 `opposes`: `quality-oversized ↔ quality-undersized`(size · type-scale의 반대 방향),
-`quality-cramped ↔ quality-loose`(whitespace의 반대 방향). 넷 다 polarity가 problem이다.
-문제 형용사와 짝이 될 target 형용사가 승격되지 않아, 이번에는 problem끼리 이었다.
+`quality-cramped ↔ quality-loose`(whitespace의 반대 방향). 둘 다 polarity가 problem끼리다.
+문제 형용사와 짝이 될 target 형용사가 승격되지 않아 problem끼리 이었다.
+`quality-cluttered`는 짝이 없다 — 반대는 `심플한`/`깔끔한`인데 그 노드가 안 만들어졌다.
 
 ## 반대 방향 쌍과 conflicts_with
 
@@ -90,20 +102,31 @@ Option 사이의 충돌을 그래프에 담으려면 `Option.conflicts_with`가 
 ## 문턱 판정
 
 `docs/plan.md` 4단계 통과 조건은 "Quality 5개 이상, 각각 `realized_by` 2개 이상"이다.
+아래는 2차(`direction: other` 허용) 반영 값이다.
 
-- Quality 노드: **4개** (quality-oversized · quality-undersized · quality-cramped · quality-loose)
-- `realized_by` 2개 이상: **2개** (oversized · undersized). cramped · loose는 각 1개
-- polarity: problem 4 / target 0
+| | 1차 | 2차 |
+|---|---|---|
+| Quality 노드 | 4개 | **5개** (oversized · undersized · cramped · loose · cluttered) |
+| `realized_by` 2개 이상 | 2개 | **2개** (oversized · undersized) |
+| polarity | problem 4 / target 0 | problem 5 / target 0 |
 
-**미달이다.** 두 조건 다 못 넘었다. 채우려면 근거 없는 항목을 지어내야 해서 채우지 않았다.
+**노드 수 조건은 넘었고, 항목 수 조건은 여전히 미달이다.** cramped · loose · cluttered가 각 1항목이다.
+채우려면 근거 없는 항목을 지어내야 해서 채우지 않았다.
 
-문턱을 못 넘은 이유는 근거 수가 아니라 두 가지 구조적 원인이다.
+세 노드가 두 번째 항목을 못 채운 사정은 각각 다르다.
 
-1. `realized_by.direction`이 `up | down | set`만 받는다. 그런데 이 코퍼스에서 형용사가 가장 많이
-   달린 property는 `structure`(Case 60건)이고 `structure`는 규칙상 `direction: other`다. 영상 4개짜리
-   `복잡한\|structure\|other`, `통일된\|structure\|other` 같은 후보가 전부 여기서 막힌다.
-2. 문턱을 영상 2개로 낮춰도 결과가 크게 달라지지 않는다. 그때 `realized_by` 2개 이상이 되는 노드는
-   3개(undersized가 touch-target을 얻어 3항목, cramped가 spacing을 얻어 2항목)로, 여전히 5개에 못 미친다.
+- cramped: 동의어 넷을 다 묶어도 두 번째 조합이 `spacing\|up` 영상 2개, `structure\|other` 영상 2개로
+  둘 다 하나가 모자란다
+- loose: 두 번째 조합이 `line-height\|down` 영상 1개뿐이다
+- cluttered: `density\|down`이 영상 2개(case-401 · case-613)로 하나가 모자란다. 스키마 제약이 아니라
+  근거 수 문제다
 
-즉 "영상을 더 모으면 된다"가 아니라 "형용사가 붙는 지적의 대부분이 수치 방향이 아니라 구조 변경"이라는
-코퍼스 성격 문제다. 후속 판단은 `docs/schema.md`의 "이 코퍼스가 말하는 것과 말하지 않는 것"에 적었다.
+항목 문턱을 영상 2개로 낮춰 다시 계산해도 `realized_by` 2개 이상인 노드는 4개(oversized ·
+undersized · cramped · cluttered)로 5개에 못 미친다. 문턱 해석을 바꿔서 넘길 수 있는 상황이 아니다.
+
+`direction: other`를 연 효과는 분명하다. 노드가 하나 늘었고, 코퍼스에서 형용사가 가장 많이 달리는
+property(`structure`, Case 60건)가 Quality로 들어올 길이 생겼다. 다만 `structure` 형용사가
+영상 3개 이상에서 반복된 조합은 `복잡한` 하나뿐이라, 이번 코퍼스에서 이 변경이 살려낸 후보는 한 건이다.
+나머지(`통일된` · `균형 잡힌` · `빡빡한\|structure`)는 제약이 아니라 영상 수에서 걸린다.
+
+후속 판단은 `docs/schema.md`의 "이 코퍼스가 말하는 것과 말하지 않는 것"에 적었다.
