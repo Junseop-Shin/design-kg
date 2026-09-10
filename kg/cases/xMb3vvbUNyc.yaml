@@ -13,7 +13,7 @@
   rationale: "실수로 넓어진 것으로 보이며, 두 번째 항목의 간격이 더 적절했다."
   stance: OPTION
   quote: "행간 이 굉장히 넓죠"
-  qualities: []
+  qualities: ["넓은→?"]
   evidence: .evidence/xMb3vvbUNyc/121.png
 
 - id: case-1302
@@ -49,7 +49,7 @@
   rationale: "간격들이 다 고만고만하게 조금씩 달라서 어디가 어디 껀지 가독성이 떨어진다."
   stance: OPTION
   quote: "많이 쪼개져 보인다는게 큰 단점이에요"
-  qualities: []
+  qualities: ["쪼개진→?"]
   evidence: .evidence/xMb3vvbUNyc/308.png
 
 - id: case-1304
@@ -67,7 +67,7 @@
   rationale: ""
   stance: OPTION
   quote: "흐려도 너무 어려요 이정도면 은 그냥 보지 말란 소리 거든요"
-  qualities: []
+  qualities: ["흐린→?"]
   evidence: .evidence/xMb3vvbUNyc/342.png
 
 - id: case-1305
@@ -85,7 +85,7 @@
   rationale: ""
   stance: OPTION
   quote: "라인이 너무 도드라져 보인다는 거 빼고는 나쁘지 않아요"
-  qualities: []
+  qualities: ["도드라진→?"]
   evidence: .evidence/xMb3vvbUNyc/408.png
 
 - id: case-1306
@@ -121,7 +121,7 @@
   rationale: "이 라인은 그냥 보이기만 하면 되는 요소라 이렇게까지 잘 보일 필요가 없다."
   stance: OPTION
   quote: "여기 이 표에서 문제는 뭐냐면 라인이 너무 진하다"
-  qualities: []
+  qualities: ["진한→?"]
   evidence: .evidence/xMb3vvbUNyc/633.png
 
 - id: case-1308
@@ -157,7 +157,7 @@
   rationale: ""
   stance: OPTION
   quote: "라인이 너무 두꺼워요 폰트의 비해서"
-  qualities: []
+  qualities: ["두꺼운→?", "강조된→?"]
   evidence: .evidence/xMb3vvbUNyc/948.png
 
 - id: case-1310
@@ -175,7 +175,7 @@
   rationale: ""
   stance: PREFERRED
   quote: "라인은 좀 죽이는게 맞는거 같아요"
-  qualities: []
+  qualities: ["강조된→?"]
   evidence: .evidence/xMb3vvbUNyc/948.png
 
 - id: case-1311
@@ -211,7 +211,7 @@
   rationale: "그림자를 기본으로 갖고 있으면 입체적으로 보이면서 오브젝트가 하나 더 생기는 느낌을 준다."
   stance: OPTION
   quote: "플랫 디자인에 있는 그림자를 웬만하면 디 플 2로 안갖고 있어요"
-  qualities: []
+  qualities: ["?→심플한"]
   evidence: .evidence/xMb3vvbUNyc/1132.png
 
 - id: case-1313
@@ -283,5 +283,5 @@
   rationale: "로그인 버튼은 중요한 액션이기 때문이다."
   stance: PRESCRIPTIVE
   quote: "로그인 버튼 중요한 건데 이렇게 짧게 들어가면 안되요"
-  qualities: []
+  qualities: ["짧은→?"]
   evidence: .evidence/xMb3vvbUNyc/1825.png

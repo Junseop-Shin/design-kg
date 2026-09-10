@@ -67,7 +67,7 @@
   rationale: "둔해 보이는 게 중요한 게 아니라 클릭이 잘 되는 게 중요하다"
   stance: PRESCRIPTIVE
   quote: "여자애가 클릭이 잘 되야 된다니까 이 체크박스는 32 너무 작아요 32 면은 일베 슬며시 아 16 이잖아요 자 가자 가 20은 대하여 최소 어여 기는 28"
-  qualities: []
+  qualities: ["작은→?"]
   measured: { prop: touch-target, value: 28, unit: px }
   evidence: .evidence/x_PIbVmQTh8/905.png
 

@@ -13,7 +13,7 @@
   rationale: "타이틀과 본문의 계층 구조를 컬러로 나눠 주면 타이틀이 보다 더 명확하게 잘 보인다."
   stance: OPTION
   quote: "타이틀에 이렇게 세 가지 이상의 효과가 들어가면 오히려 집중도가 많이 떨어지는 경향이 있습니다 그래서 이처럼 컬러를 한 톤으로 맞추면 훨씬 더 통일감 있고 간결하고 직관적인 타이프를 우리가 사용할 수 있어요."
-  qualities: ["?→간결한"]
+  qualities: ["?→간결한", "?→심플한", "?→통일된"]
   evidence: .evidence/w9vBVPCH69Q/144.png
 
 - id: case-2002
@@ -31,7 +31,7 @@
   rationale: "가운데 정렬은 줄마다 시작 지점이 지그재그로 흩어져 시선이 퍼지지만, 좌측 정렬은 책처럼 시작 지점이 고정돼 있어 가독성과 내용 파악에 훨씬 더 좋은 구조를 가져갈 수 있다."
   stance: PREFERRED
   quote: "세 줄 이상 넘어가면 가독성이 많이 저하되기 때문에 세 줄 이상 넘치는 경우에는 좌측 정렬로 깔끔하게 정렬을 맞춰 주시는게 좋습니다."
-  qualities: []
+  qualities: ["?→깔끔한"]
   evidence: .evidence/w9vBVPCH69Q/240.png
 
 - id: case-2003
@@ -85,7 +85,7 @@
   rationale: "폰트가 다 다르면 코딩에서 공통 가이드를 뽑아내기도 어렵고 시스템 가이드를 체계화하기도 어렵다."
   stance: PREFERRED
   quote: "그래서 웬만하면 너무 다체로운 폰트는 사용 안 해 주시는게 좋아요."
-  qualities: []
+  qualities: ["?→통일된"]
   evidence: .evidence/w9vBVPCH69Q/620.png
 
 - id: case-2006
@@ -103,7 +103,7 @@
   rationale: "두께를 다양하게 쓸수록 일관성이 없어지고 집중도가 떨어지며 시선이 분산되고, 코딩에서 시스템 가이드를 공통 요소로 뽑아내기도 어려워진다."
   stance: PRESCRIPTIVE
   quote: "여기서이 많은 대여섯개의 모든 두께를 다 사용하느냐 당연히 안 됩니다."
-  qualities: []
+  qualities: ["?→통일된"]
   evidence: .evidence/w9vBVPCH69Q/800.png
 
 - id: case-2007
@@ -121,5 +121,5 @@
   rationale: "설정에서 폰트를 키우는 기능에만 의존하면 이미 큰 타이틀은 더 커지고 작은 텍스트만 적당해져 밸런스가 무너지므로, 애초에 기본값 자체를 적정한 크기로 설정해 두는 것이 가장 좋다."
   stance: OPTION
   quote: "텍스트형 버튼에서 폰트를 너무 깨 같이 쓰기 때문에 가독성도 많이 떨어지고 클릭을 할 때 밑에 것과 같이 눌리거나 우리가 손가락 두께를 전혀 고려하지 않고 디자인을 해 주시는 분들이 굉장히 많습니다."
-  qualities: []
+  qualities: ["?→균형 잡힌"]
   evidence: .evidence/w9vBVPCH69Q/952.png

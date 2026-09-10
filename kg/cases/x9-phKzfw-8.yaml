@@ -13,7 +13,7 @@
   rationale: "오브젝트가 많으면 힘이 있어 보여야 하는데 오히려 시선이 분산돼 불필요하게 느껴진다"
   stance: OPTION
   quote: "그리고 인트로에 오브젝트가 너무 많아요. 이렇게 오브젝트가 많다면 어느 정도 강해 보이고 힘이 좀 있어 보이긴 해야 되거든요. 힘도 너무 약하고 오히려 시선 분산으로 오브젝트가 불필요하다고 느껴집니다."
-  qualities: []
+  qualities: ["약한→?", "혼란스러운→?"]
   evidence: .evidence/x9-phKzfw-8/520b.png
 
 - id: case-902
@@ -177,7 +177,7 @@
   rationale: ""
   stance: OPTION
   quote: "올리브형 색깔 너무 많잖아요. 스트록 스트록 스트록 스트록. 그렇죠? 안 묶여 보이죠?"
-  qualities: []
+  qualities: ["?→깔끔한"]
   evidence: .evidence/x9-phKzfw-8/2523b.png
 
 - id: case-911
@@ -195,7 +195,7 @@
   rationale: "이런 본문 텍스트에는 굳이 색깔이 들어갈 필요가 없다"
   stance: OPTION
   quote: "사실은 이런 텍스트에는 굳이 색깔이 들어갈 필요가 저는 전혀 없다고 생각해요."
-  qualities: []
+  qualities: ["강조된→?"]
   evidence: .evidence/x9-phKzfw-8/916b.png
 
 - id: case-912

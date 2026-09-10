@@ -103,7 +103,7 @@
   rationale: "그래프의 역할은 곧 마감이니 빨리 입실·예약하라는 리마인드인데 지금 그 용도에 비해 그래프가 과하다"
   stance: OPTION
   quote: "사실 컬러 강조보다는 어, 텍스트를 더 키운다. 요 색깔을 오히려 여기 이 그래프에 한번 써 보시는 거는 어떤가? 요 그래프가 조금 과해요."
-  qualities: []
+  qualities: ["강조된→?"]
   evidence: .evidence/MJKb-4dqjVg/747.png
 
 - id: case-207

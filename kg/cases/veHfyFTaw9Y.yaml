@@ -49,7 +49,7 @@
   rationale: ""
   stance: OPTION
   quote: "그리고 오브젝트 사이즈 조금 줄여도 될 거 같아요. 조금 커요."
-  qualities: []
+  qualities: ["큰→?"]
   evidence: .evidence/veHfyFTaw9Y/518.png
 
 - id: case-804
@@ -85,7 +85,7 @@
   rationale: ""
   stance: OPTION
   quote: "여백이 이제 좀 넓어 보이죠? 여기 한 8 정도로 타이트하게 잡아 죽자."
-  qualities: []
+  qualities: ["넓은→타이트한"]
   measured: { prop: whitespace, value: 8, unit: px }
   evidence: .evidence/veHfyFTaw9Y/659.png
 
@@ -122,7 +122,7 @@
   rationale: "타이틀이 커진 것과 밸런스를 맞춰야 한다"
   stance: OPTION
   quote: "그다음 밑에 폰트 사이즈 14는 좀 작지. 왜냐면 이게 이제 커졌으니까 거기에 대한 밸런스를 좀 맞춰 줘야 되니까 16 정도에 그냥 레귤러 정도."
-  qualities: []
+  qualities: ["작은→?", "?→균형 잡힌"]
   measured: { prop: type-scale, value: 16, unit: px }
   evidence: .evidence/veHfyFTaw9Y/810.png
 
@@ -141,7 +141,7 @@
   rationale: ""
   stance: OPTION
   quote: "여기는 백그라운드 컬론 없어도 될 거 같고요. 높이값을 좀 고정으로 갈 건데 좀 작다. 조금만 키워서 48 정도 좀 여유 있게."
-  qualities: []
+  qualities: ["작은→여유로운"]
   measured: { prop: size, value: 48, unit: px }
   evidence: .evidence/veHfyFTaw9Y/1011.png
 

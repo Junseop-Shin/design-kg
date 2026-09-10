@@ -49,7 +49,7 @@
   rationale: ""
   stance: PREFERRED
   quote: "간편 로그인 버튼에 대해서 스타일이 좀 다르잖아요. 이런 것들은 좀 맞춰 주는게 좋을 거 같은데요."
-  qualities: []
+  qualities: ["강한→?"]
   evidence: .evidence/cOXiN80n9hM/301.png
 
 - id: case-1004
@@ -67,7 +67,7 @@
   rationale: ""
   stance: OPTION
   quote: "그리고 지금 보시면은 좌우 여백도 36인데 많이 넓어요.한 24 정도로가 보도록 하겠습니다."
-  qualities: []
+  qualities: ["넓은→?"]
   measured: { prop: whitespace, value: 24, unit: px }
   evidence: .evidence/cOXiN80n9hM/410.png
 
@@ -86,7 +86,7 @@
   rationale: ""
   stance: OPTION
   quote: "일단이 체크가 좀 사이즈가 커요. 26인데요. 사실은 22 정도만 돼도 충분합니다."
-  qualities: []
+  qualities: ["큰→?"]
   measured: { prop: size, value: 22, unit: px }
   evidence: .evidence/cOXiN80n9hM/514.png
 
@@ -141,7 +141,7 @@
   rationale: "일반적인 원형 버튼 사이즈는 40 정도다"
   stance: PRESCRIPTIVE
   quote: "두 개 디자인이 좀 관건인데이 원이 생각보다 어 작아요. 훨씬 커야 됩니다. 보통은 일반적인 사이즈가 한 40 정도 돼요."
-  qualities: []
+  qualities: ["작은→큰"]
   measured: { prop: size, value: 40, unit: px }
   evidence: .evidence/cOXiN80n9hM/1224.png
 
@@ -160,7 +160,7 @@
   rationale: ""
   stance: PRESCRIPTIVE
   quote: "체크박스를 아무리 여기다 넣어 봤자 티가 안 나요. 그래도 그럼 뭘 해 줘야 돼? 딘들을 깔아야 돼요."
-  qualities: []
+  qualities: ["?→명확한"]
   evidence: .evidence/cOXiN80n9hM/1756.png
 
 - id: case-1010

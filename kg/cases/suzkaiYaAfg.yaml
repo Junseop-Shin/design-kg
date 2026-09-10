@@ -68,7 +68,7 @@
   rationale: ""
   stance: OPTION
   quote: "썸네일이 너무 작아 보인다"
-  qualities: []
+  qualities: ["작은→?"]
   evidence: .evidence/suzkaiYaAfg/141.png
 
 - id: case-1605
@@ -122,7 +122,7 @@
   rationale: "스크롤을 조금 더 하는 건 전혀 힘든 일이 아닌데, 가로로 빡빡하게 보여주면 가독성이 떨어진다."
   stance: OPTION
   quote: "차라리 가로로 빡빡하게 보여 줄 바에는 그냥 세로로 내리세요"
-  qualities: []
+  qualities: ["빡빡한→?"]
   evidence: .evidence/suzkaiYaAfg/304.png
 
 - id: case-1608
@@ -140,7 +140,7 @@
   rationale: ""
   stance: PRESCRIPTIVE
   quote: "다 줄여야 돼"
-  qualities: []
+  qualities: ["큰→?"]
   evidence: .evidence/suzkaiYaAfg/331.png
 
 - id: case-1609

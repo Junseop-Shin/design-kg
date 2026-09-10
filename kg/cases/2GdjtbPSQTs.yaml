@@ -13,7 +13,7 @@
   rationale: "아이콘 때문인지 전체적으로 디자인이 복잡해 보인다"
   stance: OPTION
   quote: "저는 이 아이콘이 굳이 필요한가 싶습니다. 약간 이 아이콘 때문에 그런지 모르겠지만 전체적으로 좀 디자인이 복잡해 보이긴 하거든요."
-  qualities: []
+  qualities: ["복잡한→?"]
   evidence: .evidence/2GdjtbPSQTs/327.png
 
 - id: case-402
@@ -121,7 +121,7 @@
   rationale: "탭을 카드처럼 하나하나 박스로 쪼개면 코너 안 상품 카드와 스타일이 부딪혀 복잡해질 수밖에 없다"
   stance: PREFERRED
   quote: "이 밑에도 지금 타 이렇게 하나 둘 타 이렇게 개별로 다 쪼개 놨잖아요 지금. 그렇죠? 탭도 지금 다 박스 쳐서 다 쪼개 놨죠. 복잡할 수밖에 없는 거예요. 내가 만약에 이렇게 카드로 다 쪼갠다면 요런 탭 디자인 버튼형을 여러 개 나열하는요 카드 같은 느낌의요 버튼은 안 쓰시는게 좋아요."
-  qualities: []
+  qualities: ["복잡한→?"]
   evidence: .evidence/2GdjtbPSQTs/1220.png
 
 - id: case-408
@@ -193,7 +193,7 @@
   rationale: ""
   stance: PRESCRIPTIVE
   quote: "밑에 코너를 또 보면요. 지금 썸네일이 갑자기 세로가 나왔네. 썸네일 세로가 왜 나왔어? 이 가로 썸네일 썼잖아. 243에 200짜리요. 근데 갑자기 이 세로 썸네일이 나오면 안 되지. 커머스에서 썸네일은 한 가지로 그냥 기준 잡고 통일시켜서 비율은 유지하되 사이즈만 조절하는게 가장 베스트입니다."
-  qualities: []
+  qualities: ["?→통일된"]
   evidence: .evidence/2GdjtbPSQTs/1745.png
 
 - id: case-412

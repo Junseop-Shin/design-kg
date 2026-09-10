@@ -49,7 +49,7 @@
   rationale: ""
   stance: OPTION
   quote: "컨트 사이즈 같은 건 좀 작아 보이는데 12 조금 작긴 하네요"
-  qualities: []
+  qualities: ["작은→?"]
   evidence: .evidence/O4QMn38fYGs/222.png
 
 - id: case-1504
@@ -157,7 +157,7 @@
   rationale: ""
   stance: PRESCRIPTIVE
   quote: "모바일은 생각한 것보다이 코너 간의 여백을 많이 띄워 줘야 돼"
-  qualities: []
+  qualities: ["타이트한→?"]
   evidence: .evidence/O4QMn38fYGs/550.png
 
 - id: case-1510
@@ -211,7 +211,7 @@
   rationale: ""
   stance: PREFERRED
   quote: "폰트 사이즈가 12는 돼야 될 거 같아요"
-  qualities: []
+  qualities: ["작은→?"]
   measured: { prop: type-scale, value: 12, unit: px }
   evidence: .evidence/O4QMn38fYGs/644.png
 
@@ -230,7 +230,7 @@
   rationale: "굳이 다르게 해서 복잡함을 가져갈 필요가 없다."
   stance: OPTION
   quote: "같은 디자인은 그냥 같게 맞춰 주시면 될 거 같거든요 굳이 이걸 다르게 해서 복잡함을 가져갈 필요는 없거든"
-  qualities: []
+  qualities: ["복잡한→?"]
   evidence: .evidence/O4QMn38fYGs/819.png
 
 - id: case-1514
@@ -248,7 +248,7 @@
   rationale: ""
   stance: OPTION
   quote: "이미지도 안 들어갔는데 색깔이 너무 세다 보니까 너무 무거워"
-  qualities: []
+  qualities: ["무거운→?"]
   evidence: .evidence/O4QMn38fYGs/945.png
 
 - id: case-1515

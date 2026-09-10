@@ -67,7 +67,7 @@
   rationale: ""
   stance: OPTION
   quote: "여기도 다 커 보이는데 사이즈만 줄여도 이거 여백 있게 들어가겠구만."
-  qualities: []
+  qualities: ["답답한→?", "복잡한→?"]
   evidence: .evidence/y4dzWrby5cI/824.png
 
 - id: case-305
@@ -85,7 +85,7 @@
   rationale: ""
   stance: PREFERRED
   quote: "이미지를 가운데 두고 좌우로 지금 정보가 복잡하게 뿌려져 있으니까 더 복잡해 보여요. 그래서 제 개인적으로는요 1번 썸네일 부분을 이쪽으로 옮겨. 여기가 이제 뭐야? 이미지. 여기는 정보. 여기도 정보 해서 1번 2번 3번. 요 계층의 그룹으로 가면은 조금 더 낫지 않을까 싶어요."
-  qualities: []
+  qualities: ["복잡한→?"]
   evidence: .evidence/y4dzWrby5cI/900.png
 
 - id: case-306
@@ -121,5 +121,5 @@
   rationale: "시각적 포인트라 해도 전체를 다 세게 잡으면 다 세져서 깔끔한 느낌이 나지 않는다"
   stance: OPTION
   quote: "당연히 이미지 쪽은 타이틀을 굉장히 키웠지만 그 옆에 코너부터는 타이틀 사이즈를 조금씩 줄이고 힘을 좀 뺄게요. 제가 항상 말하지만 이게 뭐 아무리 시각적인 포인트라고 해도 사용성 상관없다고 해도 전체를 세게 하면 다 세지니까 안 그러면 이게 깔끔한 느낌이 안 날 거 같은데 사이즈 줄이고 레귤러로 바꿨습니다."
-  qualities: []
+  qualities: ["?→깔끔한"]
   evidence: .evidence/y4dzWrby5cI/930.png

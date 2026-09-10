@@ -67,7 +67,7 @@
   rationale: "삼각형의 흐름을 만들면 자연스럽게 시각적 위계가 형성되고 사용자의 시선을 메인 오브젝트로 유도할 수 있다."
   stance: OPTION
   quote: "가장 안정적으로 활용할 수 있는 방법 중 하나가 바로 플라이앵글이 삼각형 구도입니다."
-  qualities: ["불분명한→명확한"]
+  qualities: ["불분명한→명확한", "복잡한→명확한"]
   evidence: .evidence/pCc9GspeYfg/750.png
 
 - id: case-1705
@@ -85,7 +85,7 @@
   rationale: "여백이 있으면 주변에 방해되는 요소가 없어 중요한 내용이 한눈에 들어오고, 콘텐츠에 대한 집중도와 이해도가 올라간다."
   stance: PRESCRIPTIVE
   quote: "스크롤 길이에 두려움을 가지지 마세요."
-  qualities: []
+  qualities: ["?→과감한"]
   evidence: .evidence/pCc9GspeYfg/1133.png
 
 - id: case-1706
@@ -121,5 +121,5 @@
   rationale: "일관성이 있을 때는 반대로 강조하기도 굉장히 쉬워진다."
   stance: OPTION
   quote: "모든 섹션의 백그라운드 컬러가 다 화이트로 돼 있는데 내가 강조하고자 하는 하나의 섹션에만 다른 피지 컬러를 깔아 줘도 곧바로 강조가 되기 시작합니다."
-  qualities: []
+  qualities: ["?→강조된"]
   evidence: .evidence/pCc9GspeYfg/1250.png

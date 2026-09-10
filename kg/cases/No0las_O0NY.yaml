@@ -140,7 +140,7 @@
   rationale: "폰트가 얇아서 두께감이 부족해 보인다."
   stance: OPTION
   quote: "폰트 사이즈 11인데 한 13까지 가고요"
-  qualities: ["작은→?"]
+  qualities: ["작은→?", "얇은→두꺼운"]
   measured: { prop: type-scale, value: 13, unit: px }
   evidence: .evidence/No0las_O0NY/453.png
 
@@ -272,5 +272,5 @@
   rationale: "버튼이 너무 강하면 스크롤 시선 흐름이 여기서 끊겨 아래 코너까지 이어지지 않는다. 더 궁금한 사람만 보면 되는 정도의 레벨이면 충분하다."
   stance: OPTION
   quote: "지금이 내용보다이 버튼이 너무 강해요"
-  qualities: []
+  qualities: ["강한→?"]
   evidence: .evidence/No0las_O0NY/944.png

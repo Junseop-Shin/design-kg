@@ -13,7 +13,7 @@
   rationale: "적절한 여백을 주면 답답함이 풀리고 널찍하고 시원한 공간감이 생기며, 그에 따라 콘텐츠 간 그룹핑도 만들 수 있다."
   stance: PREFERRED
   quote: "여백은 너무 타이트하기보다는 조금 넓게 넓게 넓직 널찍 뛰시는게 좋습니다."
-  qualities: ["답답한→시원한"]
+  qualities: ["답답한→시원한", "타이트한→?", "촘촘한→?", "빡빡한→?"]
   evidence: .evidence/YNDhbNQo_io/058.png
 
 - id: case-1902
@@ -49,7 +49,7 @@
   rationale: ""
   stance: PREFERRED
   quote: "그래서이 손가락 두께를 고려해서 널찍널찍하게 여백을 띄워 주시는게 좋아요."
-  qualities: []
+  qualities: ["촘촘한→?"]
   evidence: .evidence/YNDhbNQo_io/233.png
 
 - id: case-1904
@@ -67,7 +67,7 @@
   rationale: "여백 없이 꽉 차게 들어가면 여유로운 디자인이 나오지 않는다."
   stance: OPTION
   quote: "앞에 지금 화면 보이면 어때요 상단과 하단이 여백이 좁죠 카드 UI 자체가 상당과 하단 혹은 좌우도 될 수가 있겠죠 여백 없이 꽉 차게 들어가면 시각적으로 답답해 보이고 너무 빡빡해 보입니다 그래서 여유로운 디자인이 나오지 않아요."
-  qualities: ["답답한→여유로운"]
+  qualities: ["답답한→여유로운", "빡빡한→여유로운"]
   evidence: .evidence/YNDhbNQo_io/343.png
 
 - id: case-1905
@@ -103,7 +103,7 @@
   rationale: "정지 화면으로 볼 때는 좁아도 인지가 되는 것 같아도, 실제로 스크롤하며 빠르게 훑어볼 때는 전혀 인지가 되지 않는다. 고객의 스크롤 패턴이나 UX 흐름까지 고려해야 한다."
   stance: PREFERRED
   quote: "그래서 이런 문제를 해결하기 위해서 위에 1단과 2단의 썸네일을 넓이 여백 값을 충분히 확보를 해주시는게 좋습니다."
-  qualities: []
+  qualities: ["촘촘한→?"]
   evidence: .evidence/YNDhbNQo_io/530.png
 
 - id: case-1907
@@ -121,7 +121,7 @@
   rationale: "그래야 콘텐츠가 정확하게 읽힌다. 이런 여백 기반 그룹핑은 카드 UI보다 난이도가 높아 초보자보다는 숙련자에게 권한다."
   stance: PRESCRIPTIVE
   quote: "여백으로 그룹핑을 꼭 반드시 확보해줘야 됩니다."
-  qualities: []
+  qualities: ["촘촘한→?", "답답한→?", "빡빡한→?"]
   evidence: .evidence/YNDhbNQo_io/700.png
 
 - id: case-1908
@@ -139,5 +139,5 @@
   rationale: "대부분의 사용자는 깨알같은 본문 폰트를 하나하나 읽지 않고 타이틀을 보고 바로 버튼을 찾는다."
   stance: OPTION
   quote: "그래서 이처럼 타이틀과 본문과 버튼에 대한 여백을 충분히 확보해서 사용자가 보고자 하는 부분만 딱딱 보게끔 우리가 그룹핑을 해주는 거예요."
-  qualities: []
+  qualities: ["촘촘한→?"]
   evidence: .evidence/YNDhbNQo_io/805.png

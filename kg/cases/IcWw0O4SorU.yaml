@@ -31,7 +31,7 @@
   rationale: ""
   stance: PREFERRED
   quote: "인풋 박스와 셀렉트 박스 그이 밸런스가 좀 안 맞는데 밸런스가 위에는 버튼 때문에 짧게 들어갔고 밑에는 셀렉이고 버튼이 없으니까 길게 펼친 건데 이거는 디자인 구조를 다시 짜야 될 거 같은데"
-  qualities: []
+  qualities: ["?→균형 잡힌"]
   evidence: .evidence/IcWw0O4SorU/758.png
 
 - id: case-2203
@@ -49,7 +49,7 @@
   rationale: "안 감싸도 해결이 될 디자인이라 굳이 카드로 감쌀 필요가 없다"
   stance: OPTION
   quote: "안 감싸도 돼요. 오히려이 카드로 감싸는 것보단 저는이 상태에서 상품이 몇 개 더 있다고 여기다가 뭐 예를 들어서이 상품 왜네 개, 뭐이 상품 왜 세 개, 총 상품 몇 개인지를 나타내는 텍스트가 들어가는게 더 효과적이라고 생각이 들기는 하네요."
-  qualities: []
+  qualities: ["강조된→?"]
   evidence: .evidence/IcWw0O4SorU/641.png
 
 - id: case-2204
@@ -67,7 +67,7 @@
   rationale: ""
   stance: OPTION
   quote: "여기 펼친보다는 그냥 슬라이드로 가볍게 가시는게 어떤가 싶어요."
-  qualities: []
+  qualities: ["?→가벼운"]
   evidence: .evidence/IcWw0O4SorU/725.png
 
 - id: case-2205
@@ -85,7 +85,7 @@
   rationale: "변경 버튼은 한두 번 설정하면 잘 안 건드리는 버튼인데 이렇게 강조할 필요가 있나를 한번 고민을 해야 되는 거예요."
   stance: PRESCRIPTIVE
   quote: "그렇게 주도적으로 사용이 많이 안 되는 버튼인데 이렇게 강조할 필요가 있나를 한번 고민을 해야 되는 거예요."
-  qualities: ["흐린→?"]
+  qualities: ["흐린→?", "강조된→?"]
   evidence: .evidence/IcWw0O4SorU/422.png
 
 - id: case-2206
