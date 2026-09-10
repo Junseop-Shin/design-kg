@@ -1,0 +1,179 @@
+- id: case-1401
+  source: { video: ESwm8fbBx0s, t: "1:21" }
+  scope:
+    component: layout
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: size
+  direction: down
+  problem: "리조트 검색 결과 목록 페이지가 큰 이미지와 큰 카드로 채워져 있어 풀 해상도 화면을 그대로 쓰는데도 전체적으로 부담스러운 크기로 보인다."
+  fix: "전반적인 요소 크기를 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "저는 약간 부담스러운 크기인 것 같아요"
+  qualities: ["부담스러운→?"]
+  evidence: .evidence/ESwm8fbBx0s/121.png
+
+- id: case-1402
+  source: { video: ESwm8fbBx0s, t: "2:17" }
+  scope:
+    component: card
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: structure
+  direction: other
+  problem: "리조트 카드에서 리조트명·설명 텍스트가 사진 위에 얹혀서 사진 절반 가까이를 가리고 있다."
+  fix: "이미지 위에 텍스트를 겹쳐 올리는 배치는 기획전·프로모션 배너에서만 쓰고, 여기서는 이미지를 가리지 않게 뺀다."
+  rationale: "사용자가 리조트를 고를 때 이미지를 보려고 들어오는 건데 텍스트가 절반을 가리면 이미지를 볼 수 없다."
+  stance: PRESCRIPTIVE
+  quote: "이미지 다 가리고 있어 절대로 하지 말아야 된 배치"
+  qualities: []
+  evidence: .evidence/ESwm8fbBx0s/217.png
+
+- id: case-1403
+  source: { video: ESwm8fbBx0s, t: "2:39" }
+  scope:
+    component: card
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: type-scale
+  direction: down
+  problem: "리조트 카드의 가격 텍스트가 26px로 크게 표시되어 부담스러워 보인다."
+  fix: "폰트 크기를 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "요즘 폰트가 너무 크죠"
+  qualities: []
+  evidence: .evidence/ESwm8fbBx0s/239.png
+
+- id: case-1404
+  source: { video: ESwm8fbBx0s, t: "3:00" }
+  scope:
+    component: card
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: density
+  direction: other
+  problem: "모든 리조트 카드 썸네일 밑에 객실 정보(침대, 구조, 인터넷, 엔터테인먼트, 식음료 등)가 항상 다 펼쳐져 노출되어 있다."
+  fix: "관심 있을 때 눌러서 볼 수 있게 하고, 기본으로는 다 펼쳐서 보여주지 않는다."
+  rationale: "많이 뿌린다고 가독성이 좋은 게 아니다. 집중이 안 되고 보기 싫어도 다 봐야 하는 상태가 된다."
+  stance: OPTION
+  quote: "굳이 이걸 이렇게 까지 일일이 다 노출시킬 필요가 있다 까"
+  qualities: []
+  evidence: .evidence/ESwm8fbBx0s/300.png
+
+- id: case-1405
+  source: { video: ESwm8fbBx0s, t: "4:10" }
+  scope:
+    component: card
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: hierarchy
+  direction: other
+  problem: "신한카드 첫 결제할인·최대 2% 적립 같은 프로모션 정보가 페이지 하단에 배치되어 있다."
+  fix: "중요한 혜택 정보이므로 상단에 위치시킨다."
+  rationale: "고객 입장에서 혜택을 받거나 싸게 갈 수 있는 정보라 중요하다."
+  stance: PRESCRIPTIVE
+  quote: "이거는 상단에 위치 해야되요"
+  qualities: []
+  evidence: .evidence/ESwm8fbBx0s/410.png
+
+- id: case-1406
+  source: { video: ESwm8fbBx0s, t: "6:08" }
+  scope:
+    component: layout
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: whitespace
+  direction: other
+  problem: "레이아웃 구조 자체는 단순하지만 크고 쨍한 이미지와 텍스트가 여러 개 빽빽하게 들어차 있다."
+  fix: "여백(화이트 스페이스)을 더 확보한다."
+  rationale: ""
+  stance: OPTION
+  quote: "레이아웃은 심플한 데 그래도 좀 빡빡 에 보이는 느낌은 있어요"
+  qualities: ["빡빡한→?"]
+  evidence: .evidence/ESwm8fbBx0s/608.png
+
+- id: case-1407
+  source: { video: ESwm8fbBx0s, t: "7:30" }
+  scope:
+    component: card
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: interaction
+  direction: other
+  problem: "리조트 카드에서 버튼(예약하기 등) 외에 사진이나 카드 자체를 눌렀을 때 반응하는 영역이 명확히 정의되어 있지 않다."
+  fix: "선택했을 때 오버되거나 액션이 일어나는 영역을 명확하게 잡아준다."
+  rationale: "사용자가 선택하면 오버가 되거나 액션이 취해져야 하는데, 그 영역이 분명히 잡혀 있어야 한다."
+  stance: PRESCRIPTIVE
+  quote: "이 영역이 잡혀 있어야 되요"
+  qualities: []
+  evidence: .evidence/ESwm8fbBx0s/734.png
+
+- id: case-1408
+  source: { video: ESwm8fbBx0s, t: "14:00" }
+  scope:
+    component: any
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: labeling
+  direction: other
+  problem: "재설계한 달력 화면에 연도 표시가 빠져 있고 날짜 숫자만 크게 보인다."
+  fix: "연도(그리고 월)를 반드시 표시하고, 폰트 크기를 24 정도로 눈에 띄게 키운다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "요게 반드시 써야 됩니다"
+  qualities: []
+  evidence: .evidence/ESwm8fbBx0s/1400.png
+
+- id: case-1409
+  source: { video: ESwm8fbBx0s, t: "15:19" }
+  scope:
+    component: image
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: motion
+  direction: other
+  problem: "신한카드 프로모션 배너 영역에서 이미지 두 장을 겹쳐서(오버랩) 보여주는 스타일이 쓰여 있다."
+  fix: "겹쳐서 보여주는 방식 대신 일반적인 좌우 롤링을 쓴다."
+  rationale: ""
+  stance: OPTION
+  quote: "이거 활짝 개인 취향 이에요"
+  qualities: []
+  evidence: .evidence/ESwm8fbBx0s/1519.png
+
+- id: case-1410
+  source: { video: ESwm8fbBx0s, t: "4:27" }
+  scope:
+    component: layout
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: structure
+  direction: other
+  problem: "달력, 리조트 이미지, 좌측 메뉴가 한 페이지 안에서 스크롤에 따라 함께 흘러가는 구조로 되어 있다."
+  fix: "달력·이미지·좌측 메뉴를 3단 칼럼으로 나누고 각각 고정시킨다."
+  rationale: ""
+  stance: OPTION
+  quote: "이 달력 부분과 이 이미지 부분과 2 좌측 메뉴 부분을 이렇게 3번 칼로 쪼개 가지고 고정을 시키면 어떨까"
+  qualities: []
+  evidence: .evidence/ESwm8fbBx0s/427.png

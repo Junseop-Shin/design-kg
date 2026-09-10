@@ -1,0 +1,276 @@
+- id: case-1201
+  source: { video: No0las_O0NY, t: "2:13" }
+  scope:
+    component: badge
+    platform: any
+    size: any
+    variant: any
+    context: list
+  property: color
+  direction: other
+  problem: "상품/영상 카드 하단의 태그(Motorcycle, Ducati)가 카드마다 주황·초록·파랑 등 서로 다른 채도 높은 색으로 칠해져 있다."
+  fix: "태그마다 색을 다르게 강하게 쓰는 방식을 쓰지 않는다."
+  rationale: ""
+  stance: OPTION
+  quote: "저랑 취향이 좀 다른 거 같기는 해요"
+  qualities: []
+  evidence: .evidence/No0las_O0NY/215.png
+
+- id: case-1202
+  source: { video: No0las_O0NY, t: "2:57" }
+  scope:
+    component: icon
+    platform: mobile
+    size: any
+    variant: any
+    context: nav
+  property: weight
+  direction: other
+  problem: "상단 상태바 근처 아이콘(돋보기, 장바구니)에 반사선·겹친 십자가 같은 장식이 붙고, 아이콘마다 선 두께가 달라 복잡해 보인다."
+  fix: "장식 없이 단순하고 심플하게, 스타일 가이드에 있는 아이콘을 그대로 사용한다."
+  rationale: "아이콘은 그래픽이 아니라 단순해야 하는 요소다."
+  stance: PRESCRIPTIVE
+  quote: "아이콘이라는 거는 정말 단순하면서 심플해야 돼"
+  qualities: ["복잡한→단순한"]
+  evidence: .evidence/No0las_O0NY/257.png
+
+- id: case-1203
+  source: { video: No0las_O0NY, t: "16:56" }
+  scope:
+    component: icon
+    platform: mobile
+    size: any
+    variant: any
+    context: nav
+  property: affordance
+  direction: other
+  problem: "하단 독바의 아이콘(원형 머리+어깨 모양) 가운데에 세로로 짧은 넥타이 모양 장식이 붙어 있어, 무엇을 나타내는 아이콘인지 알아보기 어렵다."
+  fix: "불필요한 장식(굴뚝처럼 덧붙인 모양)을 그리지 않고 원래 아이콘 형태 그대로 둔다."
+  rationale: ""
+  stance: OPTION
+  quote: "홈 아이콘에 굴뚝을 그리실 필요는 없어"
+  qualities: []
+  evidence: .evidence/No0las_O0NY/1656.png
+
+- id: case-1204
+  source: { video: No0las_O0NY, t: "17:00" }
+  scope:
+    component: icon
+    platform: mobile
+    size: any
+    variant: any
+    context: nav
+  property: affordance
+  direction: other
+  problem: "쿠폰 아이콘 가운데를 굵은 실선이 완전히 갈라놓아, 종이가 절반으로 잘린 것처럼 보인다."
+  fix: "가운데를 실선으로 완전히 자르지 말고, 쿠폰 절취선처럼 점선으로 표현한다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "쿠폰을 이렇게 절반을 딱 자른 것처럼 디자인 하시면 안 되죠"
+  qualities: []
+  evidence: .evidence/No0las_O0NY/1700.png
+
+- id: case-1205
+  source: { video: No0las_O0NY, t: "17:04" }
+  scope:
+    component: icon
+    platform: mobile
+    size: any
+    variant: any
+    context: nav
+  property: weight
+  direction: other
+  problem: "장바구니 아이콘에서 가방 테두리 선과 가운데 십자가(+) 선의 두께가 서로 달라 아이콘이 복잡해 보인다."
+  fix: "십자가 선 두께를 가방 테두리 두께에 맞춰 통일하고, 기존 스타일 가이드 아이콘을 그대로 쓴다."
+  rationale: ""
+  stance: OPTION
+  quote: "장바구니의 십자가는 라인 두께도 다 다르게 하셔 가지고 너무 복잡해요"
+  qualities: []
+  evidence: .evidence/No0las_O0NY/1708.png
+
+- id: case-1206
+  source: { video: No0las_O0NY, t: "4:21" }
+  scope:
+    component: typo
+    platform: any
+    size: any
+    variant: any
+    context: list
+  property: type-scale
+  direction: down
+  problem: "'당신을 기다리는 영상' 섹션 타이틀이 ExtraBold 24px로 설정되어 있어, 색과 함께 지나치게 강조되어 보인다."
+  fix: "타이틀 크기를 24에서 20으로 줄이고 굵기를 세미볼드로 낮춘다."
+  rationale: "엑스트라볼드를 빼면 색이 강해서 타이틀이 눈에 안 띌 것이므로, 색 대신 크기와 굵기를 낮춰 타이틀을 죽인다."
+  stance: OPTION
+  quote: "사이즈를 살짝 죽여 볼까 사이즈를 20으로 줄이고요 한 세미볼드 정도"
+  qualities: []
+  measured: { prop: type-scale, value: 20, unit: px }
+  evidence: .evidence/No0las_O0NY/421.png
+
+- id: case-1207
+  source: { video: No0las_O0NY, t: "4:32" }
+  scope:
+    component: image
+    platform: any
+    size: any
+    variant: any
+    context: list
+  property: color
+  direction: other
+  problem: "영상 카드 이미지 하단에 짙은 그레이(블러) 오버레이가 깔려 사진 대부분을 가리고 답답해 보인다."
+  fix: "블러 오버레이를 걷어내고, 텍스트가 필요한 하단 절반 정도까지만 그라디언트를 내린다."
+  rationale: "블러가 이미지를 가리고 있기 때문이며, 네이버 클립이나 유튜브 같은 참고 사례도 이렇게 쓴다."
+  stance: PREFERRED
+  quote: "블러도 사실은 그냥 없는게 나 것 같습니다"
+  qualities: ["답답한→?"]
+  evidence: .evidence/No0las_O0NY/431.png
+
+- id: case-1208
+  source: { video: No0las_O0NY, t: "4:53" }
+  scope:
+    component: typo
+    platform: any
+    size: any
+    variant: any
+    context: list
+  property: type-scale
+  direction: up
+  problem: "영상 카드 하단의 제목/채널명 캡션 폰트가 Regular 11px로 작고 얇아 보인다."
+  fix: "폰트 사이즈를 11에서 13으로 키우고 두께감을 위해 세미볼드로 바꾼다."
+  rationale: "폰트가 얇아서 두께감이 부족해 보인다."
+  stance: OPTION
+  quote: "폰트 사이즈 11인데 한 13까지 가고요"
+  qualities: ["작은→?"]
+  measured: { prop: type-scale, value: 13, unit: px }
+  evidence: .evidence/No0las_O0NY/453.png
+
+- id: case-1209
+  source: { video: No0las_O0NY, t: "7:29" }
+  scope:
+    component: card
+    platform: any
+    size: any
+    variant: any
+    context: list
+  property: radius
+  direction: down
+  problem: "카드에 들어가는 이미지의 모서리 radius가 16으로 둥글게 처리되어 있다."
+  fix: "라운드(모서리 radius)를 0으로 전부 뺀다."
+  rationale: ""
+  stance: OPTION
+  quote: "라운드는 영으로 다 뺄게요"
+  qualities: []
+  measured: { prop: radius, value: 0, unit: px }
+  evidence: .evidence/No0las_O0NY/731.png
+
+- id: case-1210
+  source: { video: No0las_O0NY, t: "7:34" }
+  scope:
+    component: avatar
+    platform: any
+    size: any
+    variant: any
+    context: list
+  property: size
+  direction: down
+  problem: "리스트 안의 작성자 프로필 아바타 이미지가 필요 이상으로 크게 들어가 있다."
+  fix: "프로필 아바타 크기를 24로 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "프로필 이렇게 크게 들어갈 필요 없고 24로 확 줄이고요"
+  qualities: []
+  measured: { prop: size, value: 24, unit: px }
+  evidence: .evidence/No0las_O0NY/736.png
+
+- id: case-1211
+  source: { video: No0las_O0NY, t: "6:55" }
+  scope:
+    component: image
+    platform: any
+    size: any
+    variant: any
+    context: list
+  property: size
+  direction: down
+  problem: "뉴스 카드에서 오로라 사진 썸네일이 199×66 크기로 카드 내용보다 큰 비중을 차지한다."
+  fix: "썸네일 크기를 64 정도로 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "썸네일 크기 좀 줄일게요 너무 커요음 한 64 정도"
+  qualities: ["큰→?"]
+  measured: { prop: size, value: 64, unit: px }
+  evidence: .evidence/No0las_O0NY/655.png
+
+- id: case-1212
+  source: { video: No0las_O0NY, t: "8:11" }
+  scope:
+    component: typo
+    platform: any
+    size: any
+    variant: any
+    context: list
+  property: type-scale
+  direction: down
+  problem: "뉴스 카드의 헤드라인('남극 얼음 지키는 코르크 마개 빙하 녹는 속도 심상찮아')이 두꺼운 볼드로 크게 잡혀 있어 부담스럽다."
+  fix: "타이틀 크기를 18로 줄이고 세미볼드 정도로 낮춘다."
+  rationale: "타이틀이 너무 부담스럽고 크다고 느껴진다."
+  stance: OPTION
+  quote: "사이즈 조금만 18로 줄이고 세미볼드 정도 가주도록 할게요"
+  qualities: ["부담스러운→?", "큰→?"]
+  measured: { prop: type-scale, value: 18, unit: px }
+  evidence: .evidence/No0las_O0NY/809.png
+
+- id: case-1213
+  source: { video: No0las_O0NY, t: "8:13" }
+  scope:
+    component: typo
+    platform: any
+    size: any
+    variant: any
+    context: list
+  property: type-scale
+  direction: up
+  problem: "뉴스 카드 헤드라인 아래 본문 요약 텍스트('빙하 녹는 속도가 40년 전보다 6배가량 빨라졌다')가 작고 옅은 회색으로 잘 안 보인다."
+  fix: "본문 사이즈를 14로 키우고 미디움 정도로, 색도 너무 연한 회색(8번대)이 아니게 진하게 잡는다."
+  rationale: ""
+  stance: OPTION
+  quote: "본문 사이즈도 한 14로 좀 이렇게 키워 주고요"
+  qualities: []
+  measured: { prop: type-scale, value: 14, unit: px }
+  evidence: .evidence/No0las_O0NY/809.png
+
+- id: case-1214
+  source: { video: No0las_O0NY, t: "11:44" }
+  scope:
+    component: image
+    platform: any
+    size: any
+    variant: any
+    context: list
+  property: structure
+  direction: other
+  problem: "여러 카드에서 쓰이는 썸네일 이미지들이 자동차(가로형), 오로라, 오토바이, 빙산 등 서로 다른 비율로 섞여 있다."
+  fix: "썸네일 비율을 여러 가지로 다양하게 가져가지 않고 통일한다."
+  rationale: "정보성 사이트라 같은 썸네일을 여기저기 돌려 쓰는데, 비율이 다르면 페이지마다 이미지가 잘리는 정도가 달라져 유지보수 문제가 생긴다."
+  stance: PREFERRED
+  quote: "썸네일 비율은 많이 안 가져가시는게 좋기는 해요"
+  qualities: []
+  evidence: .evidence/No0las_O0NY/1144.png
+
+- id: case-1215
+  source: { video: No0las_O0NY, t: "9:44" }
+  scope:
+    component: button
+    platform: any
+    size: any
+    variant: any
+    context: list
+  property: contrast
+  direction: other
+  problem: "'HOT 키워드 모두 보기' 버튼이 검은색 배경에 풀 너비로 카드 바로 아래 놓여 있어, 카드 내용보다 시각적으로 더 강하게 눈에 띈다."
+  fix: "버튼을 검은색 대신 그레이 톤으로 낮추고, 버튼의 존재감(부피감)을 줄인다."
+  rationale: "버튼이 너무 강하면 스크롤 시선 흐름이 여기서 끊겨 아래 코너까지 이어지지 않는다. 더 궁금한 사람만 보면 되는 정도의 레벨이면 충분하다."
+  stance: OPTION
+  quote: "지금이 내용보다이 버튼이 너무 강해요"
+  qualities: []
+  evidence: .evidence/No0las_O0NY/944.png

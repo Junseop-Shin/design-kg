@@ -1,0 +1,287 @@
+- id: case-1301
+  source: { video: xMb3vvbUNyc, t: "1:21" }
+  scope:
+    component: chart
+    platform: any
+    size: any
+    variant: any
+    context: any
+  property: line-height
+  direction: down
+  problem: "설문 결과 파이차트 범례 텍스트(증명서 발급 항목 설명)의 줄 간격(행간)이 다른 항목들보다 넓게 떨어져 있다."
+  fix: "행간을 다른 항목과 비슷한 수준으로 좁힌다."
+  rationale: "실수로 넓어진 것으로 보이며, 두 번째 항목의 간격이 더 적절했다."
+  stance: OPTION
+  quote: "행간 이 굉장히 넓죠"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/121.png
+
+- id: case-1302
+  source: { video: xMb3vvbUNyc, t: "2:36" }
+  scope:
+    component: chart
+    platform: any
+    size: any
+    variant: any
+    context: any
+  property: alignment
+  direction: other
+  problem: "'부문별 만족도 조사' 도넛차트는 4개(레이아웃/자간행간/색상/크기), '서비스 인지도 조사' 도넛차트는 3개(전자문서지갑/국민비서/정부24안내톡)로 개수가 달라 두 그룹의 컬럼 간격이 서로 맞지 않고 한쪽으로 쏠려 보인다."
+  fix: "하단 2개 그래프를 하나로 묶어서 그룹별 개수를 맞춘다."
+  rationale: ""
+  stance: OPTION
+  quote: "여긴 4개의 꼭 여기 3개 니까 이쪽으로 더 간격이 안 맞으니까 쏠려 보일 수밖에 없어요"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/308.png
+
+- id: case-1303
+  source: { video: xMb3vvbUNyc, t: "3:08" }
+  scope:
+    component: layout
+    platform: any
+    size: any
+    variant: any
+    context: any
+  property: spacing
+  direction: other
+  problem: "리서치 페이지 전체에서 섹션 간 여백과 항목 간 간격이 조금씩 달라 화면이 여러 조각으로 쪼개져 보인다."
+  fix: "불필요하게 서로 다른 여백 값을 두지 말고, 비슷한 간격끼리 통일한다."
+  rationale: "간격들이 다 고만고만하게 조금씩 달라서 어디가 어디 껀지 가독성이 떨어진다."
+  stance: OPTION
+  quote: "많이 쪼개져 보인다는게 큰 단점이에요"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/308.png
+
+- id: case-1304
+  source: { video: xMb3vvbUNyc, t: "3:42" }
+  scope:
+    component: typo
+    platform: any
+    size: any
+    variant: any
+    context: any
+  property: contrast
+  direction: other
+  problem: "리서치 결과 아래에 붙은 한 줄짜리 설명 캡션이 옅은 회색으로 거의 안 보일 정도로 흐리다."
+  fix: "그냥 빼버리거나, 채도를 올리고 폰트 크기를 줄여서 살린다."
+  rationale: ""
+  stance: OPTION
+  quote: "흐려도 너무 어려요 이정도면 은 그냥 보지 말란 소리 거든요"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/342.png
+
+- id: case-1305
+  source: { video: xMb3vvbUNyc, t: "4:04" }
+  scope:
+    component: card
+    platform: any
+    size: any
+    variant: any
+    context: any
+  property: contrast
+  direction: down
+  problem: "유저 페르소나 카드를 감싸는 점선 테두리가 너무 진하게 도드라져 보인다."
+  fix: "테두리 선을 덜 도드라지게 낮춘다."
+  rationale: ""
+  stance: OPTION
+  quote: "라인이 너무 도드라져 보인다는 거 빼고는 나쁘지 않아요"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/408.png
+
+- id: case-1306
+  source: { video: xMb3vvbUNyc, t: "4:08" }
+  scope:
+    component: avatar
+    platform: any
+    size: any
+    variant: any
+    context: any
+  property: size
+  direction: down
+  problem: "유저 페르소나 카드의 프로필 사진이 카드 너비에 비해 크게 들어가 있다."
+  fix: "사진 높이 값을 줄인다. 사진과 이름 텍스트 사이 크기 대비가 너무 크기 때문이다."
+  rationale: ""
+  stance: OPTION
+  quote: "쓸데없이 썸네일이 너무 크다 굳이 이렇게 크게 가정할 필요가 있나"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/408.png
+
+- id: case-1307
+  source: { video: xMb3vvbUNyc, t: "6:33" }
+  scope:
+    component: chart
+    platform: any
+    size: any
+    variant: any
+    context: any
+  property: contrast
+  direction: down
+  problem: "플로우 차트의 점선 연결선(각 단계 사이)이 색이 진해서 라인 자체가 먼저 눈에 띈다."
+  fix: "라인 톤을 다운시켜서, 라인보다 박스 안 회색(그레이) 내용이 더 잘 보이게 한다."
+  rationale: "이 라인은 그냥 보이기만 하면 되는 요소라 이렇게까지 잘 보일 필요가 없다."
+  stance: OPTION
+  quote: "여기 이 표에서 문제는 뭐냐면 라인이 너무 진하다"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/633.png
+
+- id: case-1308
+  source: { video: xMb3vvbUNyc, t: "7:22" }
+  scope:
+    component: chart
+    platform: any
+    size: any
+    variant: any
+    context: any
+  property: labeling
+  direction: other
+  problem: "플로우 차트에서 홈·MY GOV·통합검색·위치찾기·메뉴 각 단계 앞에 1~5 번호가 붙어 있다."
+  fix: "이 번호(넘버링)를 도표에서 뺀다."
+  rationale: "실제로는 홈에서 바로 메뉴로 갈 수도, 검색으로 갈 수도 있는데 번호가 있으면 반드시 이 순서대로 거쳐야 하는 것처럼 오해할 소지가 있다."
+  stance: OPTION
+  quote: "넘버링 은 이 도표에 선 필요없을것 같습니다"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/722.png
+
+- id: case-1309
+  source: { video: xMb3vvbUNyc, t: "8:48" }
+  scope:
+    component: input
+    platform: any
+    size: any
+    variant: any
+    context: form
+  property: weight
+  direction: down
+  problem: "Input Box 테두리 선이 안의 placeholder 텍스트 두께에 비해 두껍게 그려져 있다."
+  fix: "테두리(스트로크) 두께를 줄여서 폰트와 균형을 맞춘다."
+  rationale: ""
+  stance: OPTION
+  quote: "라인이 너무 두꺼워요 폰트의 비해서"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/948.png
+
+- id: case-1310
+  source: { video: xMb3vvbUNyc, t: "9:48" }
+  scope:
+    component: input
+    platform: any
+    size: any
+    variant: any
+    context: form
+  property: contrast
+  direction: down
+  problem: "Input Box의 기본(Primary) 상태 테두리가 Success·Error 상태와 비슷하게 진한 색으로 강조되어 있다."
+  fix: "기본 상태의 테두리를 죽이고, Success·Error 같은 특별한 상태일 때만 강조되게 한다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "라인은 좀 죽이는게 맞는거 같아요"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/948.png
+
+- id: case-1311
+  source: { video: xMb3vvbUNyc, t: "11:15" }
+  scope:
+    component: icon
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "'자주 찾는 서비스' 카드의 아이콘(주민등록등본, 건축물대장, 토지(임야)대장)이 색이 꽉 찬 사각형 아이콘으로 되어 있다."
+  fix: "SNS 아이콘을 제외하고는 라인(선) 스타일 아이콘으로 바꾸고, 버튼도 회색 채우기보다 스트로크(테두리)만 있는 형태로 만든다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "이 버튼도 그레이 보다는 스트로크로 라인으로 만 하면 훨씬 더 느낌이 좋았을 것 같아요"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/1115.png
+
+- id: case-1312
+  source: { video: xMb3vvbUNyc, t: "11:53" }
+  scope:
+    component: card
+    platform: any
+    size: any
+    variant: any
+    context: any
+  property: shadow
+  direction: down
+  problem: "검색 화면 목업들에서 카드·키보드 등 UI 요소에 그림자 효과가 기본값으로 깔려 있다."
+  fix: "플랫 디자인 원칙상 기본 상태에는 그림자를 웬만하면 넣지 않는다. 액션을 취했을 때만 살짝 뜨는 정도로 쓴다."
+  rationale: "그림자를 기본으로 갖고 있으면 입체적으로 보이면서 오브젝트가 하나 더 생기는 느낌을 준다."
+  stance: OPTION
+  quote: "플랫 디자인에 있는 그림자를 웬만하면 디 플 2로 안갖고 있어요"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/1132.png
+
+- id: case-1313
+  source: { video: xMb3vvbUNyc, t: "13:01" }
+  scope:
+    component: layout
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "메뉴 화면에서 항목들이 '신청/확인/공유', '찾기/안내'처럼 여러 단(섹션)으로 나뉘어 있다."
+  fix: "이렇게 단을 나누지 않고 하나로 묶어도 된다."
+  rationale: ""
+  stance: OPTION
+  quote: "요렇게 단을 안쓰는게 어때요"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/1301.png
+
+- id: case-1314
+  source: { video: xMb3vvbUNyc, t: "16:42" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: contrast
+  direction: up
+  problem: "'보조금24에서 쉽고 편리하게' 프로모션 카드가 흰 배경 위에 놓여 있어 다른 카드들과 눈에 띄는 대비가 부족하다."
+  fix: "카드 배경에 색(티얼 톤)을 넣어 명확하게 대비가 되도록 한다."
+  rationale: ""
+  stance: OPTION
+  quote: "이렇게 좀 명확하게 대비가 되 하겠네"
+  qualities: ["?→명확한"]
+  evidence: .evidence/xMb3vvbUNyc/1645.png
+
+- id: case-1315
+  source: { video: xMb3vvbUNyc, t: "17:58" }
+  scope:
+    component: button
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: radius
+  direction: other
+  problem: "로그인 버튼이 위 아이디/비밀번호 입력창과 달리 완전히 둥근 필(pill) 형태가 아니라 모서리만 살짝 둥근 사각형으로 되어 있다."
+  fix: "버튼도 입력창처럼 모서리를 완전히 둥글게(pill 형태로) 맞춘다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "완벽하게 가운도 하시는게 맞죠"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/1748.png
+
+- id: case-1316
+  source: { video: xMb3vvbUNyc, t: "18:25" }
+  scope:
+    component: button
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: size
+  direction: up
+  problem: "로그인 버튼이 '아이디/비밀번호를 잊으셨나요?' 링크 옆에 작고 짧게 들어가 있다."
+  fix: "로그인처럼 중요한 버튼은 짧게 들어가면 안 되므로 크기를 키운다."
+  rationale: "로그인 버튼은 중요한 액션이기 때문이다."
+  stance: PRESCRIPTIVE
+  quote: "로그인 버튼 중요한 건데 이렇게 짧게 들어가면 안되요"
+  qualities: []
+  evidence: .evidence/xMb3vvbUNyc/1825.png

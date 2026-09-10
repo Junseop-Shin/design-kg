@@ -1,0 +1,270 @@
+- id: case-1501
+  source: { video: O4QMn38fYGs, t: "1:55" }
+  scope:
+    component: badge
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: color
+  direction: down
+  problem: "이미지 하단의 태그(2024년/겨울 스포츠/국제대회)가 진한 블랙 배경의 필(pill) 형태로 들어가 있어 라인 컨셉 대신 블랙이 두드러져 보인다."
+  fix: "블랙 톤을 다운시켜 라인이 덜 도드라지게 한다."
+  rationale: ""
+  stance: OPTION
+  quote: "이 블랙이 문젠데 그죠"
+  qualities: []
+  evidence: .evidence/O4QMn38fYGs/155.png
+
+- id: case-1502
+  source: { video: O4QMn38fYGs, t: "2:14" }
+  scope:
+    component: badge
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: color
+  direction: other
+  problem: "'2024 Shose Store', '세상과의 소통' 같은 태그들이 검정 배경 필로 곳곳에 들어가 있어 전체적으로 사이트가 어둑어둑해 보인다."
+  fix: "태그의 블랙/그레이 톤을 낮춘다."
+  rationale: ""
+  stance: OPTION
+  quote: "GMB 그레이다 보니까 전체적으로 사이트가 더 어둑어둑해 보이기도 하네요"
+  qualities: []
+  evidence: .evidence/O4QMn38fYGs/222.png
+
+- id: case-1503
+  source: { video: O4QMn38fYGs, t: "2:22" }
+  scope:
+    component: typo
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: type-scale
+  direction: up
+  problem: "상품 설명 본문 폰트 크기가 12px로 작아 보인다."
+  fix: "폰트 크기를 키운다."
+  rationale: ""
+  stance: OPTION
+  quote: "컨트 사이즈 같은 건 좀 작아 보이는데 12 조금 작긴 하네요"
+  qualities: []
+  evidence: .evidence/O4QMn38fYGs/222.png
+
+- id: case-1504
+  source: { video: O4QMn38fYGs, t: "2:36" }
+  scope:
+    component: list
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: whitespace
+  direction: up
+  problem: "건강 데이터(기초대사량/근육증가/BMI/체지방률)와 보고서 목록 항목들의 폰트 크기가 다 비슷비슷하고, 항목 간 여백이 타이트해 답답해 보인다."
+  fix: "이런 디자인은 여유 있게 여백을 줘야 한다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "이런 디자인은 좀 여유 있게 해 주시는게 좋은데"
+  qualities: ["답답한→?"]
+  evidence: .evidence/O4QMn38fYGs/236.png
+
+- id: case-1505
+  source: { video: O4QMn38fYGs, t: "2:52" }
+  scope:
+    component: nav
+    platform: mobile
+    size: any
+    variant: any
+    context: nav
+  property: structure
+  direction: other
+  problem: "상단 GNB(검색/메뉴 아이콘 바로) 위에 탭 영역이 바로 얹혀 있어 두 영역의 경계가 불분명하다."
+  fix: "탭과 GNB 영역을 서로 분리시켜 준다."
+  rationale: ""
+  stance: OPTION
+  quote: "탭 따로 GMB 따로 이걸 영역을 좀 분리시켜 줄 필요가 있긴 하거든요"
+  qualities: []
+  evidence: .evidence/O4QMn38fYGs/252.png
+
+- id: case-1506
+  source: { video: O4QMn38fYGs, t: "4:23" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: radius
+  direction: other
+  problem: "상단 사진은 모서리가 직각으로 처리되어 있는데 바로 옆 태그·버튼은 라운드(36)로 처리되어 있어 같은 화면 안에서 모서리 처리가 섞여 있다."
+  fix: "사진 모서리도 라운드로 맞춰서 통일한다."
+  rationale: ""
+  stance: OPTION
+  quote: "직각이 자꾸 눈에 보이다 보니까 이게 더 이질감이 많이 나는 거 같아요"
+  qualities: []
+  evidence: .evidence/O4QMn38fYGs/423.png
+
+- id: case-1507
+  source: { video: O4QMn38fYGs, t: "4:30" }
+  scope:
+    component: image
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: color
+  direction: other
+  problem: "인물 사진 위에 그라디언트(Linear) 레이어가 겹쳐져 있다."
+  fix: "그라디언트를 뺀다."
+  rationale: ""
+  stance: OPTION
+  quote: "그라디언트 사실은 저는 필요 없다고 생각이 들긴 합니다"
+  qualities: []
+  evidence: .evidence/O4QMn38fYGs/430.png
+
+- id: case-1508
+  source: { video: O4QMn38fYGs, t: "5:27" }
+  scope:
+    component: layout
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "'스포츠 뉴스' 같은 검정 풀너비 라벨 바가 화면 곳곳에 강하게 들어가 있어 라인 컨셉이 콘텐츠보다 더 두드러진다."
+  fix: "라인 컨셉을 이렇게까지 강하게 넣지 않는다."
+  rationale: "라인 컨셉이 너무 강해서 주객이 전도된 디자인이 됐다."
+  stance: PRESCRIPTIVE
+  quote: "이렇게까지 강하게 지금 들어가면 안 돼요"
+  qualities: []
+  evidence: .evidence/O4QMn38fYGs/527.png
+
+- id: case-1509
+  source: { video: O4QMn38fYGs, t: "5:50" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: whitespace
+  direction: up
+  problem: "'스포츠 뉴스' 라벨이 화면 좌우 끝에 거의 붙어 있어 코너 간 여백이 타이트하다."
+  fix: "모바일에서는 생각한 것보다 코너 간 여백을 많이 띄워 줘야 한다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "모바일은 생각한 것보다이 코너 간의 여백을 많이 띄워 줘야 돼"
+  qualities: []
+  evidence: .evidence/O4QMn38fYGs/550.png
+
+- id: case-1510
+  source: { video: O4QMn38fYGs, t: "6:17" }
+  scope:
+    component: layout
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "'홈 트레이닝'/'전문 훈련' 태그가 본문 텍스트 바로 옆 고정된 위치에 배치되어 있어, 본문 텍스트가 길어지거나 태그가 하나 더 늘어나면 태그와 겹치거나 어긋날 수 있는 구조다."
+  fix: "텍스트 길이나 태그 개수가 달라질 수 있다는 걸 고려해서 배치를 잡는다."
+  rationale: ""
+  stance: OPTION
+  quote: "텍스트가 만약에 이렇게 길어지거나 어 이렇게 길어지거나 만약에 이게 하나라도 더 이렇게 세 개가 들어오거나 뭐 이런 기본적인 것들이 지금 좀 안 맞춰져 있는 느낌이거든"
+  qualities: []
+  evidence: .evidence/O4QMn38fYGs/617.png
+
+- id: case-1511
+  source: { video: O4QMn38fYGs, t: "6:32" }
+  scope:
+    component: avatar
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: size
+  direction: down
+  problem: "작성자 프로필 사진(Nada Salah)이 이름·설명 텍스트에 비해 크게 들어가 있다."
+  fix: "프로필 사진 크기를 확 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "프로필 저는 너무 크기 때문에 좀 이렇게 확 줄여 주도록 하겠습니다"
+  qualities: []
+  evidence: .evidence/O4QMn38fYGs/630.png
+
+- id: case-1512
+  source: { video: O4QMn38fYGs, t: "6:44" }
+  scope:
+    component: badge
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: type-scale
+  direction: up
+  problem: "'홈 트레이닝'/'전문 훈련' 태그 안 폰트가 10px로 작다."
+  fix: "폰트 사이즈를 12는 돼야 되게 키운다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "폰트 사이즈가 12는 돼야 될 거 같아요"
+  qualities: []
+  measured: { prop: type-scale, value: 12, unit: px }
+  evidence: .evidence/O4QMn38fYGs/644.png
+
+- id: case-1513
+  source: { video: O4QMn38fYGs, t: "8:19" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: structure
+  direction: other
+  problem: "내용 구성(프로필, 타이틀, 날짜, 태그)이 완전히 똑같은 두 기사 카드가 서로 다른 스타일로 디자인되어 있다."
+  fix: "같은 구성의 카드는 그냥 같은 디자인으로 맞춘다."
+  rationale: "굳이 다르게 해서 복잡함을 가져갈 필요가 없다."
+  stance: OPTION
+  quote: "같은 디자인은 그냥 같게 맞춰 주시면 될 거 같거든요 굳이 이걸 다르게 해서 복잡함을 가져갈 필요는 없거든"
+  qualities: []
+  evidence: .evidence/O4QMn38fYGs/819.png
+
+- id: case-1514
+  source: { video: O4QMn38fYGs, t: "9:45" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: color
+  direction: down
+  problem: "두 번째 페이지의 '우리의 스토리'/'사용자 커뮤니티' 섹션이 이미지도 없이 검정 배경으로 채워져 있어 메인 페이지보다 더 무겁고 세 보인다."
+  fix: "색을 뺀다."
+  rationale: ""
+  stance: OPTION
+  quote: "이미지도 안 들어갔는데 색깔이 너무 세다 보니까 너무 무거워"
+  qualities: []
+  evidence: .evidence/O4QMn38fYGs/945.png
+
+- id: case-1515
+  source: { video: O4QMn38fYGs, t: "15:23" }
+  scope:
+    component: typo
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: hierarchy
+  direction: other
+  problem: "상품 상세 페이지의 '240-300mm', 'Material', 'Color' 항목 타이틀과 본문이 다 비슷한 크기로 가운데 정렬돼 있어 폰트 계층이 전혀 안 맞는다."
+  fix: "이 페이지는 폰트 계층에 신경 써서 다시 잡아야 한다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "여기는 폰트 계층 좀 신경 좀 쓰셔서 하셔야 돼요"
+  qualities: []
+  evidence: .evidence/O4QMn38fYGs/1523.png

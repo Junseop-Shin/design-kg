@@ -1,0 +1,271 @@
+- id: case-1601
+  source: { video: suzkaiYaAfg, t: "0:23" }
+  scope:
+    component: typo
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: type-scale
+  direction: down
+  problem: "상품 카드의 브랜드/제품명 텍스트('애플 / Studio Display XDR')가 18px(Medium)로 되어 있다."
+  fix: "폰트 크기를 14 정도로 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "여기는 폰트 18 너무 커요. 14 정도로 가고"
+  qualities: []
+  measured: { prop: type-scale, value: 14, unit: px }
+  evidence: .evidence/suzkaiYaAfg/023.png
+
+- id: case-1602
+  source: { video: suzkaiYaAfg, t: "1:03" }
+  scope:
+    component: any
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "상품 상세 페이지에 포인트·할인·혜택 정보와 배송 정보(도서산간 추가 배송비, 배송 일자 등)가 빠져 있다."
+  fix: "포인트, 할인, 혜택, 배송 일자·추가 배송비 같은 정보를 다 넣는다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "포인트, 할인, 혜택 이런게 있어야 되는데"
+  qualities: []
+  evidence: .evidence/suzkaiYaAfg/103.png
+
+- id: case-1603
+  source: { video: suzkaiYaAfg, t: "1:27" }
+  scope:
+    component: nav
+    platform: web
+    size: any
+    variant: any
+    context: nav
+  property: structure
+  direction: other
+  problem: "브레드크럼('메인 홈 / 애플 스토어 / 상품상세')이 슬래시로 이어진 하나의 텍스트 덩어리로 되어 있다."
+  fix: "각 단계를 텍스트로 이어 쓰지 말고 따로따로 나눠 줘야 한다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "텍스트로 다 이었었단 말이야. 이렇게 따로따로 해 줘야 됩니다"
+  qualities: []
+  evidence: .evidence/suzkaiYaAfg/127.png
+
+- id: case-1604
+  source: { video: suzkaiYaAfg, t: "1:41" }
+  scope:
+    component: image
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: size
+  direction: up
+  problem: "상품 목록 썸네일이 옆 썸네일과 같은 폭인데도 정사각형이 아닌 비율로 들어가 있어, 정사각형 썸네일보다 작아 보이고 부피 밸런스가 안 맞는다."
+  fix: "썸네일을 정사각형으로 맞추거나 비율에 맞게 크기를 조정해 밸런스를 맞춘다."
+  rationale: ""
+  stance: OPTION
+  quote: "썸네일이 너무 작아 보인다"
+  qualities: []
+  evidence: .evidence/suzkaiYaAfg/141.png
+
+- id: case-1605
+  source: { video: suzkaiYaAfg, t: "2:15" }
+  scope:
+    component: image
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: affordance
+  direction: other
+  problem: "상품 이미지 갤러리에 좌우 화살표와 총 페이지 수를 보여주는 인디케이터가 없다."
+  fix: "이미지 갤러리에 좌우 화살표와 페이지 인디케이터(예: 1/8)를 추가한다."
+  rationale: "네이버 쇼핑 같은 곳을 보면 페이지 수와 화살표가 다 있다."
+  stance: PREFERRED
+  quote: "총 몇 페이지까지 있는지도 보여주면 좋아"
+  qualities: []
+  evidence: .evidence/suzkaiYaAfg/215.png
+
+- id: case-1606
+  source: { video: suzkaiYaAfg, t: "2:50" }
+  scope:
+    component: card
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "스펙 정보(디스플레이 사이즈/해상도/미니 LED 등)가 테두리로 감싼 카드 형태로 들어가 있다."
+  fix: "카드로 감싸지 말고 그냥 바닥(배경)에 바로 뿌린다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "부분은 카드로 안 가시는게 맞아 보이는데"
+  qualities: []
+  evidence: .evidence/suzkaiYaAfg/250.png
+
+- id: case-1607
+  source: { video: suzkaiYaAfg, t: "3:04" }
+  scope:
+    component: layout
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "상품 소개 항목이 타이틀은 좌측, 내용은 우측에 두는 가로 2단 배치로 되어 있어, 내용이 좁은 영역에 빽빽하게 여러 줄로 들어간다."
+  fix: "차라리 가로로 빡빡하게 보여줄 바에는 세로로 내려서 배치한다."
+  rationale: "스크롤을 조금 더 하는 건 전혀 힘든 일이 아닌데, 가로로 빡빡하게 보여주면 가독성이 떨어진다."
+  stance: OPTION
+  quote: "차라리 가로로 빡빡하게 보여 줄 바에는 그냥 세로로 내리세요"
+  qualities: []
+  evidence: .evidence/suzkaiYaAfg/304.png
+
+- id: case-1608
+  source: { video: suzkaiYaAfg, t: "3:31" }
+  scope:
+    component: typo
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: type-scale
+  direction: down
+  problem: "상품 소개 항목의 타이틀과 본문 폰트가 18px로 크게 되어 있다."
+  fix: "폰트 사이즈를 다 줄여야 한다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "다 줄여야 돼"
+  qualities: []
+  evidence: .evidence/suzkaiYaAfg/331.png
+
+- id: case-1609
+  source: { video: suzkaiYaAfg, t: "3:55" }
+  scope:
+    component: avatar
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: size
+  direction: down
+  problem: "별점 옆에 들어간 리뷰어 프로필 썸네일이 너무 크게 들어가 있다."
+  fix: "사이즈를 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "요거 상품 너무 커. 이거 40. 어휴, 너무 커. 너무 커."
+  qualities: ["큰→?"]
+  evidence: .evidence/suzkaiYaAfg/355.png
+
+- id: case-1610
+  source: { video: suzkaiYaAfg, t: "4:21" }
+  scope:
+    component: any
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "상단 요약 영역에 총 상품 금액만 있고, 원래 가격/할인가 같은 가격 정보가 빠져 있다."
+  fix: "가격 정보를 여기에도 넣는다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "가격이 여기에도 있어야 돼요"
+  qualities: []
+  evidence: .evidence/suzkaiYaAfg/421.png
+
+- id: case-1611
+  source: { video: suzkaiYaAfg, t: "4:52" }
+  scope:
+    component: table
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "배송정보(무료배송)가 디스플레이 사이즈·해상도 같은 스펙 요약 정보와 같은 박스 안에 묶여 있다."
+  fix: "배송 정보는 스펙 요약 정보 안에 묶지 말고 따로 뺀다."
+  rationale: "요약 정보는 대표적인 정보로, 상세 정보(배송 정보 등)는 별도로 이해해야 한다."
+  stance: PRESCRIPTIVE
+  quote: "이 유약 정보 안에 배송 정보가 같이 묶기면 안 되고"
+  qualities: []
+  evidence: .evidence/suzkaiYaAfg/452.png
+
+- id: case-1612
+  source: { video: suzkaiYaAfg, t: "6:44" }
+  scope:
+    component: nav
+    platform: web
+    size: any
+    variant: any
+    context: nav
+  property: type-scale
+  direction: down
+  problem: "브레드크럼 항목('상품상세' 등)의 폰트가 16px(Medium)로 되어 있다."
+  fix: "폰트 사이즈를 14로 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "지금 16 너무 크니까 14로 좀 줄여 줄게요"
+  qualities: []
+  measured: { prop: type-scale, value: 14, unit: px }
+  evidence: .evidence/suzkaiYaAfg/644.png
+
+- id: case-1613
+  source: { video: suzkaiYaAfg, t: "7:14" }
+  scope:
+    component: image
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "상품 이미지가 고정된 썸네일 영역 없이 바로 배치되어 있어, 이미지 비율이 바뀌면 레이아웃이 흔들릴 수 있다."
+  fix: "그레이 배경이 깔리더라도 썸네일 영역 자체를 명확히 잡아 둔다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "썸네일 영역 자체가 있어야 돼요"
+  qualities: []
+  evidence: .evidence/suzkaiYaAfg/714.png
+
+- id: case-1614
+  source: { video: suzkaiYaAfg, t: "7:34" }
+  scope:
+    component: badge
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: size
+  direction: down
+  problem: "이미지 페이지 인디케이터('1/8') 배지가 사이즈 90으로 크게 들어가 있다."
+  fix: "사이즈를 줄인다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "요거 사이즈 너무 커요. 줄여야 돼."
+  qualities: []
+  evidence: .evidence/suzkaiYaAfg/734.png
+
+- id: case-1615
+  source: { video: suzkaiYaAfg, t: "10:08" }
+  scope:
+    component: table
+    platform: web
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "스펙 표의 각 행(디스플레이 사이즈/해상도/미니 LED 등) 사이에 구분선(라인)이 들어가 있다."
+  fix: "이런 구분선(라인)은 없어도 된다."
+  rationale: ""
+  stance: OPTION
+  quote: "그리고 이런 거 라인 없어도 되고요"
+  qualities: []
+  evidence: .evidence/suzkaiYaAfg/1010.png
