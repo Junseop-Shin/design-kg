@@ -1,0 +1,239 @@
+- id: case-001
+  source: { video: CYhJxtcL5B0, t: "1:34" }
+  scope:
+    component: hero
+    platform: web
+    size: any
+    variant: any
+    context: hero
+  property: size
+  direction: down
+  problem: "히어로 배너에 신발 클로즈업 사진과 헤드라인이 뷰포트 전체를 채워, 상품 목록 페이지에 들어왔는데도 메인 페이지급 메인 빌보드가 화면을 가로막는다."
+  fix: "배너를 상품 목록보다 작게 줄이고 상단으로 배치해, 방문자가 스크롤 없이 바로 상품을 볼 수 있게 한다."
+  rationale: "상품을 보러 들어왔는데 목적에 맞지 않게 메인 빌보드급 배너가 크게 나온다"
+  stance: OPTION
+  quote: "난 상품을 보러 왔는데 이게 지금 메인 빌보드도 아닌 것이 너무 크잖아요."
+  qualities: []
+  evidence: .evidence/CYhJxtcL5B0/134.png
+
+- id: case-002
+  source: { video: CYhJxtcL5B0, t: "2:38" }
+  scope:
+    component: modal
+    platform: web
+    size: any
+    variant: any
+    context: modal
+  property: hierarchy
+  direction: other
+  problem: "필터를 열면 딤드 레이어가 상품 목록 전체를 덮는 풀스크린 오버레이 구조로 되어 있다."
+  fix: "메인 페이지 정도가 아니라면 오버레이 대신 필터를 상단이나 좌측에 상시 노출해, 필터와 상품 정보를 같이 볼 수 있게 한다."
+  rationale: "화면을 넓게 보여주고 싶은 의도는 이해하지만 그 정도 효과는 메인에서만 해도 충분하다"
+  stance: OPTION
+  quote: "근데 사실 그 정도는 메인에서만 해도 충분해요."
+  qualities: []
+  evidence: .evidence/CYhJxtcL5B0/237.png
+
+- id: case-003
+  source: { video: CYhJxtcL5B0, t: "3:26" }
+  scope:
+    component: card
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: hierarchy
+  direction: other
+  problem: "상품 카드에서 상품수 라벨이 카드 가운데에 가격처럼 강조되어 있고, 컬러칩이 상품명·가격 사이에 끼어 있어 정보 계층이 잡혀 있지 않다."
+  fix: "상품명과 가격을 서로 묶어 배치하고, 컬러칩은 그 사이를 방해하지 않도록 아래나 위로 옮긴다."
+  rationale: "메인 디자인을 그대로 가져오면서 정보만 추가되어 계층이 하나도 안 잡혔다"
+  stance: PRESCRIPTIVE
+  quote: "요거는 가격과 같이 묶여야 돼요."
+  qualities: []
+  evidence: .evidence/CYhJxtcL5B0/304.png
+
+- id: case-004
+  source: { video: CYhJxtcL5B0, t: "4:18" }
+  scope:
+    component: nav
+    platform: web
+    size: any
+    variant: any
+    context: nav
+  property: type-scale
+  direction: down
+  problem: "브레드크럼(홈 / Collections / Statement Makers)의 홈 아이콘이 28px 크기로 옆 텍스트보다 눈에 띄게 크다."
+  fix: "홈 아이콘을 없애고 '홈' 텍스트로 바꾸거나, 구분자를 슬래시만 남기고 폰트 사이즈를 24에서 16 정도로 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "아이콘 너무 크잖아요. 사실 그냥 홈이라고 써도 되는데. 폰트 사이즈 24 너무 크죠? 16 정도로만."
+  qualities: []
+  measured: { prop: type-scale, value: 16, unit: px }
+  evidence: .evidence/CYhJxtcL5B0/420.png
+
+- id: case-005
+  source: { video: CYhJxtcL5B0, t: "4:10" }
+  scope:
+    component: typo
+    platform: web
+    size: any
+    variant: any
+    context: hero
+  property: type-scale
+  direction: down
+  problem: "히어로 배너 상단의 'NIKE RUNNING' 라벨 텍스트 사이즈가 20px로 커서 헤드라인보다 시선을 끈다."
+  fix: "텍스트 사이즈를 20에서 15 정도(미디움)로 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "아, 20 너무 크네요. 15에 미움만 가고요."
+  qualities: []
+  measured: { prop: type-scale, value: 15, unit: px }
+  evidence: .evidence/CYhJxtcL5B0/410.png
+
+- id: case-006
+  source: { video: CYhJxtcL5B0, t: "4:24" }
+  scope:
+    component: hero
+    platform: web
+    size: any
+    variant: any
+    context: hero
+  property: type-scale
+  direction: down
+  problem: "히어로 배너의 메인 헤드라인('더 빠르게, 더 멀리 러닝을 위한 운동화') 폰트가 64px로 과도하게 크다."
+  fix: "폰트 사이즈를 64에서 48 정도로 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "여기는 64 크죠? 48 정도로만."
+  qualities: []
+  measured: { prop: type-scale, value: 48, unit: px }
+  evidence: .evidence/CYhJxtcL5B0/424.png
+
+- id: case-007
+  source: { video: CYhJxtcL5B0, t: "4:29" }
+  scope:
+    component: hero
+    platform: web
+    size: any
+    variant: any
+    context: hero
+  property: size
+  direction: down
+  problem: "배너 프레임 높이가 599px로 길어서 상품을 보기 전에 스크롤해야 하는 공간을 많이 차지한다."
+  fix: "배너 높이를 450 정도까지 줄이고, 그 안에서 이미지를 꽉 채워 길게 늘어뜨린다."
+  rationale: ""
+  stance: OPTION
+  quote: "일단이 배너의 여백을 먼저 잡아야겠구나. 여기 한 450까지 이렇게 줄여 볼게요."
+  qualities: []
+  measured: { prop: size, value: 450, unit: px }
+  evidence: .evidence/CYhJxtcL5B0/429.png
+
+- id: case-008
+  source: { video: CYhJxtcL5B0, t: "5:09" }
+  scope:
+    component: button
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: size
+  direction: down
+  problem: "필터 노출 토글 버튼의 화살표 아이콘이 커서 버튼 전체가 무거워 보인다."
+  fix: "폰트는 15, 화살표 아이콘은 20 정도로 줄여 가벼운 인상으로 만들고, 라벨도 '필터 숨기기/필터 켜기'처럼 상태를 명확하게 표현한다."
+  rationale: ""
+  stance: OPTION
+  quote: "그냥 다 뺐으면 좋겠고 그냥 요렇게만 갔으면 좋겠어요. 가볍게 폰트 사이즈 15 화살표 사이즈 너무 크죠? 20."
+  qualities: ["?→가벼운"]
+  measured: { prop: size, value: 20, unit: px }
+  evidence: .evidence/CYhJxtcL5B0/506.png
+
+- id: case-009
+  source: { video: CYhJxtcL5B0, t: "5:35" }
+  scope:
+    component: image
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: color
+  direction: other
+  problem: "상품 카드 이미지 뒤에 회색 배경(백드롭)이 깔려 있다."
+  fix: "이미지 뒤 그레이 배경을 걷어낸다."
+  rationale: ""
+  stance: OPTION
+  quote: "우선은 그레이는 좀 걷어내 주도록 하고요."
+  qualities: []
+  evidence: .evidence/CYhJxtcL5B0/538.png
+
+- id: case-010
+  source: { video: CYhJxtcL5B0, t: "5:38" }
+  scope:
+    component: card
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: size
+  direction: down
+  problem: "왼쪽에 필터 메뉴가 상시 노출되는 레이아웃으로 바뀌면 상품 목록이 쓸 수 있는 가로 폭이 줄어드는데, 지금 상품 썸네일 크기는 그 폭을 고려하지 않은 크기다."
+  fix: "좌측 필터 레이아웃에 맞춰 상품 썸네일 크기를 작게 줄인다."
+  rationale: "처음부터 좌측에 필터가 있는 모습으로 디자인할 것이기 때문"
+  stance: PRESCRIPTIVE
+  quote: "썸네일 크기는 우리는 좀 줄여야 돼요."
+  qualities: []
+  evidence: .evidence/CYhJxtcL5B0/538.png
+
+- id: case-011
+  source: { video: CYhJxtcL5B0, t: "10:38" }
+  scope:
+    component: nav
+    platform: web
+    size: any
+    variant: any
+    context: nav
+  property: hierarchy
+  direction: other
+  problem: "필터를 상단에 둘지 좌측에 둘지가 정해지지 않았다. 상단형은 화면을 넓게 쓸 수 있지만 필터와 상품을 같이 보기 어렵고, 좌측형은 같이 볼 수 있지만 상품 영역이 좁아진다."
+  fix: "커머스 사이트 성격에 따라 상단형(검색 후 내려보며 탐색)이나 좌측형(필터를 계속 보며 적용) 중 하나를 고른다. 패션 계열은 화면을 넓게 쓰기 위해 상단형을 쓰는 경우가 많다."
+  rationale: "위에 있다고 단점은 아니다. 사용 패턴이 검색 후 내려가며 브랜드·가격·사이즈를 고르는 방식이면 상단형도 괜찮다"
+  stance: OPTION
+  quote: "이거는 이제이 커머스 사이트 성격에 따라서 어떤 전략을 가져가냐에 따라 다른 거예요."
+  qualities: []
+  evidence: .evidence/CYhJxtcL5B0/1038.png
+
+- id: case-012
+  source: { video: CYhJxtcL5B0, t: "13:08" }
+  scope:
+    component: input
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: contrast
+  direction: other
+  problem: "색상 필터에서 선택된 색상 칩에 검은 테두리(스트록)만 둘러져 있어 어떤 색이 선택된 상태인지 한눈에 명확하지 않다."
+  fix: "선택된 칩 가운데에 체크 표시를 강하게 넣어 선택 상태를 명확하게 피드백한다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "내가 선택한 건 이거야라고 피드백을 정확하게 줘야 돼요."
+  qualities: []
+  evidence: .evidence/CYhJxtcL5B0/1304.png
+
+- id: case-013
+  source: { video: CYhJxtcL5B0, t: "13:16" }
+  scope:
+    component: card
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: type-scale
+  direction: down
+  problem: "좌측 필터 레이아웃으로 좁아진 영역 안에서 상품 타이틀 폰트가 너무 크다."
+  fix: "타이틀 사이즈를 16 정도로 줄이고 굵기는 세미볼드로 바꾼다."
+  rationale: ""
+  stance: OPTION
+  quote: "타이틀 사이즈는 16 정도. 세미볼트 가도 되겠네요."
+  qualities: []
+  measured: { prop: type-scale, value: 16, unit: px }
+  evidence: .evidence/CYhJxtcL5B0/1316.png
