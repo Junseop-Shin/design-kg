@@ -31,15 +31,16 @@
       cases: [case-1208, case-1503, case-1512, case-807]
   opposes: quality-oversized
 
+# `타이트한`은 문제(타이트한→?)와 목표(넓은→타이트한) 양쪽으로 쓰여 alias로 묶지 않았다
 - id: quality-cramped
   label: 답답한
-  aliases: [빡빡한, 타이트한, 촘촘한]
+  aliases: [빡빡한, 촘촘한]
   polarity: problem
   realized_by:
     - property: whitespace
       direction: up
-      weight: 11
-      cases: [case-404, case-1504, case-1901, case-1904, case-1906, case-1907, case-1908, case-606, case-304, case-1509, case-701]
+      weight: 9
+      cases: [case-404, case-1504, case-1901, case-1904, case-1906, case-1907, case-1908, case-606, case-304]
   opposes: quality-loose
 
 - id: quality-loose

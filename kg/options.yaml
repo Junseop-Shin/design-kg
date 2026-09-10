@@ -1,4 +1,7 @@
 # 후보 → Option 결정 근거는 kg/promotion-log.md
+# type-scale up ↔ down: option-008 ↔ option-009 (양립 불가, 함께 조회할 것)
+# 스키마에 Option끼리 잇는 필드가 없어 주석으로 남긴다. 반대 방향 쌍 전체는 promotion-log 참고
+# option-006 결번 — card|structure 후보는 근거 있는 선택지가 한쪽뿐이라 보류했다
 - id: option-001
   question: 썸네일 이미지 영역을 어떻게 잡을까
   scope: { component: image }
@@ -50,7 +53,7 @@
       cases: [case-1505, case-509, case-201]
 
 - id: option-005
-  question: 목록 필터를 상단에 둘까 좌측에 둘까
+  question: 목록 필터를 상단에 둘까 좌측에 둘까 (영상 1개 · 문턱 미만, 선택지 서술용)
   scope: { component: nav }
   choices:
     - label: 상단형
@@ -59,18 +62,6 @@
     - label: 좌측형
       when: 필터를 계속 보면서 적용하는 패턴일 때
       cases: [case-011]
-
-- id: option-006
-  question: 정보 블록을 카드로 감쌀까
-  scope: { component: card }
-  choices:
-    - label: 카드로 감싼다
-      when: 잔액·그래프처럼 화면에서 힘을 줘야 하는 영역일 때
-      cases: [case-507]
-    - label: 감싸지 않고 배경에 바로 뿌린다
-      when: 스펙·목록처럼 정보량이 많고 카드가 화면 곳곳에 반복될 때
-      recommended: true
-      cases: [case-1606, case-507]
 
 - id: option-007
   question: 카드 안이 답답해 보일 때 무엇을 바꿀까
@@ -100,16 +91,19 @@
       cases: [case-204, case-1701]
 
 - id: option-009
-  question: 타이틀이 과하게 커 보일 때 무엇을 낮출까
+  question: 텍스트가 과하게 커 보일 때 어디까지 줄일까
   scope: { component: typo }
   choices:
-    - label: 크기를 한두 단계 낮춘다
-      when: 같은 화면의 헤드라인보다 먼저 눈에 들어올 때
-      recommended: true
-      cases: [case-005, case-1206, case-1212, case-711, case-1601, case-1608]
-    - label: 크기는 두고 굵기와 색으로 힘을 뺀다
-      when: 크기를 줄이면 섹션 위계가 무너질 때
+    - label: 14~15px
+      when: 카드 브랜드·상품명이나 히어로 라벨처럼 보조 텍스트일 때
+      cases: [case-1601, case-005]
+    - label: 18~20px
+      when: 섹션 타이틀·헤드라인이라 위계는 남겨야 할 때
       cases: [case-1206, case-1212]
+    - label: 타이틀·본문을 한 단계씩 같이 낮춘다
+      when: 타이틀만이 아니라 화면 전체 폰트가 커 보일 때
+      recommended: true
+      cases: [case-711, case-1608]
 
 - id: option-010
   question: 본문 텍스트를 어느 쪽으로 정렬할까
@@ -120,7 +114,7 @@
       recommended: true
       cases: [case-1011, case-710, case-904]
     - label: 가운데 정렬
-      when: 나란히 놓이는 요소들의 폭이 비슷하고 한두 줄로 짧을 때
+      when: 이어지는 요소들의 폭이 서로 다르지 않을 때. case-608은 폭이 다른 요소를 계속 가운데로 맞추면 좌우 여백이 들쭉날쭉해져 시선이 지그재그로 흐른다고 지적한다
       cases: [case-608]
 
 - id: option-011
@@ -145,8 +139,8 @@
     - label: 인접 요소와 합쳐 버튼 수를 줄인다
       when: 검색 인풋처럼 입력과 실행이 한 동작이거나, 버튼처럼 보이는 요소가 이미 여럿일 때
       cases: [case-601, case-801]
-    - label: 부차적인 액션은 텍스트 버튼으로 낮춘다
-      when: 문구만으로 뜻이 분명해 아이콘이나 언더라인이 없어도 될 때
+    - label: 텍스트형 버튼에서 아이콘·언더라인을 뺀다
+      when: 문구만으로 뜻이 분명할 때
       cases: [case-707]
 
 - id: option-013
