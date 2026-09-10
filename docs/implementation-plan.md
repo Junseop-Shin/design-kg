@@ -37,9 +37,11 @@ design-kg/
     query.ts         queryRules · queryOptions · queryQualities · queryCases · caseSummary
     check.ts         check(kg, snapshot) — CHECKABLE 식 평가 · JUDGMENT 묶음 · contrastRatio
     candidates.ts    ruleCandidates · qualityCandidates — 승격 후보 계산
+    coverage.ts      coverage(kg) — my-ui-lib 컴포넌트 커버리지
   scripts/
     validate.ts      CLI: kg/ 검증
     candidates.ts    CLI: 승격 후보 표 출력
+    coverage.ts      CLI: 커버리지 표 + 미커버 컴포넌트
     snapshot.ts      CLI: Playwright로 페이지 → 스냅샷 JSON
     vtt2txt.ts       CLI: WebVTT 자막 → [m:ss] 텍스트
   mcp/
@@ -51,13 +53,13 @@ design-kg/
     fixtures/page.html   스냅샷 테스트용 페이지
     fixtures/sample.vtt
   kg/
-    videos.yaml  cases/<videoId>.yaml  rules.yaml  options.yaml  qualities.yaml  promotion-log.md
+    videos.yaml  components.yaml  cases/<videoId>.yaml  rules.yaml  options.yaml  qualities.yaml  promotion-log.md
   docs/
     plan.md  implementation-plan.md  extraction-guide.md  schema.md  roundtrip-01.md
   .evidence/       gitignore. 자막·영상·프레임·스냅샷
 ```
 
-의존 순서: T1→T2→T3 (스키마·검증기) → T4→T5→T6 (코퍼스·추출) → T7→T8 (승격) → T9→T10→T11→T12 (MCP) → T13.
+의존 순서: T1→T2→T3 (스키마·검증기) → T5→T4→T6a→T6b (코퍼스·추출) → T6c→T6d (커버리지 증분) → T7→T8 (승격) → T9→T10→T11→T12 (MCP) → T13.
 
 ---
 
@@ -1248,6 +1250,191 @@ Expected: 20개 파일, 총 Case 100개 이상, `qualities` 비어 있지 않은
 git push -u origin feat/corpus
 gh pr create --title "feat(corpus): 영상 20개 선별 · Case 추출" --body "T4~T6. videos.yaml 20개, cases/*.yaml. validate 결과: <붙여넣기>"
 ```
+
+---
+
+### Task 6c: 컴포넌트 매핑 + 커버리지 스크립트 [Opus]
+
+**Files:**
+- Create: `kg/components.yaml`, `src/coverage.ts`, `scripts/coverage.ts`, `test/coverage.test.ts`, `test/fixtures/kg/components.yaml`
+- Modify: `package.json` (`"coverage": "tsx scripts/coverage.ts"`), `docs/extraction-guide.md` (§5 `scope.component` 목록 확장), `src/load.ts` (components 로딩)
+
+**Interfaces:**
+- Consumes: `Kg`, `loadKg`, Case/Rule/Option/Quality 타입
+- Produces:
+  ```ts
+  // schema.ts 추가
+  const ComponentMap = z.object({ kg: z.string(), ui: z.array(z.string()), exclude: z.boolean().default(false), note: z.string().optional() });
+  // Kg 확장: components: ComponentMap[]   (kg/components.yaml, 없으면 [])
+  type Coverage = {
+    rows: Array<{ kg: string; ui: string[]; cases: number; videos: number; promoted: boolean }>;
+    caseCoverage: number;      // 0~1. exclude 아닌 ui 컴포넌트 중 cases ≥ 1 인 kg에 속한 것의 비율
+    promotedCoverage: number;  // 0~1. 같은 분모, promoted인 kg에 속한 것의 비율
+    uncovered: string[];       // ui 이름. 가장 비어 있는 것부터
+  };
+  function coverage(kg: Kg): Coverage;
+  ```
+  CLI `npm run coverage [dir]` → 표 + `case coverage: 61% (33/54)` · `promoted coverage: 20% (11/54)` · `uncovered: Table, Tabs, …` 세 줄
+
+- [ ] **Step 1: `kg/components.yaml`** — my-ui-lib 컴포넌트 54개를 KG component 어휘로 묶는다. KG 어휘는 기존 13개에 `select · checkbox · table · tabs · accordion · tooltip · badge · avatar · chart · progress · toast · popover · separator`를 더한다.
+
+```yaml
+- { kg: button,    ui: [Button, Toggle, ToggleGroup] }
+- { kg: input,     ui: [Input, Textarea, NumberField, OtpField, Autocomplete, Combobox, Label, Fieldset] }
+- { kg: select,    ui: [Select, DropdownMenu, ContextMenu, Menubar] }
+- { kg: checkbox,  ui: [Checkbox, CheckboxGroup, RadioGroup, Switch] }
+- { kg: card,      ui: [Card, StatCard, PreviewCard] }
+- { kg: list,      ui: [ScrollArea] }
+- { kg: table,     ui: [Table, DataTable] }
+- { kg: nav,       ui: [Header, Sidebar, NavigationMenu, Toolbar] }
+- { kg: modal,     ui: [Dialog, AlertDialog, Drawer] }
+- { kg: popover,   ui: [Popover] }
+- { kg: tooltip,   ui: [Tooltip] }
+- { kg: tabs,      ui: [Tabs] }
+- { kg: accordion, ui: [Accordion, Collapsible] }
+- { kg: badge,     ui: [Badge, Tag] }
+- { kg: avatar,    ui: [Avatar] }
+- { kg: progress,  ui: [Progress, Meter, Slider] }
+- { kg: toast,     ui: [Toaster] }
+- { kg: form,      ui: [Form] }
+- { kg: chart,     ui: [PieChart] }
+- { kg: separator, ui: [Separator] }
+- { kg: icon,      ui: [Icon] }
+- { kg: hero,      ui: [] }
+- { kg: typo,      ui: [] }
+- { kg: color,     ui: [] }
+- { kg: layout,    ui: [] }
+- { kg: image,     ui: [] }
+- { kg: structure, ui: [] }
+- { kg: excluded,  ui: [ActiveStrategyCard, StrategyNode, NodePalette, PropertyPanel, StockChart, CodeBlock], exclude: true, note: "kis-trader 도메인 전용. 디자인 채널이 다룰 리 없음" }
+```
+
+`hero · typo · color · layout · image · structure`는 ui가 비어 있어도 둔다 — Case의 component 값으로 쓰이지만 분모에는 안 들어간다. 분모 = `exclude: false`인 행의 `ui` 합집합 = 48개.
+
+- [ ] **Step 2: 실패하는 테스트** — `test/fixtures/kg/components.yaml`에 위 매핑 중 4행(button · card · table · excluded)만 넣고, 픽스처 Case(button ×3, hero ×3, card ×1)로:
+
+```ts
+import { describe, expect, it } from "vitest";
+import { coverage } from "../src/coverage.js";
+import { loadKg } from "../src/load.js";
+
+const kg = loadKg(new URL("./fixtures/kg", import.meta.url).pathname);
+
+describe("coverage", () => {
+  it("counts cases and videos per kg component", () => {
+    const c = coverage(kg);
+    const button = c.rows.find((r) => r.kg === "button")!;
+    expect(button).toMatchObject({ cases: 3, videos: 3, promoted: true });   // rule-001 scope any component? → 아래 참고
+    expect(c.rows.find((r) => r.kg === "table")).toMatchObject({ cases: 0, videos: 0, promoted: false });
+  });
+  it("computes coverage over non-excluded ui components", () => {
+    const c = coverage(kg);
+    // 분모: Button Toggle ToggleGroup Card StatCard PreviewCard Table DataTable = 8
+    // cases≥1: button(3 ui) + card(3 ui) = 6 → 0.75
+    expect(c.caseCoverage).toBeCloseTo(6 / 8);
+    expect(c.uncovered).toEqual(["Table", "DataTable"]);
+  });
+  it("marks promoted when a rule/option/quality scope names the component", () => {
+    const c = coverage(kg);
+    expect(c.rows.find((r) => r.kg === "card")!.promoted).toBe(true);     // option-001 scope card
+    expect(c.rows.find((r) => r.kg === "button")!.promoted).toBe(false);  // rule-001 scope component any → 명시 아님
+    expect(c.promotedCoverage).toBeCloseTo(3 / 8);
+  });
+});
+```
+
+첫 테스트의 `promoted: true` 주석은 틀렸다 — 세 번째 테스트가 맞다(`rule-001`은 `component: any`라 명시가 아님). 첫 테스트를 `promoted: false`로 쓴다. `scope.component === "any"`는 promoted로 세지 않는다.
+
+- [ ] **Step 3: 구현**
+
+`src/coverage.ts`:
+
+```ts
+import type { Kg } from "./schema.js";
+
+export type CoverageRow = { kg: string; ui: string[]; cases: number; videos: number; promoted: boolean };
+export type Coverage = { rows: CoverageRow[]; caseCoverage: number; promotedCoverage: number; uncovered: string[] };
+
+export function coverage(kg: Kg): Coverage {
+  const promotedKg = new Set<string>();
+  for (const r of kg.rules) if (r.scope.component !== "any") promotedKg.add(r.scope.component);
+  for (const o of kg.options) if (o.scope.component !== "any") promotedKg.add(o.scope.component);
+  for (const q of kg.qualities)
+    for (const rb of q.realized_by) if (rb.scope && rb.scope.component !== "any") promotedKg.add(rb.scope.component);
+
+  const rows: CoverageRow[] = kg.components
+    .filter((m) => !m.exclude)
+    .map((m) => {
+      const cases = kg.cases.filter((c) => c.scope.component === m.kg);
+      return {
+        kg: m.kg, ui: m.ui, cases: cases.length,
+        videos: new Set(cases.map((c) => c.source.video)).size,
+        promoted: promotedKg.has(m.kg),
+      };
+    });
+
+  const denom = rows.flatMap((r) => r.ui);
+  const covered = rows.filter((r) => r.cases > 0).flatMap((r) => r.ui);
+  const promoted = rows.filter((r) => r.promoted).flatMap((r) => r.ui);
+  const uncovered = rows
+    .filter((r) => r.cases === 0)
+    .sort((a, b) => b.ui.length - a.ui.length)
+    .flatMap((r) => r.ui);
+  return {
+    rows,
+    caseCoverage: denom.length ? covered.length / denom.length : 0,
+    promotedCoverage: denom.length ? promoted.length / denom.length : 0,
+    uncovered,
+  };
+}
+```
+
+`scripts/coverage.ts`:
+
+```ts
+import { coverage } from "../src/coverage.js";
+import { loadKg } from "../src/load.js";
+
+const kg = loadKg(process.argv[2] ?? "kg");
+const c = coverage(kg);
+console.log("| kg | ui | cases | videos | promoted |\n|---|---|---|---|---|");
+for (const r of c.rows) console.log(`| ${r.kg} | ${r.ui.join(" ") || "-"} | ${r.cases} | ${r.videos} | ${r.promoted ? "yes" : "-"} |`);
+const denom = c.rows.flatMap((r) => r.ui).length;
+console.log(`\ncase coverage: ${Math.round(c.caseCoverage * 100)}% (${Math.round(c.caseCoverage * denom)}/${denom})`);
+console.log(`promoted coverage: ${Math.round(c.promotedCoverage * 100)}% (${Math.round(c.promotedCoverage * denom)}/${denom})`);
+console.log(`uncovered: ${c.uncovered.join(", ") || "-"}`);
+```
+
+`src/schema.ts`에 `ComponentMap` 추가, `Kg`에 `components: ComponentMap[]`. `src/load.ts`의 `loadKg`가 `components.yaml`을 `parseList`로 읽는다(없으면 `[]`). 기존 테스트가 `Kg` 형태 변경으로 깨지면 그 테스트의 기대 객체에 `components`를 더한다.
+
+`docs/extraction-guide.md` §5의 `scope.component` 주석 목록을 `kg/components.yaml`의 `kg` 값 전체로 바꾼다(excluded 제외).
+
+- [ ] **Step 4: 통과 확인 · 커밋**
+
+```bash
+npm test && npm run typecheck && npm run coverage
+git add kg/components.yaml src/coverage.ts src/schema.ts src/load.ts scripts/coverage.ts test/coverage.test.ts test/fixtures/kg/components.yaml package.json docs/extraction-guide.md
+git commit -m "feat(coverage): my-ui-lib 컴포넌트 매핑 · 커버리지 스크립트"
+```
+
+---
+
+### Task 6d: 커버리지 목표까지 5편씩 증분 추출 [Sonnet]
+
+**Files:**
+- Modify: `kg/videos.yaml` (+5씩), `kg/cases/<id>.yaml` (신규)
+
+**Interfaces:**
+- Consumes: `npm run coverage`, `docs/extraction-guide.md`, `.evidence/channel-list.tsv` (Task 4)
+- Produces: 목표를 만족하는 코퍼스. Task 7~8이 이 위에서 돈다
+
+**목표**: case coverage ≥ 70%, promoted coverage는 Task 8 뒤에 잰다(여기서는 case coverage만). 상한 40편. 한 번의 +5가 case coverage를 5%p 미만으로 올리면 멈추고 남은 uncovered는 "이 채널이 안 다루는 컴포넌트"로 보고한다.
+
+- [ ] **Step 1: 측정** — `npm run coverage` → `uncovered` 목록을 본다.
+- [ ] **Step 2: 5편 고르기** — uncovered 컴포넌트를 겨냥한다. `.evidence/channel-list.tsv`에서 제목 검색(예: 테이블·표·리스트 → table, 탭 → tabs, 드롭다운·셀렉트 → select, 팝업·모달·바텀시트 → modal, 토스트·알림 → toast, 차트·그래프·대시보드 → chart, 프로필·아바타 → avatar, 태그·뱃지·라벨 → badge, 아코디언·펼침 → accordion, 툴팁 → tooltip). 제목으로 안 잡히면 `yt-dlp "ytsearch10:<키워드> site:youtube.com/@UXUIDesign"`은 안 되므로, 후보 영상의 자막을 받아 `grep -c` 로 키워드 빈도를 세서 고른다. Task 4의 기준(8~30분, 한국어 자막, 툴 강좌 제외)은 그대로.
+- [ ] **Step 3: 추가 · 추출** — `kg/videos.yaml`에 5편 append (`reason`에 겨냥한 컴포넌트를 적는다). 각 영상은 가이드 §0~§7. Case id 블록은 videos.yaml의 index(21 → `case-2101…`).
+- [ ] **Step 4: 재측정** — `npm run coverage`. 목표 도달 · 상한 도달 · 증분 < 5%p 중 하나면 종료, 아니면 Step 1로.
+- [ ] **Step 5: 보고 · 커밋** — 라운드마다 커밋 `feat(corpus): +5편 (round N) — <겨냥 컴포넌트>`. 최종 coverage 표를 `docs/coverage.md`에 남긴다.
 
 ---
 

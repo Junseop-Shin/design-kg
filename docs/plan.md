@@ -344,6 +344,15 @@ ThemeProvider는 옛 `ui-theme` 키를 첫 실행에 한 번 읽어 옮긴다. `
 
 검증: 전 Case가 `scripts/validate.ts`를 통과. `qualities`가 비어 있지 않은 Case 비율. `measured`가 있는 Case 수.
 
+**커버리지 목표.** my-ui-lib 컴포넌트를 KG component 어휘로 묶은 매핑(`kg/components.yaml`)을 기준으로 잰다. 도메인 전용 컴포넌트(kis-trader용 6개)는 분모에서 뺀다.
+
+| 지표 | 정의 | 목표 |
+|---|---|---|
+| case coverage | 분모 컴포넌트 중 Case가 1개 이상인 비율 | 70% |
+| promoted coverage | Rule · Option · Quality 중 하나라도 scope에 명시된 비율 (4단계 뒤 측정) | 40% |
+
+영상 20개로는 테이블·탭·토스트·차트 같은 것이 안 나올 가능성이 크다. 목표 미달이면 가장 비어 있는 컴포넌트를 겨냥해 5편씩 추가하고 재측정한다. 상한 40편. 한 번의 +5가 case coverage를 5%p 미만으로 올리면 그 컴포넌트는 이 채널이 다루지 않는 것으로 결론 내고 멈춘다. 그때 남는 빈 자리는 6단계 랜딩페이지가 그 컴포넌트를 쓰지 않도록 설계해 피하거나, 다른 코퍼스에서 채운다.
+
 ### 4단계 — 스키마 확정 + 승격
 
 레포: design-kg. 승격 게이트를 수동으로 돌리고 `docs/schema.md`를 확정한다.
