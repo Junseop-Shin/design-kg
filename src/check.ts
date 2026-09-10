@@ -41,24 +41,45 @@ export type CheckResult = {
   violations: Violation[];
   judgments: JudgmentItem[];
   errors: Array<{ rule: string; message: string }>;
-  checked: number;
+  evaluated: number;
 };
 
 type CheckFn = (el: SnapshotElement, n: typeof num, contrast: typeof contrastRatio) => unknown;
+type Compiled = { fn: CheckFn } | { error: Error };
 
-const compiled = new Map<string, CheckFn>();
+const compiled = new Map<string, Compiled>();
+
+function compile(src: string): Compiled {
+  let c = compiled.get(src);
+  if (!c) {
+    try {
+      c = { fn: new Function("el", "num", "contrast", `"use strict"; return (${src});`) as CheckFn };
+    } catch (e) {
+      c = { error: e as Error };
+    }
+    compiled.set(src, c);
+  }
+  return c;
+}
 
 function evalCheck(rule: Rule, el: SnapshotElement): boolean {
-  let fn = compiled.get(rule.check!);
-  if (!fn) {
-    fn = new Function("el", "num", "contrast", `"use strict"; return (${rule.check});`) as CheckFn;
-    compiled.set(rule.check!, fn);
-  }
-  return Boolean(fn(el, num, contrastRatio));
+  const c = compile(rule.check!);
+  if ("error" in c) throw c.error;
+  return Boolean(c.fn(el, num, contrastRatio));
 }
 
 export function check(kg: Kg, snapshot: Snapshot): CheckResult {
-  const out: CheckResult = { violations: [], judgments: [], errors: [], checked: 0 };
+  const out: CheckResult = { violations: [], judgments: [], errors: [], evaluated: 0 };
+  const reported = new Set<string>();
+  const casesByRule = new Map<string, CaseSummary[]>();
+  const casesFor = (id: string) => {
+    let cs = casesByRule.get(id);
+    if (!cs) {
+      cs = queryCases(kg, id)?.cases ?? [];
+      casesByRule.set(id, cs);
+    }
+    return cs;
+  };
   for (const el of snapshot.elements) {
     const q: ScopeQuery = {
       component: el.ui, platform: snapshot.platform, size: el.size as Scope["size"],
@@ -67,7 +88,7 @@ export function check(kg: Kg, snapshot: Snapshot): CheckResult {
     for (const rule of kg.rules) {
       if (rule.state !== el.state) continue;
       if (!matchesScope(rule.scope, q, "strict")) continue;
-      out.checked += 1;
+      out.evaluated += 1;
       if (rule.grade === "CHECKABLE") {
         try {
           if (!evalCheck(rule, el)) {
@@ -77,12 +98,15 @@ export function check(kg: Kg, snapshot: Snapshot): CheckResult {
             });
           }
         } catch (e) {
-          out.errors.push({ rule: rule.id, message: (e as Error).message });
+          if (!reported.has(rule.id)) {
+            reported.add(rule.id);
+            out.errors.push({ rule: rule.id, message: (e as Error).message });
+          }
         }
       } else {
         out.judgments.push({
           rule: rule.id, statement: rule.statement, selector: el.selector, state: el.state,
-          element: el, cases: queryCases(kg, rule.id)?.cases ?? [],
+          element: el, cases: casesFor(rule.id),
         });
       }
     }

@@ -41,7 +41,7 @@ describe("check", () => {
   it("passes a compliant element", () => {
     const r = check(kg, snap([el({})]));
     expect(r.violations).toEqual([]);
-    expect(r.checked).toBe(2);
+    expect(r.evaluated).toBe(2);
   });
 
   it("flags a small touch target on mobile only", () => {
@@ -75,5 +75,13 @@ describe("check", () => {
     const r = check(broken, snap([el({})]));
     expect(r.errors[0].rule).toBe("rule-001");
     expect(r.violations).toEqual([]);
+  });
+
+  it("reports a broken rule once per run, not once per element", () => {
+    const broken = { ...kg, rules: [{ ...kg.rules[0], check: "this is also not js" }] };
+    const r = check(broken, snap([el({}), el({ selector: "[data-snap-id=\"1\"]" })]));
+    expect(r.evaluated).toBe(2);
+    expect(r.errors).toHaveLength(1);
+    expect(r.errors[0].rule).toBe("rule-001");
   });
 });
