@@ -1,0 +1,4 @@
+- { kg: button,   ui: [Button, Toggle, ToggleGroup] }
+- { kg: card,     ui: [Card, StatCard, PreviewCard] }
+- { kg: table,    ui: [Table, DataTable] }
+- { kg: excluded, ui: [ActiveStrategyCard, StrategyNode, NodePalette, PropertyPanel, StockChart, CodeBlock], exclude: true, note: "kis-trader 도메인 전용. 디자인 채널이 다룰 리 없음" }

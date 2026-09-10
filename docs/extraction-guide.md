@@ -70,7 +70,7 @@ grep -rho "case-[0-9]*" kg/cases | sort -t- -k2 -n | tail -1
 - id: case-NNN
   source: { video: <ID>, t: "m:ss" }
   scope:
-    component: button      # button | input | card | list | nav | hero | form | modal | typo | color | layout | icon | image | any
+    component: button      # button | input | select | checkbox | card | list | table | nav | modal | popover | tooltip | tabs | accordion | badge | avatar | progress | toast | form | chart | separator | icon | hero | typo | color | layout | image | structure | any
     platform: mobile       # mobile | web | any
     size: any              # sm | md | lg | any
     variant: any           # primary | secondary | ghost | outline | any

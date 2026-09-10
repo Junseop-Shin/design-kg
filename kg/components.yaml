@@ -1,0 +1,28 @@
+- { kg: button,    ui: [Button, Toggle, ToggleGroup] }
+- { kg: input,     ui: [Input, Textarea, NumberField, OtpField, Autocomplete, Combobox, Label, Fieldset] }
+- { kg: select,    ui: [Select, DropdownMenu, ContextMenu, Menubar] }
+- { kg: checkbox,  ui: [Checkbox, CheckboxGroup, RadioGroup, Switch] }
+- { kg: card,      ui: [Card, StatCard, PreviewCard] }
+- { kg: list,      ui: [ScrollArea] }
+- { kg: table,     ui: [Table, DataTable] }
+- { kg: nav,       ui: [Header, Sidebar, NavigationMenu, Toolbar] }
+- { kg: modal,     ui: [Dialog, AlertDialog, Drawer] }
+- { kg: popover,   ui: [Popover] }
+- { kg: tooltip,   ui: [Tooltip] }
+- { kg: tabs,      ui: [Tabs] }
+- { kg: accordion, ui: [Accordion, Collapsible] }
+- { kg: badge,     ui: [Badge, Tag] }
+- { kg: avatar,    ui: [Avatar] }
+- { kg: progress,  ui: [Progress, Meter, Slider] }
+- { kg: toast,     ui: [Toaster] }
+- { kg: form,      ui: [Form] }
+- { kg: chart,     ui: [PieChart] }
+- { kg: separator, ui: [Separator] }
+- { kg: icon,      ui: [Icon] }
+- { kg: hero,      ui: [] }
+- { kg: typo,      ui: [] }
+- { kg: color,     ui: [] }
+- { kg: layout,    ui: [] }
+- { kg: image,     ui: [] }
+- { kg: structure, ui: [] }
+- { kg: excluded,  ui: [ActiveStrategyCard, StrategyNode, NodePalette, PropertyPanel, StockChart, CodeBlock], exclude: true, note: "kis-trader 도메인 전용. 디자인 채널이 다룰 리 없음" }

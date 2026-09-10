@@ -9,6 +9,7 @@
     "typecheck": "tsc --noEmit",
     "validate": "tsx scripts/validate.ts",
     "candidates": "tsx scripts/candidates.ts",
+    "coverage": "tsx scripts/coverage.ts",
     "snapshot": "tsx scripts/snapshot.ts",
     "vtt2txt": "tsx scripts/vtt2txt.ts",
     "mcp": "tsx mcp/index.ts"

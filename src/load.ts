@@ -2,7 +2,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "yaml";
 import { z } from "zod";
-import { Case, Option, Quality, Rule, Video, type Kg } from "./schema.js";
+import { Case, ComponentMap, Option, Quality, Rule, Video, type Kg } from "./schema.js";
 
 export class KgLoadError extends Error {
   constructor(public file: string, public issues: string[]) {
@@ -35,6 +35,7 @@ export function loadKg(dir: string): Kg {
     rules: parseList(join(dir, "rules.yaml"), Rule),
     options: parseList(join(dir, "options.yaml"), Option),
     qualities: parseList(join(dir, "qualities.yaml"), Quality),
+    components: parseList(join(dir, "components.yaml"), ComponentMap),
   };
   checkReferences(kg);
   return kg;

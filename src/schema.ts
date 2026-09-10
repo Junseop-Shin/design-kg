@@ -99,6 +99,13 @@ export const Quality = z.object({
   opposes: z.string().optional(),
 });
 
+export const ComponentMap = z.object({
+  kg: z.string(),
+  ui: z.array(z.string()),
+  exclude: z.boolean().default(false),
+  note: z.string().optional(),
+});
+
 export const Video = z.object({
   id: z.string().regex(/^[A-Za-z0-9_-]{11}$/),
   title: z.string(),
@@ -137,6 +144,7 @@ export type Rule = z.infer<typeof Rule>;
 export type Option = z.infer<typeof Option>;
 export type Quality = z.infer<typeof Quality>;
 export type Video = z.infer<typeof Video>;
+export type ComponentMap = z.infer<typeof ComponentMap>;
 export type SnapshotElement = z.infer<typeof SnapshotElement>;
 export type Snapshot = z.infer<typeof Snapshot>;
 
@@ -146,4 +154,5 @@ export type Kg = {
   rules: Rule[];
   options: Option[];
   qualities: Quality[];
+  components: ComponentMap[];
 };
