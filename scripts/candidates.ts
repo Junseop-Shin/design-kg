@@ -18,8 +18,9 @@ for (const c of ruleCandidates(kg.cases, min)) {
 }
 
 console.log(`\n# Quality 후보 (영상 ${min}개 이상)\n`);
-console.log("| 형용사 | property | direction | videos | weight | cases |");
-console.log("|---|---|---|---|---|---|");
+// polarity=target 은 "이 인상을 내려면", polarity=problem 은 "이 인상을 없애려면"
+console.log("| polarity | 형용사 | property | direction | videos | weight | cases |");
+console.log("|---|---|---|---|---|---|---|");
 for (const q of qualityCandidates(kg.cases, min)) {
-  console.log(`| ${q.target} | ${q.property} | ${q.direction} | ${q.videos.length} | ${q.weight} | ${q.cases.join(" ")} |`);
+  console.log(`| ${q.polarity} | ${q.adjective} | ${q.property} | ${q.direction} | ${q.videos.length} | ${q.weight} | ${q.cases.join(" ")} |`);
 }

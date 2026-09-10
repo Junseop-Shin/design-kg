@@ -95,6 +95,7 @@ export const Quality = z.object({
   id: z.string().regex(/^quality-[a-z0-9-]+$/),
   label: z.string(),
   aliases: z.array(z.string()).default([]),
+  polarity: z.enum(["target", "problem"]).default("target"),
   realized_by: z.array(RealizedBy).default([]),
   opposes: z.string().optional(),
 });

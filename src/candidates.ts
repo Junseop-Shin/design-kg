@@ -14,7 +14,8 @@ export type RuleCandidate = {
 };
 
 export type QualityCandidate = {
-  target: string;
+  polarity: "target" | "problem";
+  adjective: string;
   property: string;
   direction: string;
   videos: string[];
@@ -67,21 +68,32 @@ export function ruleCandidates(cases: Case[], minVideos = 3): RuleCandidate[] {
 }
 
 export function qualityCandidates(cases: Case[], minVideos = 3): QualityCandidate[] {
-  type Row = { target: string; case: Case };
+  type Row = { polarity: "target" | "problem"; adjective: string; case: Case };
+  // 한쪽이 ?면 나머지 한쪽만 후보가 된다. 둘 다 실제 형용사면 두 행으로 쪼갠다
   const rows: Row[] = cases.flatMap((c) =>
-    c.qualities.map((q) => ({ target: q.split("→")[1].trim(), case: c })),
+    c.qualities.flatMap((q) => {
+      const [current, target] = q.split("→").map((s) => s.trim());
+      const made: Row[] = [];
+      if (target !== "?") made.push({ polarity: "target", adjective: target, case: c });
+      if (current !== "?") made.push({ polarity: "problem", adjective: current, case: c });
+      return made;
+    }),
   );
   const out: QualityCandidate[] = [];
-  const groups = groupBy(rows, (r) => `${r.target}|${r.case.property}|${r.case.direction}`);
+  const groups = groupBy(
+    rows,
+    (r) => `${r.polarity}|${r.adjective}|${r.case.property}|${r.case.direction}`,
+  );
   for (const [key, group] of groups) {
     const videos = uniq(group.map((r) => r.case.source.video));
     if (videos.length < minVideos) continue;
-    const [target, property, direction] = key.split("|");
+    const [polarity, adjective, property, direction] = key.split("|");
     out.push({
-      target, property, direction, videos,
+      polarity: polarity as "target" | "problem",
+      adjective, property, direction, videos,
       cases: group.map((r) => r.case.id),
       weight: group.length,
     });
   }
-  return out.sort((a, b) => b.weight - a.weight || a.target.localeCompare(b.target));
+  return out.sort((a, b) => b.weight - a.weight || a.adjective.localeCompare(b.adjective));
 }

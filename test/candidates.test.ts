@@ -53,15 +53,27 @@ describe("ruleCandidates", () => {
 });
 
 describe("qualityCandidates", () => {
-  it("groups by target adjective|property|direction", () => {
+  it("splits an entry with both sides into target and problem rows", () => {
     const q = qualityCandidates(kg.cases);
     expect(q).toEqual([
-      { target: "과감한", property: "type-scale", direction: "up", videos: ["dQw4w9WgXcQ", "aaaaaaaaaaa", "bbbbbbbbbbb"], cases: ["case-004", "case-005", "case-006"], weight: 3 },
+      { polarity: "target", adjective: "과감한", property: "type-scale", direction: "up", videos: ["dQw4w9WgXcQ", "aaaaaaaaaaa", "bbbbbbbbbbb"], cases: ["case-004", "case-005", "case-006"], weight: 3 },
+      { polarity: "problem", adjective: "밋밋한", property: "type-scale", direction: "up", videos: ["dQw4w9WgXcQ", "aaaaaaaaaaa", "bbbbbbbbbbb"], cases: ["case-004", "case-005", "case-006"], weight: 3 },
     ]);
+  });
+
+  it("keeps only the problem row when the target is ?", () => {
+    const cases = kg.cases
+      .filter((c) => c.property === "touch-target")
+      .map((c) => ({ ...c, qualities: ["큰→?"] }));
+    const q = qualityCandidates(cases);
+    expect(q).toEqual([
+      { polarity: "problem", adjective: "큰", property: "touch-target", direction: "up", videos: ["dQw4w9WgXcQ", "aaaaaaaaaaa", "bbbbbbbbbbb"], cases: ["case-001", "case-002", "case-003"], weight: 3 },
+    ]);
+    expect(q.find((x) => x.adjective === "?")).toBeUndefined();
   });
 
   it("ignores stance entirely", () => {
     const all = kg.cases.map((c) => ({ ...c, stance: "OPTION" as const }));
-    expect(qualityCandidates(all)).toHaveLength(1);
+    expect(qualityCandidates(all)).toHaveLength(2);
   });
 });

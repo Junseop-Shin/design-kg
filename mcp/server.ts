@@ -51,6 +51,7 @@ export function createServer(kgDir: string): McpServer {
       description:
         "'과감한' '고급스러운' 같은 디자인 형용사를 받아 어떤 속성(property)을 어느 방향(direction)으로 움직여야 그 인상이 나는지 돌려준다. " +
         "realized_by는 근거 사례 수(weight) 순이고 scope로 걸러진다. 다 적용하라는 뜻이 아니라 후보 목록이다. " +
+        "`polarity`가 problem이면 그 형용사는 고쳐야 할 인상이고 realized_by는 그 인상을 없애는 방향이다. " +
         "반대 형용사(opposes)와 그 scope의 Rule도 같이 준다. 모르는 형용사면 found:false와 아는 형용사 목록을 준다.",
       inputSchema: { term: z.string().describe("형용사. 예: 과감한, 차분한, 따뜻한"), ...scopeShape },
     },

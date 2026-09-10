@@ -77,6 +77,12 @@ describe("Quality", () => {
     expect(q.realized_by[0].weight).toBe(2);
   });
 
+  it("defaults polarity to target", () => {
+    const q = Quality.parse({ id: "quality-bold", label: "과감한" });
+    expect(q.polarity).toBe("target");
+    expect(Quality.parse({ id: "quality-big", label: "큰", polarity: "problem" }).polarity).toBe("problem");
+  });
+
   it("requires value when direction is set", () => {
     expect(() => Quality.parse({
       id: "quality-x", label: "x",
