@@ -54,6 +54,8 @@ ffmpeg -loglevel error -ss "$T" -i .evidence/$ID/$ID.mp4 -frames:v 1 -y .evidenc
 
 프레임을 Read 툴로 열어 본다. 자막이 "여기를 이렇게"라고만 말하는 경우 프레임이 있어야 `problem` · `fix`를 쓸 수 있다.
 
+프레임은 `problem`이 말하는 상태를 실제로 보여줘야 한다. 화자가 설명하는 상태(오버레이가 열린 화면 등)가 인용 시점과 다른 시점에 보이면 그 시점의 프레임을 잡고, `t`는 인용문 시점으로 둔다. 상태가 영상에 안 보이면 `problem`은 보이는 것만 쓰고 설명은 `rationale`로 보낸다.
+
 ## 5. Case 초안
 
 `kg/cases/<ID>.yaml`에 리스트로 쓴다. ID는 전역 일련번호다. 기존 최댓값 다음 번호부터 쓴다:
@@ -73,7 +75,7 @@ grep -rho "case-[0-9]*" kg/cases | sort -t- -k2 -n | tail -1
     size: any              # sm | md | lg | any
     variant: any           # primary | secondary | ghost | outline | any
     context: any           # list | hero | form | modal | nav | any
-  property: touch-target   # spacing | size | color | contrast | hierarchy | touch-target | radius | shadow | motion | type-scale | line-height | alignment | density | whitespace | saturation | weight
+  property: touch-target   # spacing | size | color | contrast | hierarchy | touch-target | radius | shadow | motion | type-scale | line-height | alignment | density | whitespace | saturation | weight | structure | interaction | affordance | labeling
   direction: up            # up | down | set | other   — 화자가 값을 키우라/줄이라/특정값으로/구조 변경
   problem: <무엇이 문제였나. 프레임에서 본 것>
   fix: <어떻게 고쳤나 / 고치라고 했나>
@@ -85,19 +87,25 @@ grep -rho "case-[0-9]*" kg/cases | sort -t- -k2 -n | tail -1
   evidence: .evidence/<ID>/0412.png
 ```
 
+`structure`(레이아웃·정보구조·패턴 선택 — 오버레이 vs 고정 패널, 상단 vs 좌측 필터) · `interaction`(동작·상태 전이·스크롤 등 UI 행동) · `affordance`(눌림·선택 상태가 보이는가) · `labeling`(버튼·라벨 문구)은 JUDGMENT 전용이다. `measured`를 쓰지 않고 `direction`은 `other`로 둔다.
+
 stance 판정 규칙:
 
 | stance | 어미 |
 |---|---|
-| PRESCRIPTIVE | ~해야 됩니다 · ~하면 안 돼요 · 무조건 · 반드시 · 절대 · 필수 |
-| PREFERRED | ~하는 게 좋아요 · 훨씬 낫죠 · 추천드려요 · ~하면 더 |
-| OPTION | ~해볼까요 · ~해도 되고 · 취향이에요 · 이럴 수도 있고 · 상황에 따라 |
+| PRESCRIPTIVE | ~해야 됩니다 · ~하면 안 돼요 · 무조건 · 반드시 · 절대 · 필수 · ~있어야 돼요 · ~하셔야 돼요 · ~해야 돼요 · ~하면 안 되죠 |
+| PREFERRED | ~하는 게 좋아요 · 훨씬 낫죠 · 추천드려요 · ~하면 더 · ~하시는 게 · ~하는 게 맞아요/맞죠 · ~하면 좋겠어요 · ~가 낫죠 · ~하시면 돼요 |
+| OPTION | ~해볼까요 · ~해도 되고 · 취향이에요 · 이럴 수도 있고 · 상황에 따라 · ~정도로만 · ~해 볼게요/줄여 볼게요 · ~하도록 하고요 · -겠-…-구나(혼잣말, 지시 아님) |
 
 `quote`에 어미가 그대로 들어 있어야 한다. 헷갈리면 낮은 쪽(OPTION)으로 둔다. 규칙이 되기보다 선택지로 남는 게 안전하다.
 
-`qualities`는 화자가 실제로 쓴 형용사만. "과감하게"라고 안 했는데 추출자가 그렇게 느꼈다고 적지 않는다. 현재 상태 형용사를 안 말했으면 `?→과감한`처럼 `?`를 쓴다.
+`~해야겠구나`처럼 -겠-이 붙은 혼잣말은 PRESCRIPTIVE가 아니다. `~해야 돼요`만 PRESCRIPTIVE다.
+
+`qualities`는 화자가 실제로 쓴 평가어만 적는다. 서술형도 센다 — "답답해 보여요" → `답답한`, "정보 계층이 안 잡혀 있다" → `안 잡힌`, "깔끔하게만 잡아 주시면" → `?→깔끔한`. 범위는 같은 지적을 말하는 동안(같은 화제, 인용문 앞뒤 30초 안). 추출자가 느낀 형용사는 적지 않는다. 현재 상태를 안 말했으면 `?→목표`.
 
 `direction`: `measured`가 있고 화자가 "이 값으로"라고 했으면 `set`. "키워라/줄여라"면 `up/down`. 구조·배치 변경이면 `other`.
+
+한 Case = 한 지적. 한 인용문 안에서 크기와 굵기를 같이 말하면(case-013처럼) 하나로 두고 주된 property를 적는다. 한 호흡에 두 지적을 하면(아이콘 크기 + 라벨 문구) 둘로 나눈다. 각 Case의 `fix`는 자기 `quote`에 근거가 있어야 한다.
 
 ## 6. 검수 체크리스트
 
