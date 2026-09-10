@@ -1,1 +1,35 @@
-[]
+# 승격 판단 근거는 kg/promotion-log.md, 게이트 적용 방식은 docs/schema.md
+# 이번 라운드에서 source: corpus Rule은 0개다. 코퍼스 후보 3건은 모두 팽팽(강등) 또는 보류였다.
+- id: rule-001
+  statement: 본문 텍스트와 배경의 대비는 4.5:1 이상이어야 한다
+  grade: CHECKABLE
+  source: standard
+  standard_ref: WCAG 2.2 SC 1.4.3
+  scope: {}
+  property: contrast
+  check: "contrast(el.style.color, el.style['background-color']) >= 4.5"
+  promoted_from: [case-2503, case-1304]
+  confidence: 2
+
+- id: rule-002
+  statement: 모바일 터치 타겟은 최소 44×44px여야 한다
+  grade: CHECKABLE
+  source: standard
+  standard_ref: WCAG 2.2 SC 2.5.8 + Apple HIG
+  scope: { platform: mobile }
+  property: touch-target
+  check: "Math.min(el.box.width, el.box.height) >= 44"
+  promoted_from: [case-2103, case-2104, case-1903, case-2007]
+  confidence: 4
+
+- id: rule-003
+  statement: 키보드 포커스를 받은 요소는 포커스 상태가 눈에 보여야 한다
+  grade: CHECKABLE
+  source: standard
+  standard_ref: WCAG 2.2 SC 2.4.7
+  scope: {}
+  property: focus
+  state: focus-visible
+  check: "num(el.style['outline-width']) >= 2 && el.style['outline-style'] !== 'none'"
+  promoted_from: []
+  confidence: 0

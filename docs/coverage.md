@@ -15,21 +15,21 @@
 
 | kg | ui | cases | videos | promoted |
 |---|---|---|---|---|
-| button | Button Toggle ToggleGroup | 19 | 12 | - |
+| button | Button Toggle ToggleGroup | 19 | 12 | yes |
 | input | Input Textarea NumberField OtpField Autocomplete Combobox Label Fieldset | 6 | 5 | - |
 | select | Select DropdownMenu ContextMenu Menubar | 4 | 3 | - |
 | checkbox | Checkbox CheckboxGroup RadioGroup Switch | 6 | 3 | - |
-| card | Card StatCard PreviewCard | 43 | 17 | - |
+| card | Card StatCard PreviewCard | 43 | 17 | yes |
 | list | ScrollArea | 8 | 5 | - |
 | table | Table DataTable | 2 | 1 | - |
-| nav | Header Sidebar NavigationMenu Toolbar | 18 | 9 | - |
+| nav | Header Sidebar NavigationMenu Toolbar | 18 | 9 | yes |
 | modal | Dialog AlertDialog Drawer | 4 | 2 | - |
 | popover | Popover | 0 | 0 | - |
 | tooltip | Tooltip | 0 | 0 | - |
 | tabs | Tabs | 0 | 0 | - |
 | accordion | Accordion Collapsible | 3 | 2 | - |
 | badge | Badge Tag | 5 | 3 | - |
-| avatar | Avatar | 5 | 5 | - |
+| avatar | Avatar | 5 | 5 | yes |
 | progress | Progress Meter Slider | 0 | 0 | - |
 | toast | Toaster | 0 | 0 | - |
 | form | Form | 2 | 1 | - |
@@ -37,14 +37,18 @@
 | separator | Separator | 0 | 0 | - |
 | icon | Icon | 12 | 6 | - |
 | hero | - | 11 | 5 | - |
-| typo | - | 35 | 19 | - |
+| typo | - | 35 | 19 | yes |
 | color | - | 0 | 0 | - |
-| layout | - | 22 | 12 | - |
-| image | - | 18 | 11 | - |
+| layout | - | 22 | 12 | yes |
+| image | - | 18 | 11 | yes |
 | structure | - | 4 | 2 | - |
 
 case coverage: 83% (40/48)
-promoted coverage: 0% (0/48)
+promoted coverage: 23% (11/48)
+
+> promoted 열과 promoted coverage는 Task 8(1차 승격) 반영 값이다. Rule · Option · Quality가 실제로
+> 가리키는 컴포넌트는 button · card · nav · avatar 넷이고, 나머지 승격분(typo · layout · image)은
+> my-ui-lib 컴포넌트로 매핑되지 않아 분모 48개에는 잡히지 않는다. 승격 판단은 `kg/promotion-log.md`.
 
 ## 추가한 5편과 실제로 새로 커버한 컴포넌트
 

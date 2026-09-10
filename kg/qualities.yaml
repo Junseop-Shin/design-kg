@@ -1,1 +1,53 @@
-[]
+# 동의어 묶기와 문턱 판정은 kg/promotion-log.md, 정규화 규칙은 docs/schema.md
+# 이번 라운드 승격분은 전부 polarity: problem 이다. target 형용사는 영상 3개 문턱을 넘은 조합이 없다.
+- id: quality-oversized
+  label: 큰
+  aliases: [부담스러운]
+  polarity: problem
+  realized_by:
+    - property: size
+      direction: down
+      weight: 10
+      cases: [case-2206, case-1210, case-1211, case-1511, case-1005, case-1609, case-1614, case-803, case-1306, case-1401]
+    - property: type-scale
+      direction: down
+      weight: 6
+      cases: [case-1403, case-1212, case-711, case-1601, case-1608, case-1612]
+  opposes: quality-undersized
+
+- id: quality-undersized
+  label: 작은
+  aliases: []
+  polarity: problem
+  realized_by:
+    - property: size
+      direction: up
+      weight: 6
+      cases: [case-2303, case-2504, case-2404, case-1008, case-1604, case-808]
+    - property: type-scale
+      direction: up
+      weight: 4
+      cases: [case-1208, case-1503, case-1512, case-807]
+  opposes: quality-oversized
+
+- id: quality-cramped
+  label: 답답한
+  aliases: [빡빡한, 타이트한, 촘촘한]
+  polarity: problem
+  realized_by:
+    - property: whitespace
+      direction: up
+      weight: 11
+      cases: [case-404, case-1504, case-1901, case-1904, case-1906, case-1907, case-1908, case-606, case-304, case-1509, case-701]
+  opposes: quality-loose
+
+- id: quality-loose
+  label: 넓은
+  aliases: [벙벙한]
+  polarity: problem
+  realized_by:
+    - property: whitespace
+      direction: down
+      weight: 4
+      cases: [case-1004, case-1010, case-805, case-908]
+  opposes: quality-cramped

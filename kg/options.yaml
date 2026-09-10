@@ -1,1 +1,165 @@
-[]
+# 후보 → Option 결정 근거는 kg/promotion-log.md
+- id: option-001
+  question: 썸네일 이미지 영역을 어떻게 잡을까
+  scope: { component: image }
+  choices:
+    - label: 정사각형 비율로 통일한다
+      when: 상품·콘텐츠 카드가 목록으로 반복될 때
+      recommended: true
+      cases: [case-410, case-302, case-411]
+    - label: 비율은 원본대로 두되 썸네일 영역(프레임)을 고정한다
+      when: 원본 비율이 제각각이라 한 비율로 자를 수 없을 때
+      cases: [case-1613, case-1214]
+
+- id: option-002
+  question: 이미지 위 오버레이를 어떻게 처리할까
+  scope: { component: image }
+  choices:
+    - label: 오버레이·배경을 걷어낸다
+      when: 이미지 자체가 사용자가 보러 온 정보일 때
+      cases: [case-009, case-1507]
+    - label: 텍스트가 얹히는 하단 절반까지만 그라디언트를 내린다
+      when: 이미지 위에 텍스트를 올려야 할 때
+      recommended: true
+      cases: [case-1207]
+
+- id: option-003
+  question: 항목을 여러 단으로 쪼갤까 한 덩어리로 합칠까
+  scope: { component: layout }
+  choices:
+    - label: 한 덩어리로 합친다
+      when: 항목 수가 적고 성격이 같을 때
+      cases: [case-412, case-1313]
+    - label: 세로로 내려 쌓는다
+      when: 가로 폭이 좁아 내용이 여러 줄로 빽빽해질 때
+      cases: [case-1607]
+    - label: 칼럼으로 나누고 각각 고정한다
+      when: 성격이 다른 정보를 나란히 계속 봐야 할 때
+      cases: [case-1410]
+
+- id: option-004
+  question: GNB와 탭 영역을 합칠까 나눌까
+  scope: { component: nav }
+  choices:
+    - label: 한 단으로 합친다
+      when: 메뉴 수가 적어 상단 높이를 아끼고 싶을 때
+      cases: [case-402]
+    - label: 영역을 분리하고 시각적으로도 구분한다
+      when: 성격과 기능이 다른 컨트롤이 섞여 있을 때
+      recommended: true
+      cases: [case-1505, case-509, case-201]
+
+- id: option-005
+  question: 목록 필터를 상단에 둘까 좌측에 둘까
+  scope: { component: nav }
+  choices:
+    - label: 상단형
+      when: 검색한 뒤 내려보며 고르는 패턴이고 상품 영역을 넓게 써야 할 때
+      cases: [case-011]
+    - label: 좌측형
+      when: 필터를 계속 보면서 적용하는 패턴일 때
+      cases: [case-011]
+
+- id: option-006
+  question: 정보 블록을 카드로 감쌀까
+  scope: { component: card }
+  choices:
+    - label: 카드로 감싼다
+      when: 잔액·그래프처럼 화면에서 힘을 줘야 하는 영역일 때
+      cases: [case-507]
+    - label: 감싸지 않고 배경에 바로 뿌린다
+      when: 스펙·목록처럼 정보량이 많고 카드가 화면 곳곳에 반복될 때
+      recommended: true
+      cases: [case-1606, case-507]
+
+- id: option-007
+  question: 카드 안이 답답해 보일 때 무엇을 바꿀까
+  scope: { component: card }
+  choices:
+    - label: 카드 시작과 끝의 여백을 과감하게 넓힌다
+      when: 여러 정보를 테두리 하나로 묶어서 갈 때
+      recommended: true
+      cases: [case-606, case-1904, case-1509]
+    - label: 여백을 넓히는 대신 카드를 개별로 쪼갠다
+      when: 묶인 정보의 성격이 서로 다를 때
+      cases: [case-606]
+
+- id: option-008
+  question: 텍스트를 키울 때 어디까지 키울까
+  scope: { component: typo }
+  choices:
+    - label: 13~14px
+      when: 카드·리스트 캡션이나 보조 설명일 때
+      cases: [case-1208, case-1213]
+    - label: 16px
+      when: 모바일 본문이나 히어로 서브 텍스트일 때
+      cases: [case-704, case-807, case-1503]
+    - label: 28~32px 이상
+      when: 들어오자마자 읽혀야 하는 페이지·히어로 타이틀일 때
+      recommended: true
+      cases: [case-204, case-1701]
+
+- id: option-009
+  question: 타이틀이 과하게 커 보일 때 무엇을 낮출까
+  scope: { component: typo }
+  choices:
+    - label: 크기를 한두 단계 낮춘다
+      when: 같은 화면의 헤드라인보다 먼저 눈에 들어올 때
+      recommended: true
+      cases: [case-005, case-1206, case-1212, case-711, case-1601, case-1608]
+    - label: 크기는 두고 굵기와 색으로 힘을 뺀다
+      when: 크기를 줄이면 섹션 위계가 무너질 때
+      cases: [case-1206, case-1212]
+
+- id: option-010
+  question: 본문 텍스트를 어느 쪽으로 정렬할까
+  scope: { component: typo }
+  choices:
+    - label: 좌측 정렬
+      when: 두세 줄이 넘거나 목록·카드 본문일 때
+      recommended: true
+      cases: [case-1011, case-710, case-904]
+    - label: 가운데 정렬
+      when: 나란히 놓이는 요소들의 폭이 비슷하고 한두 줄로 짧을 때
+      cases: [case-608]
+
+- id: option-011
+  question: 리스트 안 프로필 아바타 크기를 어떻게 잡을까
+  scope: { component: avatar }
+  choices:
+    - label: 24px 안팎으로 고정한다
+      when: 작성자를 보조 정보로만 보여줄 때
+      recommended: true
+      cases: [case-1210, case-2504]
+    - label: 옆에 붙는 이름·설명 텍스트 높이에 맞춘다
+      when: 카드 너비나 텍스트 크기가 화면마다 달라질 때
+      cases: [case-1511, case-1609, case-1306]
+
+- id: option-012
+  question: 한 화면에 버튼이 여럿일 때 어떻게 정리할까
+  scope: { component: button }
+  choices:
+    - label: 세로로 하나씩 쌓는다
+      when: 선택지가 서로 동등하고 세로 영역이 충분할 때
+      cases: [case-706]
+    - label: 인접 요소와 합쳐 버튼 수를 줄인다
+      when: 검색 인풋처럼 입력과 실행이 한 동작이거나, 버튼처럼 보이는 요소가 이미 여럿일 때
+      cases: [case-601, case-801]
+    - label: 부차적인 액션은 텍스트 버튼으로 낮춘다
+      when: 문구만으로 뜻이 분명해 아이콘이나 언더라인이 없어도 될 때
+      cases: [case-707]
+
+- id: option-013
+  question: 콘텐츠 그룹을 무엇으로 나눌까
+  scope: { component: layout }
+  choices:
+    - label: 여백만으로 그룹핑한다
+      when: 카드로 감싸지 않고 바닥에 바로 뿌리는 디자인이고 스크롤이 길어져도 괜찮을 때
+      recommended: true
+      cases: [case-1907, case-1908, case-1705]
+    - label: 라인이나 카드로 그룹핑한다
+      when: 여백만으로 계층을 잡기 어려울 때
+      cases: [case-1907]
+    - label: 요소 크기를 줄여 여백을 만든다
+      when: 영역 자체를 넓힐 수 없을 때
+      cases: [case-304]
