@@ -1,7 +1,7 @@
 # 승격 로그
 
-Task 8(4단계) 1차 승격. 후보 표는 `.evidence/candidates.md`(영상 3개 이상)와
-`.evidence/candidates-min2.md`(2개 이상, 아깝게 못 넘은 것 확인용)이다.
+Task 8(4단계) 1차 승격. 후보 표는 `npm run candidates`(영상 3개 이상)와
+`npm run candidates kg 2`(2개 이상, 아깝게 못 넘은 것 확인용)로 다시 뽑는다.
 게이트는 `docs/plan.md`의 승격 게이트 절을 따랐고, 실제로 적용한 형태는 `docs/schema.md`에 적었다.
 
 2026-09-11 3차: 리뷰에서 "근거가 뒤집히거나 없는 choice"가 넷 지적돼 고쳤다. 해당 행에 "3차"로

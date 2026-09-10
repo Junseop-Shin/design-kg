@@ -83,6 +83,21 @@ hero 31 · form 29 · nav 28 · modal 3.
 Case 수로는 90건, 전체의 37%다. 승격은 되지만 `promoted coverage` 분모(컴포넌트 이름 48개)에는
 잡히지 않는다. 커버리지 수치를 읽을 때 이 점을 감안해야 한다.
 
+## 스냅샷 `data-ui` 어휘와 KG `component` 어휘
+
+둘은 아직 같은 어휘가 아니다. 스냅샷은 페이지에 적힌 `data-ui` 값을 그대로 읽는다. 테스트 픽스처와
+roundtrip 페이지가 쓰는 값은 `heading` · `text` · `button` 같은 것들이다. KG의 `scope.component`는
+`kg/components.yaml`의 `kg` 값이라 `typo` · `layout` · `hero`처럼 다른 이름을 쓴다. `button`처럼
+우연히 겹치는 이름도 있지만 맞춰 두고 쓴 것은 아니다.
+
+그래서 `scope.component`가 `any`가 아닌 Rule은 스냅샷 쪽에서 걸리지 않는다. `matchesScope`가 strict로
+비교하기 때문에 `heading`은 `typo`와 만나지 않는다. 지금은 `kg/rules.yaml`의 Rule 셋이 모두 component를
+비워 둬서 `design_check`가 실제로 막히는 곳이 없다. component를 지정한 Rule을 처음 승격하면 그때 이
+틈이 보인다.
+
+매핑을 만든다면 자리는 `kg/components.yaml`이다. 이 파일은 지금 `kg` 값과 my-ui-lib 컴포넌트
+이름(`ui`)을 잇고 있으니, 스냅샷이 쓰는 `data-ui` 값도 같은 방식으로 한 줄 더 이으면 된다.
+
 ## property 어휘 최종
 
 실제로 쓰인 direction 분포와 `measured` 단위다.

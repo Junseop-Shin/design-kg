@@ -84,7 +84,7 @@ grep -rho "case-[0-9]*" kg/cases | sort -t- -k2 -n | tail -1
   quote: <어조 판정 근거가 된 문장 그대로>
   qualities: [밋밋한→과감한]   # 화자가 쓴 형용사. 현재→목표. 없으면 []
   measured: { prop: touch-target, value: 44, unit: px }   # 수치 언급 시에만
-  evidence: .evidence/<ID>/0412.png
+  evidence: .evidence/<ID>/412.png
 ```
 
 `structure`(레이아웃·정보구조·패턴 선택 — 오버레이 vs 고정 패널, 상단 vs 좌측 필터) · `interaction`(동작·상태 전이·스크롤 등 UI 행동) · `affordance`(눌림·선택 상태가 보이는가) · `labeling`(버튼·라벨 문구)은 JUDGMENT 전용이다. `measured`를 쓰지 않고 `direction`은 `other`로 둔다.

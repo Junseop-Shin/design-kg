@@ -17,10 +17,17 @@ UI/UX 디자인 지식그래프와 그걸 조회·검증하는 MCP 서버.
 
 ```bash
 npm install && npx playwright install chromium
+npm test                         # vitest
+npm run typecheck                # tsc --noEmit
 npm run validate                 # kg/ 검증
-npm run candidates               # 승격 후보 표
+npm run candidates               # 승격 후보 표 (기본 영상 3개 이상, `npm run candidates kg 2`로 문턱 조정)
+npm run coverage                 # 컴포넌트 커버리지 집계
 npm run snapshot -- --url <url> --out .evidence/snapshots/x.json --platform mobile
+npm run vtt2txt <file.vtt>       # 자막을 타임스탬프 붙은 텍스트로
 npm run mcp                      # stdio MCP 서버 (Claude Code는 .mcp.json으로 자동 연결)
 ```
 
 Claude Code에서 이 디렉터리를 열면 `.mcp.json`의 `design-kg` 서버가 뜬다. `/mcp`로 확인.
+
+`DESIGN_KG_DIR`로 다른 디렉터리를 가리키면 그 디렉터리의 `rules.yaml` `check` 식이 `new Function`으로
+실행된다. 신뢰하는 KG만 가리킬 것.

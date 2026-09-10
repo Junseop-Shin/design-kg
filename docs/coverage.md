@@ -46,6 +46,8 @@
 case coverage: 83% (40/48)
 promoted coverage: 23% (11/48)
 
+promoted coverage 목표는 `docs/plan.md`가 잡은 40%였는데 실제는 23%로 목표에 못 미쳤다. typo · layout · image에 걸린 승격분이 my-ui-lib 컴포넌트로 매핑되지 않고, 승격 노드를 가진 kg 컴포넌트가 button · card · nav · avatar 넷뿐이기 때문이다.
+
 > promoted 열과 promoted coverage는 Task 8(1차 승격) 반영 값이다. Rule · Option · Quality가 실제로
 > 가리키는 컴포넌트는 button · card · nav · avatar 넷이고, 나머지 승격분(typo · layout · image)은
 > my-ui-lib 컴포넌트로 매핑되지 않아 분모 48개에는 잡히지 않는다. 승격 판단은 `kg/promotion-log.md`.
