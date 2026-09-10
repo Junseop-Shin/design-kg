@@ -72,16 +72,13 @@ Task 13 브리프의 Step 2는 새 Claude Code 세션을 열어 `design_qualitie
     "aliases": ["빡빡한", "촘촘한"],
     "polarity": "problem",
     "realized_by": [
-      {
-        "property": "whitespace",
-        "direction": "up",
-        "weight": 9,
-        "cases": ["case-404", "case-1504", "case-1901", "case-1904", "case-1906", "case-1907", "case-1908", "case-606", "case-304"]
-      }
+      { "property": "whitespace", "direction": "up", "weight": 9, "cases": ["case-404", "case-1504", "case-1901", "case-1904", "case-1906", "case-1907", "case-1908", "case-606", "case-304"] }
     ],
     "opposes": "quality-loose"
   },
-  "realized_by": "…(quality.realized_by와 동일 — 생략, 위 참조)",
+  "realized_by": [
+    { "property": "whitespace", "direction": "up", "weight": 9, "cases": ["case-404", "case-1504", "case-1901", "case-1904", "case-1906", "case-1907", "case-1908", "case-606", "case-304"] }
+  ],
   "opposes": {
     "id": "quality-loose",
     "label": "넓은",
@@ -92,9 +89,15 @@ Task 13 브리프의 Step 2는 새 Claude Code 세션을 열어 `design_qualitie
     ],
     "opposes": "quality-cramped"
   },
-  "rules": "…(2 lines omitted — §1-0 sanity check의 design_rules 출력과 동일: rule-001, rule-003)"
+  "rules": [
+    { "id": "rule-001", "statement": "본문 텍스트와 배경의 대비는 4.5:1 이상이어야 한다", "grade": "CHECKABLE", "source": "standard", "standard_ref": "WCAG 2.2 SC 1.4.3", "scope": { "component": "any", "platform": "any", "size": "any", "variant": "any", "context": "any" }, "property": "contrast", "state": "default", "check": "contrast(el.style.color, el.style['background-color']) >= 4.5", "promoted_from": ["case-2503", "case-1304"], "confidence": 2, "conflicts_with": [], "conflicts": [] },
+    { "id": "rule-003", "statement": "키보드 포커스를 받은 요소는 포커스 상태가 눈에 보여야 한다", "grade": "CHECKABLE", "source": "standard", "standard_ref": "WCAG 2.2 SC 2.4.7", "scope": { "component": "any", "platform": "any", "size": "any", "variant": "any", "context": "any" }, "property": "focus", "state": "focus-visible", "check": "num(el.style['outline-width']) >= 2 && el.style['outline-style'] !== 'none'", "promoted_from": [], "confidence": 0, "conflicts_with": [], "conflicts": [] }
+  ]
 }
 ```
+
+`realized_by`(최상위)와 `quality.realized_by`, `rules`와 §1-0의 sanity check 출력은 각각
+내용이 완전히 같다 — 서버가 그렇게 돌려준 그대로이지 문서에서 줄인 것이 아니다.
 
 `realized_by` 항목이 하나(`whitespace, up, weight 9`)뿐이다. `답답한`은 `polarity: problem`이라
 이 방향(`up`)을 적용하면 답답함을 없애는 쪽으로 간다.
@@ -110,9 +113,7 @@ Task 13 브리프의 Step 2는 새 Claude Code 세션을 열어 `design_qualitie
 
 ### 1-3. `design_rules({component: hero, platform: web, context: hero})`
 
-```json
-"…(생략 — §1-0과 완전히 동일한 rule-001 · rule-003 두 건)"
-```
+§1-0과 완전히 동일한 JSON(rule-001 · rule-003 두 건)이 그대로 반환됐다 — 아래 생략.
 
 `hero` scope로 좁혀도 결과가 안 바뀐 이유는 두 Rule의 `scope.component`가 둘 다 `any`라서다.
 
@@ -182,7 +183,16 @@ Task 13 브리프의 Step 2는 새 Claude Code 세션을 열어 `design_qualitie
 ```json
 {
   "kind": "quality",
-  "node": "…(§1-1의 quality 노드와 동일 — 생략)",
+  "node": {
+    "id": "quality-cramped",
+    "label": "답답한",
+    "aliases": ["빡빡한", "촘촘한"],
+    "polarity": "problem",
+    "realized_by": [
+      { "property": "whitespace", "direction": "up", "weight": 9, "cases": ["case-404", "case-1504", "case-1901", "case-1904", "case-1906", "case-1907", "case-1908", "case-606", "case-304"] }
+    ],
+    "opposes": "quality-loose"
+  },
   "cases": [
     {
       "id": "case-1901",
@@ -216,7 +226,16 @@ gap 결정에 직접 인용했다.
 ```json
 {
   "kind": "option",
-  "node": "…(§1-5의 option-008 노드와 동일 — 생략)",
+  "node": {
+    "id": "option-008",
+    "question": "텍스트를 키울 때 어디까지 키울까",
+    "scope": { "component": "typo", "platform": "any", "size": "any", "variant": "any", "context": "any" },
+    "choices": [
+      { "label": "13~14px", "when": "카드·리스트 캡션이나 보조 설명일 때", "recommended": false, "cases": ["case-1208", "case-1213"] },
+      { "label": "16px", "when": "모바일 본문이나 히어로 서브 텍스트일 때", "recommended": false, "cases": ["case-704", "case-807", "case-1503"] },
+      { "label": "28~32px 이상", "when": "들어오자마자 읽혀야 하는 페이지·히어로 타이틀일 때", "recommended": true, "cases": ["case-204", "case-1701"] }
+    ]
+  },
   "cases": [
     {
       "id": "case-204",
@@ -256,7 +275,20 @@ gap 결정에 직접 인용했다.
 ```json
 {
   "kind": "rule",
-  "node": "…(§1-0의 rule-001 노드와 동일 — 생략)",
+  "node": {
+    "id": "rule-001",
+    "statement": "본문 텍스트와 배경의 대비는 4.5:1 이상이어야 한다",
+    "grade": "CHECKABLE",
+    "source": "standard",
+    "standard_ref": "WCAG 2.2 SC 1.4.3",
+    "scope": { "component": "any", "platform": "any", "size": "any", "variant": "any", "context": "any" },
+    "property": "contrast",
+    "state": "default",
+    "check": "contrast(el.style.color, el.style['background-color']) >= 4.5",
+    "promoted_from": ["case-2503", "case-1304"],
+    "confidence": 2,
+    "conflicts_with": []
+  },
   "cases": [
     {
       "id": "case-2503",
@@ -304,8 +336,7 @@ gap 결정에 직접 인용했다.
     flex-direction: column;
     align-items: center; /* graph silent — option-010(정렬)은 목록·카드 "본문"용 근거(case-1011,
       case-710, case-904)라 히어로 타이틀에는 그대로 적용하지 않음. 관례적 판단으로 중앙 정렬 */
-    gap: 32px; /* quality-cramped realized_by(whitespace, up)와 같은 근거를 요소 간 간격에도 적용,
-      case-1908 "타이틀과 본문과 버튼에 대한 여백을 충분히 확보해서" */
+    gap: 32px; /* quality-cramped realized_by(whitespace, up)와 같은 근거를 요소 간 간격에도 적용 */
     text-align: center;
     max-width: 960px;
     margin: 0 auto;
@@ -366,6 +397,11 @@ gap 결정에 직접 인용했다.
 </body>
 </html>
 ```
+
+`section[data-context="hero"]`의 `gap: 32px`는 위 주석대로 `quality-cramped.realized_by[0]`
+(whitespace, up)에서 나왔고, 그중에서도 §1-6에서 인용한 case-1908("타이틀과 본문과 버튼에 대한
+여백을 충분히 확보해서 사용자가 보고자 하는 부분만 딱딱 보게끔")이 이 히어로 구조(타이틀→본문→
+버튼)를 정확히 지적한 사례라 요소 간 간격 결정에 직접 반영했다.
 
 **에이전트가 realized_by 중 고른 것**
 
