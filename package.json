@@ -1,0 +1,28 @@
+{
+  "name": "design-kg",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "validate": "tsx scripts/validate.ts",
+    "candidates": "tsx scripts/candidates.ts",
+    "snapshot": "tsx scripts/snapshot.ts",
+    "vtt2txt": "tsx scripts/vtt2txt.ts",
+    "mcp": "tsx mcp/index.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "yaml": "^2.9.0",
+    "zod": "^4.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.0",
+    "playwright": "^1.63.0",
+    "tsx": "^4.23.0",
+    "typescript": "^6.0.0",
+    "vitest": "^5.0.0"
+  }
+}
