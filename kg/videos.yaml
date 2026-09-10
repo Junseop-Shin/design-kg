@@ -180,7 +180,7 @@
   duration_s: 1210
   category: review
   subtitles: auto
-  reason: "겨냥: checkbox · tabs — 체크박스·라디오 버튼 크기, 탭 선택 상태 지적"
+  reason: "겨냥: checkbox · select — 체크박스·라디오 버튼 크기, 셀렉트/인풋 사이즈 일관성 지적. (애초 겨냥했던 tabs는 리뷰 결과 실제로는 하단 내비게이션 바(아이콘)로 확인되어 component를 nav로 재분류함 — tabs에 대한 실질적 기여 없음)"
 
 - id: ahElVueKyRI
   title: "UI디자인을 예술작품으로 만들었네...? [시청자컨펌] [Figma]"
@@ -188,7 +188,7 @@
   duration_s: 1465
   category: review
   subtitles: auto
-  reason: "겨냥: progress — 배너 캐러셀 인디케이터 위치·정렬 지적이 영상 전반에 반복(목록에 카루셀 인디케이터 전용 값이 없어 progress를 가장 가까운 값으로 사용)"
+  reason: "겨냥: icon — 헤더 아이콘 사이즈·불필요한 원형 배경 지적. (애초 겨냥했던 progress는 리뷰 결과 실제로는 캐러셀 페이지 인디케이터로, Progress/Meter/Slider 어디에도 해당하지 않아 component를 structure로 재분류함 — progress에 대한 실질적 기여 없음)"
 
 - id: aVEyY--6S2g
   title: "UXUI 디자인이 망해가는 결정적인 신호 3가지 ｜시청자 디자인 컨펌 #208｜UXUI 디자인｜Figma"

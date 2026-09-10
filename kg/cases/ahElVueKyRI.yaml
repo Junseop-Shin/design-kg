@@ -1,7 +1,7 @@
 - id: case-2401
   source: { video: ahElVueKyRI, t: "5:47" }
   scope:
-    component: progress
+    component: structure
     platform: mobile
     size: any
     variant: any
@@ -19,7 +19,7 @@
 - id: case-2402
   source: { video: ahElVueKyRI, t: "8:21" }
   scope:
-    component: progress
+    component: structure
     platform: mobile
     size: any
     variant: any
@@ -37,7 +37,7 @@
 - id: case-2403
   source: { video: ahElVueKyRI, t: "15:16" }
   scope:
-    component: progress
+    component: structure
     platform: mobile
     size: any
     variant: any

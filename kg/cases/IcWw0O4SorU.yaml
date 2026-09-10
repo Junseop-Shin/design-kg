@@ -55,7 +55,7 @@
 - id: case-2204
   source: { video: IcWw0O4SorU, t: "7:25" }
   scope:
-    component: progress
+    component: structure
     platform: mobile
     size: any
     variant: any
@@ -63,7 +63,7 @@
   property: structure
   direction: other
   problem: "배송 시간 선택 영역이 펼치기(아코디언) 방식으로 되어 있다."
-  fix: "펼치기보다는 슬라이드(슬라이더) 방식으로 가볍게 바꾼다."
+  fix: "펼치기보다는 슬라이드(옆으로 넘기는 방식)로 가볍게 바꾼다."
   rationale: ""
   stance: OPTION
   quote: "여기 펼친보다는 그냥 슬라이드로 가볍게 가시는게 어떤가 싶어요."
