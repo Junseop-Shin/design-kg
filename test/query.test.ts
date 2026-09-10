@@ -42,6 +42,19 @@ describe("queryRules", () => {
   it("excludes mobile-only rules on web and keeps hero JUDGMENT rules", () => {
     expect(queryRules(kg, { platform: "web", context: "hero" }).map((x) => x.id)).toEqual(["rule-002", "rule-003"]);
   });
+  it("resolves conflicts_with into rules and drops unknown ids", () => {
+    const withConflict = { ...kg, rules: [{ ...kg.rules[0], conflicts_with: ["rule-003"] }, kg.rules[1], kg.rules[2]] };
+    expect(queryRules(withConflict, { platform: "mobile" })[0].conflicts.map((r) => r.id)).toEqual(["rule-003"]);
+    const withUnknown = { ...kg, rules: [{ ...kg.rules[0], conflicts_with: ["rule-999"] }, kg.rules[1], kg.rules[2]] };
+    expect(queryRules(withUnknown, { platform: "mobile" })[0].conflicts).toEqual([]);
+  });
+  it("breaks ties on equal grade and confidence by id", () => {
+    const tied = {
+      ...kg,
+      rules: [{ ...kg.rules[1], id: "rule-010" }, { ...kg.rules[1], id: "rule-002" }],
+    };
+    expect(queryRules(tied, {}).map((r) => r.id)).toEqual(["rule-002", "rule-010"]);
+  });
 });
 
 describe("queryOptions", () => {
