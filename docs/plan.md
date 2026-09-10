@@ -170,6 +170,7 @@ scope:
   variant: any             # primary | ghost | outline | any
   context: list            # list | hero | form | modal | any
 property: touch-target     # spacing | size | color | contrast | hierarchy | radius | shadow | motion | …
+direction: up              # up | down | set | other. 화자가 값을 키우라/줄이라/특정값으로/구조 변경
 problem: 무엇이 문제였나
 fix: 어떻게 고쳤나
 rationale: 왜 (영상에서 말한 이유)
@@ -180,7 +181,7 @@ measured: { prop: touch-target, value: 44, unit: px }   # 수치 언급 시에�
 evidence: .evidence/<video>/0412.png
 ```
 
-`scope`가 원안보다 넓어졌다. 버튼 하나에도 크기·플랫폼·문맥에 따라 다른 말이 붙으므로 조건을 정식 필드로 둔다. 모르는 조건은 `any`다.
+`scope`가 원안보다 넓어졌다. 버튼 하나에도 크기·플랫폼·문맥에 따라 다른 말이 붙으므로 조건을 정식 필드로 둔다. 모르는 조건은 `any`다. `direction`은 승격 게이트가 `(component, property, 방향)`으로 묶을 때 쓰는 그 방향이다.
 
 `qualities`는 화자가 쓴 형용사를 `현재→목표` 쌍으로 적는다. "너무 밋밋해요, 좀 더 과감하게"면 `밋밋한→과감한`. Quality 노드의 원료다.
 
@@ -201,8 +202,10 @@ id: rule-007
 statement: 모바일 터치 타겟은 최소 44px
 grade: CHECKABLE           # CHECKABLE | JUDGMENT
 source: corpus             # corpus | standard  (standard = WCAG · HIG 등 명문 규격과 일치)
+standard_ref: null         # source가 standard일 때 조항. 예: "WCAG 2.2 SC 2.5.8"
 scope: { component: any, platform: mobile }
-check: "min(width, height) >= 44"    # CHECKABLE만. 스냅샷 필드에 대한 식
+state: default             # default | focus-visible. 스냅샷의 어느 상태에서 판정하나
+check: "Math.min(el.box.width, el.box.height) >= 44"   # CHECKABLE만. 스냅샷 요소 el에 대한 JS 식
 promoted_from: [case-001, case-014, case-032]
 confidence: 3
 ```
