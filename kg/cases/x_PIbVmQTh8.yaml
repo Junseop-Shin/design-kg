@@ -1,0 +1,108 @@
+- id: case-2101
+  source: { video: x_PIbVmQTh8, t: "7:22" }
+  scope:
+    component: accordion
+    platform: mobile
+    size: any
+    variant: any
+    context: nav
+  property: structure
+  direction: other
+  problem: "항목이 많고 페이지가 긴 경우에 어울리는 좌측 아코디언(접이식) 메뉴 UI를 콘텐츠가 짧고 항목도 많지 않은 페이지에 그대로 가져와, 좁은 영역에 빡빡하게 우겨넣은 레이아웃이 되었다."
+  fix: "이 UI는 항목이 굉장히 많을 때만 돋보이므로, 지금처럼 페이지가 짧을 때는 폰트를 키우고 다른 레이아웃 UI로 바꾼다."
+  rationale: "이 UI가 항목이 굉장히 많았을 때 엄청 돋보이는 UI인데 지금은 페이지가 길지 않아 적합하지 않다"
+  stance: PREFERRED
+  quote: "폰트를 키우고 ui를 다르게 가져 가면 되요"
+  qualities: ["빡빡한→?"]
+  evidence: .evidence/x_PIbVmQTh8/500.png
+
+- id: case-2102
+  source: { video: x_PIbVmQTh8, t: "6:18" }
+  scope:
+    component: accordion
+    platform: mobile
+    size: any
+    variant: any
+    context: nav
+  property: interaction
+  direction: other
+  problem: "아코디언 메뉴의 항목을 클릭할 때마다 옆에 펼쳐지는 콘텐츠 영역의 시작 위치가 계속 달라져 화면이 흔들리는 것처럼 보인다."
+  fix: "어느 항목을 클릭해도 콘텐츠가 항상 같은 위치에서 시작하도록 고정한다."
+  rationale: "누를 때마다 위치가 왔다갔다 흔들리는 게 좋지 않다"
+  stance: OPTION
+  quote: "계속 미투 를 차지 잖아요 위치가 왔다갔다 흔들리 적에서 이게 그렇게 좋진 않습니다"
+  qualities: []
+  evidence: .evidence/x_PIbVmQTh8/500.png
+
+- id: case-2103
+  source: { video: x_PIbVmQTh8, t: "7:58" }
+  scope:
+    component: select
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: touch-target
+  direction: up
+  problem: "날짜 범위·주택구분을 고르는 셀렉트 박스가 너무 작아 클릭하기 불편해 보인다."
+  fix: "셀렉트 박스를 더 크게 키운다."
+  rationale: "너무 작다. 클릭하기도 불편하다"
+  stance: PRESCRIPTIVE
+  quote: "복제 아이 셀렉트 박스 도 70 좀 짜 가요 좀더 커야 되어 이 디자인의 느낌은 지금 디자인 너무 작을 자가 되어 너무 작다 말이에요 클릭하게 도 불편해요"
+  qualities: ["작은→큰"]
+  evidence: .evidence/x_PIbVmQTh8/758.png
+
+- id: case-2104
+  source: { video: x_PIbVmQTh8, t: "9:05" }
+  scope:
+    component: checkbox
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: touch-target
+  direction: up
+  problem: "분양/임대 필터의 선택 버튼(체크박스류)이 너무 작아 클릭이 잘 안 될 것 같다."
+  fix: "선택 버튼 크기를 최소 28 정도로 키운다."
+  rationale: "둔해 보이는 게 중요한 게 아니라 클릭이 잘 되는 게 중요하다"
+  stance: PRESCRIPTIVE
+  quote: "여자애가 클릭이 잘 되야 된다니까 이 체크박스는 32 너무 작아요 32 면은 일베 슬며시 아 16 이잖아요 자 가자 가 20은 대하여 최소 어여 기는 28"
+  qualities: []
+  measured: { prop: touch-target, value: 28, unit: px }
+  evidence: .evidence/x_PIbVmQTh8/905.png
+
+- id: case-2105
+  source: { video: x_PIbVmQTh8, t: "13:57" }
+  scope:
+    component: checkbox
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: structure
+  direction: other
+  problem: "제목+내용 / 제목 / 내용 중 하나만 골라야 하는 항목인데 체크박스(다중 선택용) 스타일로 되어 있다."
+  fix: "이 항목은 체크박스가 아니라 라디오 버튼으로 바꾼다. 체크박스는 중복 선택, 라디오 버튼은 하나만 선택하는 용도다."
+  rationale: "내용을 보면 하나만 선택하는 항목인데 체크박스를 썼다. 체크박스는 중복으로 여러 개를 선택하는 것이고 라디오 버튼은 이 중 하나를 선택하는 것이다"
+  stance: PRESCRIPTIVE
+  quote: "아니지 이게 무조건 라디오 버튼 지퍼"
+  qualities: []
+  evidence: .evidence/x_PIbVmQTh8/1335.png
+
+- id: case-2106
+  source: { video: x_PIbVmQTh8, t: "10:29" }
+  scope:
+    component: icon
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: weight
+  direction: other
+  problem: "리스트 항목의 화살표 아이콘 스트로크 두께가 다른 아이콘과 다르게 1px로 되어 있어 디자인의 2배수 그리드에 맞지 않는다."
+  fix: "스트로크 두께를 1px이 아니라 2배수 그리드에 맞는 값으로 통일한다."
+  rationale: "지금 디자인이 2배수인데 1픽셀은 안 된다"
+  stance: PRESCRIPTIVE
+  quote: "화살표 두께가 좀 다른데 일각 일이네 1 픽셀은 안돼요 왜 이것이 2배수 잖아요"
+  qualities: []
+  evidence: .evidence/x_PIbVmQTh8/1029.png
