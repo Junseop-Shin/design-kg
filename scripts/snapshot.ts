@@ -1,5 +1,5 @@
 import { writeFileSync } from "node:fs";
-import { chromium } from "playwright";
+import { type BrowserContext, chromium } from "playwright";
 import { Snapshot, type SnapshotElement } from "../src/schema.js";
 
 const PROPS = [
@@ -8,6 +8,9 @@ const PROPS = [
   "padding-top", "padding-right", "padding-bottom", "padding-left", "gap",
   "outline-width", "outline-style", "outline-color", "opacity", "transition-duration",
 ];
+
+// [data-ui]가 아닌 탭 가능 요소가 많은 페이지도 훑을 수 있는 상한
+const TAB_BUDGET = 200;
 
 const VIEWPORT = { web: { width: 1280, height: 800 }, mobile: { width: 390, height: 844 } };
 
@@ -22,6 +25,10 @@ function readElement(el: Element, props: string[], state: string) {
   while (node && /rgba\(\d+, \d+, \d+, 0\)|transparent/.test(style["background-color"])) {
     node = node.parentElement;
     if (node) style["background-color"] = getComputedStyle(node).getPropertyValue("background-color");
+  }
+  // 어떤 조상도 배경을 칠하지 않으면 브라우저 캔버스 기본색으로 본다
+  if (/rgba\(\d+, \d+, \d+, 0\)|transparent/.test(style["background-color"])) {
+    style["background-color"] = "rgb(255, 255, 255)";
   }
   const ctx = el.closest("[data-context]")?.getAttribute("data-context") ?? "any";
   return {
@@ -39,14 +46,15 @@ function readElement(el: Element, props: string[], state: string) {
 
 export async function snapshotPage(url: string, opts: { platform: "web" | "mobile" }): Promise<Snapshot> {
   const browser = await chromium.launch();
+  let context: BrowserContext | undefined;
   try {
-    const page = await browser.newPage({ viewport: VIEWPORT[opts.platform] });
+    // new Function을 쓰므로 페이지 CSP(script-src에 'unsafe-eval' 없음)를 우회한다
+    context = await browser.newContext({ viewport: VIEWPORT[opts.platform], bypassCSP: true });
+    const page = await context.newPage();
     await page.goto(url, { waitUntil: "networkidle" });
 
-    const count = await page.evaluate(() => {
-      const els = document.querySelectorAll("[data-ui]");
-      els.forEach((el, i) => el.setAttribute("data-snap-id", String(i)));
-      return els.length;
+    await page.evaluate(() => {
+      document.querySelectorAll("[data-ui]").forEach((el, i) => el.setAttribute("data-snap-id", String(i)));
     });
 
     const defaults = await page.evaluate(
@@ -60,17 +68,25 @@ export async function snapshotPage(url: string, opts: { platform: "web" | "mobil
     // Tab을 눌러 가며 키보드 포커스를 옮긴다. 키보드 포커스는 항상 :focus-visible을 켠다.
     const focused: unknown[] = [];
     const seen = new Set<string>();
-    for (let i = 0; i < count + 5; i++) {
+    let bodyStreak = 0;
+    for (let i = 0; i < TAB_BUDGET; i++) {
       await page.keyboard.press("Tab");
       const one = await page.evaluate(
         ({ props, read }) => {
           const el = document.activeElement;
-          if (!el || !el.hasAttribute("data-ui")) return null;
+          if (!el || el === document.body) return "body" as const;
+          if (!el.hasAttribute("data-ui")) return null;
           const fn = new Function("return " + read)() as typeof readElement;
           return fn(el, props, "focus-visible");
         },
         { props: PROPS, read: readElement.toString() },
       );
+      if (one === "body") {
+        // 탭 순서가 주소창을 지나 문서 밖으로 나갔다. 두 번 연속이면 한 바퀴 돈 것으로 본다
+        if (seen.size > 0 && ++bodyStreak >= 2) break;
+        continue;
+      }
+      bodyStreak = 0;
       if (!one) continue;
       if (seen.has(one.selector)) break;
       seen.add(one.selector);
@@ -83,6 +99,7 @@ export async function snapshotPage(url: string, opts: { platform: "web" | "mobil
       elements: [...defaults, ...focused] as SnapshotElement[],
     });
   } finally {
+    await context?.close();
     await browser.close();
   }
 }

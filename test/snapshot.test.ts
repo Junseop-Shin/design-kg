@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { snapshotPage } from "../scripts/snapshot.js";
 
 const url = new URL("./fixtures/page.html", import.meta.url).href;
+const nobgUrl = new URL("./fixtures/page-nobg.html", import.meta.url).href;
 
 describe("snapshotPage", () => {
   it("collects only data-ui elements with box, style, context and states", async () => {
@@ -23,6 +24,11 @@ describe("snapshotPage", () => {
     expect(focused.map((e) => e.selector)).toEqual(['[data-snap-id="1"]', '[data-snap-id="2"]']);
     expect(focused[0].style["outline-style"]).toBe("solid");
     expect(focused[0].style["outline-width"]).toBe("2px");
+  }, 30_000);
+
+  it("falls back to white when no ancestor sets a background", async () => {
+    const snap = await snapshotPage(nobgUrl, { platform: "web" });
+    expect(snap.elements[0].style["background-color"]).toBe("rgb(255, 255, 255)");
   }, 30_000);
 
   it("uses a phone viewport for mobile", async () => {
