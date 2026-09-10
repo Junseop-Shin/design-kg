@@ -48,8 +48,8 @@ yt-dlp -f "bv*[height<=720][ext=mp4]/bv*[height<=720]" -o ".evidence/%(id)s/%(id
 후보마다 화자가 문제를 가리키는 시점(`t`)의 프레임을 뽑는다. before와 after가 다른 시점이면 둘 다.
 
 ```bash
-T=04:12
-ffmpeg -loglevel error -ss 00:$T -i .evidence/$ID/$ID.mp4 -frames:v 1 -y .evidence/$ID/$(echo $T | tr -d :).png
+T=4:12
+ffmpeg -loglevel error -ss "$T" -i .evidence/$ID/$ID.mp4 -frames:v 1 -y .evidence/$ID/$(echo $T | tr -d :).png
 ```
 
 프레임을 Read 툴로 열어 본다. 자막이 "여기를 이렇게"라고만 말하는 경우 프레임이 있어야 `problem` · `fix`를 쓸 수 있다.
