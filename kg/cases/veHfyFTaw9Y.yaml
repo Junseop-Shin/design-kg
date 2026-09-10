@@ -1,0 +1,201 @@
+- id: case-801
+  source: { video: veHfyFTaw9Y, t: "4:51" }
+  scope:
+    component: button
+    platform: web
+    size: any
+    variant: any
+    context: hero
+  property: structure
+  direction: other
+  problem: "히어로 이미지 안에 'Start a Project' 버튼과 하단 탭(Environments 등)이 겹쳐서 버튼처럼 보이는 요소가 네 개나 된다."
+  fix: "겹쳐 보이는 버튼·탭 요소들을 정리한다."
+  rationale: ""
+  stance: OPTION
+  quote: "버튼이 하나, 둘, 셋, 넷. 이게 다 겹쳐 보이잖아요. 사실 이런 것들이 좀 문제긴 합니다."
+  qualities: []
+  evidence: .evidence/veHfyFTaw9Y/455.png
+
+- id: case-802
+  source: { video: veHfyFTaw9Y, t: "5:09" }
+  scope:
+    component: image
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: structure
+  direction: other
+  problem: "인사이트 카드 목록 위에 3D 오브젝트(메탈 구체)가 카드 이미지 위로 겹쳐 올라와 있다."
+  fix: "오브젝트를 이미지 앞이 아니라 뒤쪽으로 깔리게 배치한다."
+  rationale: ""
+  stance: OPTION
+  quote: "이런 오브젝트들이 사실은 어 이미지 위에 오버랩되는 거는 저는 조금 과하다 생각해요. 네. 오브젝트가 깔려도 이미지 뒤쪽으로 깔리는게 더 좋아 보입니다."
+  qualities: []
+  evidence: .evidence/veHfyFTaw9Y/509.png
+
+- id: case-803
+  source: { video: veHfyFTaw9Y, t: "5:18" }
+  scope:
+    component: image
+    platform: web
+    size: any
+    variant: any
+    context: list
+  property: size
+  direction: down
+  problem: "인사이트 카드 위에 겹쳐 있는 3D 오브젝트의 크기가 카드 이미지에 비해 크다."
+  fix: "오브젝트 사이즈를 조금 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "그리고 오브젝트 사이즈 조금 줄여도 될 거 같아요. 조금 커요."
+  qualities: []
+  evidence: .evidence/veHfyFTaw9Y/518.png
+
+- id: case-804
+  source: { video: veHfyFTaw9Y, t: "5:21" }
+  scope:
+    component: nav
+    platform: web
+    size: any
+    variant: any
+    context: nav
+  property: color
+  direction: other
+  problem: "상단 GNB는 화이트, 그 아래 서브 영역은 그레이로 배경색이 두 칸으로 나뉘어 있다."
+  fix: "배경을 블랙 한 가지로 통일한다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "그리고 여기도 지금 보면은 백그라운드를 그냥 블랙으로 가시는게 낫을 거 같은데 지금 여기 상단 GMB 화이트죠? 여기 그레이죠."
+  qualities: []
+  evidence: .evidence/veHfyFTaw9Y/521.png
+
+- id: case-805
+  source: { video: veHfyFTaw9Y, t: "6:57" }
+  scope:
+    component: nav
+    platform: web
+    size: any
+    variant: any
+    context: nav
+  property: whitespace
+  direction: down
+  problem: "GNB 탭 메뉴 항목들 사이 여백이 넓게 잡혀 있다."
+  fix: "탭 사이 여백을 8px 정도로 타이트하게 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "여백이 이제 좀 넓어 보이죠? 여기 한 8 정도로 타이트하게 잡아 죽자."
+  qualities: []
+  measured: { prop: whitespace, value: 8, unit: px }
+  evidence: .evidence/veHfyFTaw9Y/659.png
+
+- id: case-806
+  source: { video: veHfyFTaw9Y, t: "7:47" }
+  scope:
+    component: hero
+    platform: web
+    size: any
+    variant: any
+    context: hero
+  property: alignment
+  direction: other
+  problem: "히어로 타이틀·본문 텍스트가 좌측 정렬로 배치돼 있다."
+  fix: "가운데 정렬로 바꾼다."
+  rationale: ""
+  stance: OPTION
+  quote: "여기 텍스트 좌측 정렬로 가니까 힘이 좀 없거든요. 가운데 정렬로 갈게요."
+  qualities: []
+  evidence: .evidence/veHfyFTaw9Y/749.png
+
+- id: case-807
+  source: { video: veHfyFTaw9Y, t: "8:10" }
+  scope:
+    component: typo
+    platform: web
+    size: any
+    variant: any
+    context: hero
+  property: type-scale
+  direction: up
+  problem: "히어로 타이틀 밑 서브 텍스트 크기가 14px로, 커진 타이틀에 비해 작다."
+  fix: "서브 텍스트 크기를 16px 정도로 키운다."
+  rationale: "타이틀이 커진 것과 밸런스를 맞춰야 한다"
+  stance: OPTION
+  quote: "그다음 밑에 폰트 사이즈 14는 좀 작지. 왜냐면 이게 이제 커졌으니까 거기에 대한 밸런스를 좀 맞춰 줘야 되니까 16 정도에 그냥 레귤러 정도."
+  qualities: []
+  measured: { prop: type-scale, value: 16, unit: px }
+  evidence: .evidence/veHfyFTaw9Y/810.png
+
+- id: case-808
+  source: { video: veHfyFTaw9Y, t: "10:08" }
+  scope:
+    component: nav
+    platform: web
+    size: any
+    variant: any
+    context: nav
+  property: size
+  direction: up
+  problem: "로고 아래 브랜드 로고 슬라이드 바의 높이값이 고정하기엔 작다."
+  fix: "높이값을 48px 정도로 여유 있게 키운다."
+  rationale: ""
+  stance: OPTION
+  quote: "여기는 백그라운드 컬론 없어도 될 거 같고요. 높이값을 좀 고정으로 갈 건데 좀 작다. 조금만 키워서 48 정도 좀 여유 있게."
+  qualities: []
+  measured: { prop: size, value: 48, unit: px }
+  evidence: .evidence/veHfyFTaw9Y/1011.png
+
+- id: case-809
+  source: { video: veHfyFTaw9Y, t: "10:14" }
+  scope:
+    component: nav
+    platform: web
+    size: any
+    variant: any
+    context: nav
+  property: saturation
+  direction: down
+  problem: "상단 Everbyte 로고 색상이 진해서 세 보인다."
+  fix: "로고 색깔의 진하기를 다운시킨다."
+  rationale: ""
+  stance: OPTION
+  quote: "로고가 좀 세 보이죠? 여기가 너무 진해서 그래요. 색이. 여기 로고 색깔을 다운시켜 줍니다."
+  qualities: ["센→?"]
+  evidence: .evidence/veHfyFTaw9Y/1016.png
+
+- id: case-810
+  source: { video: veHfyFTaw9Y, t: "16:01" }
+  scope:
+    component: button
+    platform: web
+    size: any
+    variant: any
+    context: hero
+  property: hierarchy
+  direction: other
+  problem: "메인 히어로 코너에 버튼처럼 보이는 요소가 네 개나 쌍으로 겹쳐 보인다."
+  fix: "겹쳐 보이는 버튼들을 정리해 시각 계층을 맞춘다."
+  rationale: ""
+  stance: OPTION
+  quote: "버튼 버튼 버튼 버튼이 지금 다 이렇게네 개가 쌍으로 보이잖아요. 그리고 다 겹치잖아요."
+  qualities: []
+  evidence: .evidence/veHfyFTaw9Y/1552.png
+
+- id: case-811
+  source: { video: veHfyFTaw9Y, t: "16:48" }
+  scope:
+    component: nav
+    platform: web
+    size: any
+    variant: any
+    context: nav
+  property: radius
+  direction: set
+  problem: "선택된 탭('Digital Nature')에 파란 배경색이 꽉 채워져 있고 모서리도 크게 둥글다."
+  fix: "배경색을 빼고 라운드도 2px 정도로 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "아무리 봐도 여기 색을 빼고 선택 됐으니까 2픽셀 라운드는 다 빼 줘야겠네."
+  qualities: []
+  measured: { prop: radius, value: 2, unit: px }
+  evidence: .evidence/veHfyFTaw9Y/1648.png

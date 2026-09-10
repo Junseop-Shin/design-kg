@@ -1,0 +1,218 @@
+- id: case-1001
+  source: { video: cOXiN80n9hM, t: "1:52" }
+  scope:
+    component: form
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: structure
+  direction: other
+  problem: "로그인 화면 콘텐츠가 375 너비 프레임 한 화면에 다 들어오지 않아, 하단의 '계정이 없으신가요? 회원가입' 문구가 스크롤해야만 보인다."
+  fix: "스크롤 없이 로그인 프로세스 전체가 한 화면 안에 다 보이게 만든다."
+  rationale: "로그인 페이지는 스크롤 없이 프로세스가 한눈에 다 보여야 한다"
+  stance: PRESCRIPTIVE
+  quote: "로그인 페이지라는 거는 사실 스크롤 없이 그 안에 모든 프로세스가 다 보여야 돼요. 눈에."
+  qualities: []
+  evidence: .evidence/cOXiN80n9hM/138.png
+
+- id: case-1002
+  source: { video: cOXiN80n9hM, t: "2:29" }
+  scope:
+    component: button
+    platform: mobile
+    size: any
+    variant: outline
+    context: form
+  property: weight
+  direction: down
+  problem: "간편 로그인 버튼들의 텍스트가 굵고 테두리(스트록)도 강한데, 그에 비해 아이콘은 작아 보인다."
+  fix: "텍스트와 스트록의 강도를 낮춰 아이콘과 균형을 맞춘다."
+  rationale: ""
+  stance: OPTION
+  quote: "간편 로그인 부분이 약간 세요. 왜 센가 보면은 텍스트 좀 강하고 스트록도 조금 세고 거기에 비해서이 아이콘은 조금 작은 거 같고"
+  qualities: ["센→?"]
+  evidence: .evidence/cOXiN80n9hM/229.png
+
+- id: case-1003
+  source: { video: cOXiN80n9hM, t: "3:01" }
+  scope:
+    component: button
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: radius
+  direction: other
+  problem: "로그인 버튼은 라운드가 강하게 들어가 있는데 간편 로그인 버튼들은 각이 진 스타일로, 두 버튼 그룹의 라운드 스타일이 서로 다르다."
+  fix: "로그인 버튼과 간편 로그인 버튼의 라운드 스타일을 서로 맞춘다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "간편 로그인 버튼에 대해서 스타일이 좀 다르잖아요. 이런 것들은 좀 맞춰 주는게 좋을 거 같은데요."
+  qualities: []
+  evidence: .evidence/cOXiN80n9hM/301.png
+
+- id: case-1004
+  source: { video: cOXiN80n9hM, t: "4:10" }
+  scope:
+    component: form
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: whitespace
+  direction: down
+  problem: "로그인 화면의 좌우 여백이 36px로 넓다."
+  fix: "좌우 여백을 24px 정도로 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "그리고 지금 보시면은 좌우 여백도 36인데 많이 넓어요.한 24 정도로가 보도록 하겠습니다."
+  qualities: []
+  measured: { prop: whitespace, value: 24, unit: px }
+  evidence: .evidence/cOXiN80n9hM/410.png
+
+- id: case-1005
+  source: { video: cOXiN80n9hM, t: "5:14" }
+  scope:
+    component: input
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: size
+  direction: down
+  problem: "'로그인 상태 유지' 체크박스 크기가 26px로 크다."
+  fix: "체크박스 크기를 22px 정도로 줄인다."
+  rationale: ""
+  stance: OPTION
+  quote: "일단이 체크가 좀 사이즈가 커요. 26인데요. 사실은 22 정도만 돼도 충분합니다."
+  qualities: []
+  measured: { prop: size, value: 22, unit: px }
+  evidence: .evidence/cOXiN80n9hM/514.png
+
+- id: case-1006
+  source: { video: cOXiN80n9hM, t: "7:47" }
+  scope:
+    component: nav
+    platform: mobile
+    size: any
+    variant: any
+    context: nav
+  property: structure
+  direction: other
+  problem: "상단 GNB에 뒤로가기 화살표만 프레임 없이 떠 있고, 화살표와 타이틀 텍스트가 서로 겹친다."
+  fix: "GNB에 프레임을 만들어 모든 페이지에 공통으로 적용한다."
+  rationale: "상단 헤더 GNB는 보통 프레임을 만들어 모든 페이지에 공통으로 적용한다"
+  stance: PRESCRIPTIVE
+  quote: "그거는 두 번째 문제고 GNB는 항상 뭐가 있어야 돼? 프레임이 하나 있어야 돼요."
+  qualities: []
+  evidence: .evidence/cOXiN80n9hM/747.png
+
+- id: case-1007
+  source: { video: cOXiN80n9hM, t: "8:50" }
+  scope:
+    component: image
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "위치 이름·주소 텍스트가 지도 이미지 위에 오버랩돼 있다."
+  fix: "텍스트를 지도 이미지 밖으로 뺀다."
+  rationale: "지도 위에 텍스트가 오버랩되면 가독성이 많이 떨어진다"
+  stance: OPTION
+  quote: "텍스트가이지도 위에 오버랩이 되면은 될까요, 안 될까요? 좀 가독성이 많이 떨어지긴 하시겠죠? 그래서 당연히 텍스 밖으로 빠져야 될 거 같고요."
+  qualities: []
+  evidence: .evidence/cOXiN80n9hM/850.png
+
+- id: case-1008
+  source: { video: cOXiN80n9hM, t: "12:24" }
+  scope:
+    component: button
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: size
+  direction: up
+  problem: "지도 우측의 원형 아이콘 버튼(북마크·위치·하트·공유)들의 크기가 작다."
+  fix: "원형 버튼 크기를 40px 정도로 키운다."
+  rationale: "일반적인 원형 버튼 사이즈는 40 정도다"
+  stance: PRESCRIPTIVE
+  quote: "두 개 디자인이 좀 관건인데이 원이 생각보다 어 작아요. 훨씬 커야 됩니다. 보통은 일반적인 사이즈가 한 40 정도 돼요."
+  qualities: []
+  measured: { prop: size, value: 40, unit: px }
+  evidence: .evidence/cOXiN80n9hM/1224.png
+
+- id: case-1009
+  source: { video: cOXiN80n9hM, t: "17:56" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: affordance
+  direction: other
+  problem: "관심사 선택 카드에 체크 아이콘만 넣어서는 선택된 상태가 잘 드러나지 않는다."
+  fix: "선택된 카드에 딤(어둡게 깔리는 레이어)을 강하게 깔아 선택 상태를 명확히 보여준다."
+  rationale: ""
+  stance: PRESCRIPTIVE
+  quote: "체크박스를 아무리 여기다 넣어 봤자 티가 안 나요. 그래도 그럼 뭘 해 줘야 돼? 딘들을 깔아야 돼요."
+  qualities: []
+  evidence: .evidence/cOXiN80n9hM/1756.png
+
+- id: case-1010
+  source: { video: cOXiN80n9hM, t: "15:54" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: whitespace
+  direction: down
+  problem: "관심사 선택 카드들 사이 마진이 넓어서 카드들이 따로따로 조각 나 보인다."
+  fix: "카드 사이 마진을 타이트하게 좁혀 뭉쳐 보이게 한다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "여기 사이 마진이 조금 넓어 보이거든요. 조금 타이트하게 뭉쳐 주는 것도 좋을 거 같아요."
+  qualities: ["넓은→타이트한"]
+  evidence: .evidence/cOXiN80n9hM/1554.png
+
+- id: case-1011
+  source: { video: cOXiN80n9hM, t: "25:28" }
+  scope:
+    component: typo
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: alignment
+  direction: other
+  problem: "마지막 페이지 목록의 타이틀·설명 텍스트가 가운데 정렬로 배치돼 있다."
+  fix: "가운데 정렬 대신 좌측 정렬로 바꾼다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "텍스트 가운데 정렬보다 좌측 정렬이 확실히 가독성이 좋긴 하죠."
+  qualities: []
+  evidence: .evidence/cOXiN80n9hM/2528.png
+
+- id: case-1012
+  source: { video: cOXiN80n9hM, t: "21:31" }
+  scope:
+    component: any
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: labeling
+  direction: other
+  problem: "라이브 스트림 카드의 뱃지에 '라이브' 표시와 함께 '방송중'이라는 문구가 같이 들어가 있다."
+  fix: "'라이브' 표시만 남기고 '방송중' 문구는 뺀다."
+  rationale: ""
+  stance: OPTION
+  quote: "라이브만 들어가도 되지 않을까? 방송 중이라는 문과 꼭 들어가야 될까요?"
+  qualities: []
+  evidence: .evidence/cOXiN80n9hM/2131.png

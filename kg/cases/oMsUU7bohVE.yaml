@@ -1,0 +1,199 @@
+- id: case-701
+  source: { video: oMsUU7bohVE, t: "2:14" }
+  scope:
+    component: hero
+    platform: mobile
+    size: any
+    variant: any
+    context: hero
+  property: whitespace
+  direction: up
+  problem: "온보딩 화면에서 타이틀과 본문 텍스트 주변 여백이 타이트하게 잡혀 있다."
+  fix: "텍스트 주변 여백을 조금 더 넓힌다."
+  rationale: ""
+  stance: OPTION
+  quote: "이 여백이 생각보다 타이트해요. 조금 더 넓히셔도 됩니다."
+  qualities: ["타이트한→?"]
+  evidence: .evidence/oMsUU7bohVE/214.png
+
+- id: case-702
+  source: { video: oMsUU7bohVE, t: "2:39" }
+  scope:
+    component: hero
+    platform: mobile
+    size: any
+    variant: any
+    context: hero
+  property: alignment
+  direction: other
+  problem: "온보딩 화면의 타이틀·본문 텍스트가 가운데 정렬로 이미지 중앙에 배치돼 있다."
+  fix: "가운데 정렬 대신 좌측 정렬로 바꾸고 폰트를 키워서 하단으로 내린다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "가운데 정렬로 가지 마시고 좌측 정렬로 해서 폰트 키워 가지고 하단으로 내리시면은 이미지가 잘 보일 겁니다."
+  qualities: []
+  evidence: .evidence/oMsUU7bohVE/239.png
+
+- id: case-703
+  source: { video: oMsUU7bohVE, t: "2:56" }
+  scope:
+    component: typo
+    platform: mobile
+    size: any
+    variant: any
+    context: hero
+  property: weight
+  direction: down
+  problem: "히어로 이미지 위 본문 텍스트에 볼드가 적용되어 두꺼워 보인다."
+  fix: "볼드를 빼서 무게감을 낮춘다."
+  rationale: ""
+  stance: OPTION
+  quote: "제가 볼 때는 빼도 되지 않을까 싶습니다."
+  qualities: ["두꺼운→?"]
+  evidence: .evidence/oMsUU7bohVE/256.png
+
+- id: case-704
+  source: { video: oMsUU7bohVE, t: "3:19" }
+  scope:
+    component: typo
+    platform: mobile
+    size: any
+    variant: any
+    context: hero
+  property: type-scale
+  direction: up
+  problem: "온보딩 화면의 본문 텍스트 크기가 작아 이미지와 대비되지 않는다."
+  fix: "본문 텍스트 크기를 한 치수 키워 16px로 바꾼다."
+  rationale: ""
+  stance: OPTION
+  quote: "사이즈 제가 한 치수만 더 키워 보자고 했죠? 본문을 좀 키워 보자. 그러면 타이틀은 28이면 나쁘진 않네요. 본문 사이즈만 제가 살짝 키웠어요. 16으로."
+  qualities: []
+  measured: { prop: type-scale, value: 16, unit: px }
+  evidence: .evidence/oMsUU7bohVE/319.png
+
+- id: case-705
+  source: { video: oMsUU7bohVE, t: "4:37" }
+  scope:
+    component: any
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: alignment
+  direction: other
+  problem: "로그인 화면 상단 로고가 좌측 정렬로 배치돼 있다."
+  fix: "로고를 가운데로 정렬해 하단 코너 요소와 밸런스를 맞춘다."
+  rationale: ""
+  stance: OPTION
+  quote: "근데 좌측 정렬보다는 여기서는 가운데 정렬이 조금 더 안정적이지 않을까? 그래서 로고를 한 요쯤까지요 가운데에 좀 맞춰 가지고 배치를 해 주면 조금 더 이 밑에 코너하고 밸런스가 여기로 가면 더 잘 맞을 거 같아요."
+  qualities: []
+  evidence: .evidence/oMsUU7bohVE/437.png
+
+- id: case-706
+  source: { video: oMsUU7bohVE, t: "6:03" }
+  scope:
+    component: button
+    platform: mobile
+    size: any
+    variant: outline
+    context: form
+  property: structure
+  direction: other
+  problem: "로그인 화면 하단의 '구글로 계속하기'·'애플로 계속하기' 버튼이 가로로 나란히 배치돼 있다."
+  fix: "버튼을 가로 배치 대신 세로로 하나씩 쌓아 배치한다."
+  rationale: "영역 확보가 충분하다"
+  stance: OPTION
+  quote: "제가 볼 때 가로보다는 그냥 세로로 이런 식으로 세로로 하나 둘 세로로 배치하셔도 문제가 없을 거 같아. 왜 그러냐면 지금 영역 확보가 아주 충분하게 되고 있거든요."
+  qualities: []
+  evidence: .evidence/oMsUU7bohVE/603.png
+
+- id: case-707
+  source: { video: oMsUU7bohVE, t: "6:22" }
+  scope:
+    component: button
+    platform: mobile
+    size: any
+    variant: ghost
+    context: form
+  property: structure
+  direction: other
+  problem: "로그인 화면 하단 '계정 만들기' 텍스트 링크에 화살표 아이콘이 붙어 있다."
+  fix: "텍스트형 버튼이므로 화살표 아이콘을 뺀다."
+  rationale: "내용이 명확할 때는 아이콘이나 언더라인을 꼭 추가하지 않아도 된다"
+  stance: OPTION
+  quote: "여기 화살표 빼도 되지 않을까? 텍스트형 버튼이라고 해서 뭔가 꼭 앞에 아이콘을 넣는다거나 하단에 언더라인이 반드시 들어가야 된다거나 그렇지는 않아요."
+  qualities: []
+  evidence: .evidence/oMsUU7bohVE/622.png
+
+- id: case-708
+  source: { video: oMsUU7bohVE, t: "7:44" }
+  scope:
+    component: input
+    platform: mobile
+    size: any
+    variant: any
+    context: form
+  property: type-scale
+  direction: up
+  problem: "로그인 화면 이메일 인풋의 텍스트 크기가 14px로 작다."
+  fix: "인풋 텍스트 크기를 15px 정도로 키운다."
+  rationale: ""
+  stance: OPTION
+  quote: "여기 인풋 텍스트 사이즈 좀 보자. 14. 폰트 사이즈 하나 더 키웁니다. 15 정도로 살짝 키울게요."
+  qualities: []
+  measured: { prop: type-scale, value: 15, unit: px }
+  evidence: .evidence/oMsUU7bohVE/744.png
+
+- id: case-709
+  source: { video: oMsUU7bohVE, t: "9:35" }
+  scope:
+    component: layout
+    platform: mobile
+    size: any
+    variant: any
+    context: hero
+  property: color
+  direction: other
+  problem: "홈 화면 배경 전체에 옅은 그레이 톤이 깔려 있어 화면이 탁해 보인다."
+  fix: "배경의 그레이 톤을 걷어낸다."
+  rationale: ""
+  stance: OPTION
+  quote: "그레이 컬러를 꼭 깔았어야 되나? 전반적으로 좀 탁해 보여요."
+  qualities: ["탁한→?"]
+  evidence: .evidence/oMsUU7bohVE/935.png
+
+- id: case-710
+  source: { video: oMsUU7bohVE, t: "9:43" }
+  scope:
+    component: typo
+    platform: mobile
+    size: any
+    variant: any
+    context: hero
+  property: alignment
+  direction: other
+  problem: "홈 화면 상단 타이틀 '당신의 모험을 찾아보세요'가 가운데 정렬로 배치돼 있다."
+  fix: "가운데 정렬 대신 좌측 정렬로 바꾼다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "가운데 정렬보다는 그냥 여기 좌측 정렬로 바꿔 주시는게 좋을 것 같거든요."
+  qualities: []
+  evidence: .evidence/oMsUU7bohVE/943.png
+
+- id: case-711
+  source: { video: oMsUU7bohVE, t: "9:48" }
+  scope:
+    component: typo
+    platform: mobile
+    size: any
+    variant: any
+    context: hero
+  property: type-scale
+  direction: down
+  problem: "홈 화면 상단 타이틀과 본문 텍스트 크기가 크다."
+  fix: "본문 사이즈를 줄이고 타이틀 사이즈도 함께 줄인다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "여기 본문 사이즈 조금 줄이고요 타이틀 사이즈도 조금 줄여야 될 것 같고"
+  qualities: []
+  evidence: .evidence/oMsUU7bohVE/948.png
