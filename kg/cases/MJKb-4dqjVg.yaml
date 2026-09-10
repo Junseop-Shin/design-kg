@@ -91,7 +91,7 @@
 - id: case-206
   source: { video: MJKb-4dqjVg, t: "7:50" }
   scope:
-    component: any
+    component: chart
     platform: mobile
     size: any
     variant: any

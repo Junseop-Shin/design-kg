@@ -47,7 +47,7 @@
   problem: "프로모션 배너(Xiaomi·Apple 타일)의 상품 이미지 뒤에 평평한 단색 배경이 그대로 깔려 있다."
   fix: "배경을 걷어낸다."
   rationale: "요즘 프로모션 배너는 상품 이미지가 배경 밖으로 살짝 튀어나오는 공간감을 살리는 경우가 많아, 배경을 잘라내 상품을 부각시키면 좋다"
-  stance: PRESCRIPTIVE
+  stance: PREFERRED
   quote: "그레이 백그라운드도 제가 볼 때 걷어내야 될 거 같아요."
   qualities: []
   evidence: .evidence/2GdjtbPSQTs/422.png
@@ -173,7 +173,7 @@
   problem: "상품 카드 썸네일이 243x200으로 정사각형이 아니다."
   fix: "썸네일을 정사각형 비율로 바꾼다."
   rationale: "썸네일은 정사각형이 정석이다"
-  stance: PRESCRIPTIVE
+  stance: PREFERRED
   quote: "그다음에 지금 썸네일이 정사각형이 아니야. 243에 200이잖아요. 정사각형으로 바꾸시죠. 썸네일은 정사각형이 정석이야."
   qualities: []
   evidence: .evidence/2GdjtbPSQTs/1408.png
