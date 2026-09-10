@@ -12,3 +12,15 @@ UI/UX 디자인 지식그래프와 그걸 조회·검증하는 MCP 서버.
 그래프에는 추출 결과와 출처(영상 ID + 타임스탬프)만 들어 있다. 프레임 캡처 원본은 `.evidence/`에 두고 커밋하지 않는다.
 
 관련 레포: [my-ui-lib](https://github.com/Junseop-Shin/my-ui-lib) (디자인 테마 축 · 평가 대상 컴포넌트)
+
+## 사용
+
+```bash
+npm install && npx playwright install chromium
+npm run validate                 # kg/ 검증
+npm run candidates               # 승격 후보 표
+npm run snapshot -- --url <url> --out .evidence/snapshots/x.json --platform mobile
+npm run mcp                      # stdio MCP 서버 (Claude Code는 .mcp.json으로 자동 연결)
+```
+
+Claude Code에서 이 디렉터리를 열면 `.mcp.json`의 `design-kg` 서버가 뜬다. `/mcp`로 확인.

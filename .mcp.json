@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "design-kg": {
+      "command": "npm",
+      "args": ["run", "-s", "mcp"]
+    }
+  }
+}
