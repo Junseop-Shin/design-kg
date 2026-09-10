@@ -121,7 +121,7 @@
   problem: "위치 이름·주소 텍스트가 지도 이미지 위에 오버랩돼 있다."
   fix: "텍스트를 지도 이미지 밖으로 뺀다."
   rationale: "지도 위에 텍스트가 오버랩되면 가독성이 많이 떨어진다"
-  stance: OPTION
+  stance: PREFERRED
   quote: "텍스트가이지도 위에 오버랩이 되면은 될까요, 안 될까요? 좀 가독성이 많이 떨어지긴 하시겠죠? 그래서 당연히 텍스 밖으로 빠져야 될 거 같고요."
   qualities: []
   evidence: .evidence/cOXiN80n9hM/850.png

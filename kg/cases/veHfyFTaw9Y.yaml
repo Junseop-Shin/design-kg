@@ -163,24 +163,6 @@
   qualities: ["센→?"]
   evidence: .evidence/veHfyFTaw9Y/1016.png
 
-- id: case-810
-  source: { video: veHfyFTaw9Y, t: "16:01" }
-  scope:
-    component: button
-    platform: web
-    size: any
-    variant: any
-    context: hero
-  property: hierarchy
-  direction: other
-  problem: "메인 히어로 코너에 버튼처럼 보이는 요소가 네 개나 쌍으로 겹쳐 보인다."
-  fix: "겹쳐 보이는 버튼들을 정리해 시각 계층을 맞춘다."
-  rationale: ""
-  stance: OPTION
-  quote: "버튼 버튼 버튼 버튼이 지금 다 이렇게네 개가 쌍으로 보이잖아요. 그리고 다 겹치잖아요."
-  qualities: []
-  evidence: .evidence/veHfyFTaw9Y/1552.png
-
 - id: case-811
   source: { video: veHfyFTaw9Y, t: "16:48" }
   scope:

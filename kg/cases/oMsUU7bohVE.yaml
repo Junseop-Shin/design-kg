@@ -37,20 +37,20 @@
 - id: case-703
   source: { video: oMsUU7bohVE, t: "2:56" }
   scope:
-    component: typo
+    component: button
     platform: mobile
     size: any
-    variant: any
+    variant: primary
     context: hero
   property: weight
   direction: down
-  problem: "히어로 이미지 위 본문 텍스트에 볼드가 적용되어 두꺼워 보인다."
+  problem: "히어로 하단 '계속하기' 버튼 텍스트에 볼드가 적용되어 두꺼워 보인다."
   fix: "볼드를 빼서 무게감을 낮춘다."
   rationale: ""
   stance: OPTION
   quote: "제가 볼 때는 빼도 되지 않을까 싶습니다."
   qualities: ["두꺼운→?"]
-  evidence: .evidence/oMsUU7bohVE/256.png
+  evidence: .evidence/oMsUU7bohVE/259b.png
 
 - id: case-704
   source: { video: oMsUU7bohVE, t: "3:19" }
