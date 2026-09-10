@@ -67,7 +67,7 @@
   rationale: "여백 없이 꽉 차게 들어가면 여유로운 디자인이 나오지 않는다."
   stance: OPTION
   quote: "앞에 지금 화면 보이면 어때요 상단과 하단이 여백이 좁죠 카드 UI 자체가 상당과 하단 혹은 좌우도 될 수가 있겠죠 여백 없이 꽉 차게 들어가면 시각적으로 답답해 보이고 너무 빡빡해 보입니다 그래서 여유로운 디자인이 나오지 않아요."
-  qualities: []
+  qualities: ["답답한→여유로운"]
   evidence: .evidence/YNDhbNQo_io/343.png
 
 - id: case-1905
@@ -85,7 +85,7 @@
   rationale: "그래야 하나의 카드 안에서 그룹핑이 완벽하게 잘 되어 보인다."
   stance: PREFERRED
   quote: "약간 안쪽으로 살짝 들여 써 주시는게 좋습니다 너무 끝에 딱 붙으면 정렬이 안 맞아 보이는 시각적인 느낌이 있어서 텍스트가 튀어나오는 것 같아서 아슬아슬하고 불안해 보이는듯한 느낌을 가져갑니다."
-  qualities: []
+  qualities: ["불안한→?"]
   evidence: .evidence/YNDhbNQo_io/449.png
 
 - id: case-1906

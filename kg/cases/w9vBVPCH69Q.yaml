@@ -13,7 +13,7 @@
   rationale: "타이틀과 본문의 계층 구조를 컬러로 나눠 주면 타이틀이 보다 더 명확하게 잘 보인다."
   stance: OPTION
   quote: "타이틀에 이렇게 세 가지 이상의 효과가 들어가면 오히려 집중도가 많이 떨어지는 경향이 있습니다 그래서 이처럼 컬러를 한 톤으로 맞추면 훨씬 더 통일감 있고 간결하고 직관적인 타이프를 우리가 사용할 수 있어요."
-  qualities: []
+  qualities: ["?→간결한"]
   evidence: .evidence/w9vBVPCH69Q/144.png
 
 - id: case-2002

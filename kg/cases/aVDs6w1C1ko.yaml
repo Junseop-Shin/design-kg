@@ -31,7 +31,7 @@
   fix: "무난하게 갈 거면 줄간격은 120%와 140% 두 값만 반복적으로 쓴다. 지금 값이 너무 넓어 보이면 120%로, 좁아 보이면 140%로 바꿔가며 사용한다."
   rationale: ""
   stance: OPTION
-  quote: "그냥 무난하게 좀 하실 거면은 120% 40% 두 개 반복적으로 쓰세요."
+  quote: "그냥 무난하게 좀 하실 거면은 120% 40% 두 개 반복적으로 쓰세요 이게 무슨 말이냐면 지금 이게 140% 든요 어 조금 넓은 거 같아 그러면 120 쓰세요 이렇게 이해 돼요 그래서 120% 140% 왔다 갔다 반복하면서 학습을 하세요."
   qualities: []
   measured: { prop: line-height, value: 140, unit: "%" }
   evidence: .evidence/aVDs6w1C1ko/1230.png
@@ -82,14 +82,13 @@
     variant: any
     context: any
   property: type-scale
-  direction: set
+  direction: other
   problem: "본문 텍스트는 14px, 타이틀 텍스트는 18px로 쓰고 있는데, 타이틀 사이즈를 얼마까지 키워도 되는지 기준이 필요하다."
   fix: "타이틀은 보통 18~24px 사이에서 쓴다. 크게 쓸 때는 24px까지, 일반적으로는 18~20px 정도로 잡는다."
   rationale: ""
   stance: OPTION
   quote: "지금 앞에 있는이 폰트 사이즈는 몇 사이즈일 14이 타이틀은 몇일까 18 타이틀은 보통 18에서 24 안쪽으로 왔다 갔다 합니다 좀 크게 쓴다면 24 일반적인 건 18에서 20 정도 왔다 갔다 한다고 보시면 될 거 같아요."
   qualities: []
-  measured: { prop: type-scale, value: 18, unit: px }
   evidence: .evidence/aVDs6w1C1ko/1645.png
 
 - id: case-1806
@@ -108,4 +107,4 @@
   stance: OPTION
   quote: "버튼 사이즈는 제가 좀 추천 드릴 수 있는 거는 모바일에서 52 48 뭐 40 36 24요 정도 안에서 한번 해결해 보시기 바랍니다."
   qualities: []
-  evidence: .evidence/aVDs6w1C1ko/1350.png
+  evidence: .evidence/aVDs6w1C1ko/1657.png
