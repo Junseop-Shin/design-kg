@@ -1,0 +1,18 @@
+- id: dQw4w9WgXcQ
+  title: 픽스처 영상 A
+  url: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+  category: review
+  subtitles: auto
+  reason: 테스트용
+- id: aaaaaaaaaaa
+  title: 픽스처 영상 B
+  url: https://www.youtube.com/watch?v=aaaaaaaaaaa
+  category: mobile
+  subtitles: auto
+  reason: 테스트용
+- id: bbbbbbbbbbb
+  title: 픽스처 영상 C
+  url: https://www.youtube.com/watch?v=bbbbbbbbbbb
+  category: web
+  subtitles: auto
+  reason: 테스트용

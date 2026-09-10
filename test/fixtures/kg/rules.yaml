@@ -1,0 +1,23 @@
+- id: rule-001
+  statement: 모바일 터치 타겟은 최소 44px
+  grade: CHECKABLE
+  scope: { platform: mobile }
+  property: touch-target
+  check: "Math.min(el.box.width, el.box.height) >= 44"
+  promoted_from: [case-001, case-002, case-003]
+  confidence: 3
+- id: rule-002
+  statement: 텍스트와 배경의 대비는 4.5:1 이상
+  grade: CHECKABLE
+  source: standard
+  standard_ref: WCAG 2.2 SC 1.4.3
+  scope: {}
+  property: contrast
+  check: "contrast(el.style.color, el.style['background-color']) >= 4.5"
+- id: rule-003
+  statement: 히어로 타이틀은 본문과 위계가 한눈에 구분돼야 한다
+  grade: JUDGMENT
+  scope: { context: hero }
+  property: hierarchy
+  promoted_from: [case-004]
+  confidence: 1

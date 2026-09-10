@@ -1,0 +1,71 @@
+- id: case-001
+  source: { video: dQw4w9WgXcQ, t: "04:12" }
+  scope: { component: button, platform: mobile }
+  property: touch-target
+  direction: up
+  problem: 버튼 높이가 32px라 손가락으로 누르기 어렵다
+  fix: 높이를 44px로 키웠다
+  rationale: 모바일 터치 영역 기준
+  stance: PRESCRIPTIVE
+  quote: 터치 영역은 무조건 44 이상 잡으셔야 돼요
+  measured: { prop: touch-target, value: 44, unit: px }
+- id: case-002
+  source: { video: aaaaaaaaaaa, t: "01:30" }
+  scope: { component: button, platform: mobile }
+  property: touch-target
+  direction: up
+  problem: 아이콘 버튼이 너무 작다
+  fix: 44로 키움
+  stance: PRESCRIPTIVE
+  quote: 이건 반드시 44는 돼야 해요
+  measured: { prop: touch-target, value: 44, unit: px }
+- id: case-003
+  source: { video: bbbbbbbbbbb, t: "07:05" }
+  scope: { component: button, platform: mobile }
+  property: touch-target
+  direction: up
+  problem: 탭 영역 부족
+  fix: 48로 키움
+  stance: PRESCRIPTIVE
+  quote: 터치 영역은 꼭 확보하셔야 됩니다
+  measured: { prop: touch-target, value: 48, unit: px }
+- id: case-004
+  source: { video: dQw4w9WgXcQ, t: "09:40" }
+  scope: { component: hero, platform: web, context: hero }
+  property: type-scale
+  direction: up
+  problem: 히어로 타이틀이 본문과 크기 차이가 없어 밋밋하다
+  fix: 타이틀을 64px로 키움
+  stance: PREFERRED
+  quote: 좀 더 과감하게 키우는 게 훨씬 낫죠
+  qualities: [밋밋한→과감한]
+- id: case-005
+  source: { video: aaaaaaaaaaa, t: "03:15" }
+  scope: { component: hero, platform: web, context: hero }
+  property: type-scale
+  direction: up
+  problem: 첫 화면 임팩트가 약하다
+  fix: 헤드라인 2배로
+  stance: OPTION
+  quote: 과감하게 가볼까요?
+  qualities: [밋밋한→과감한]
+- id: case-006
+  source: { video: bbbbbbbbbbb, t: "02:00" }
+  scope: { component: hero, platform: web, context: hero }
+  property: type-scale
+  direction: up
+  problem: 헤드라인이 작다
+  fix: 키움
+  stance: PREFERRED
+  quote: 과감한 느낌을 주려면 글자를 키우세요
+  qualities: [밋밋한→과감한]
+- id: case-007
+  source: { video: dQw4w9WgXcQ, t: "12:00" }
+  scope: { component: card }
+  property: radius
+  direction: set
+  problem: 카드 모서리가 직각이라 딱딱하다
+  fix: 8px 라운드
+  stance: OPTION
+  quote: 라운드를 주셔도 되고 취향이에요
+  measured: { prop: radius, value: 8, unit: px }

@@ -1,0 +1,12 @@
+- id: quality-bold
+  label: 과감한
+  aliases: [대담한, 강한]
+  realized_by:
+    - { property: type-scale, direction: up, scope: { context: hero }, weight: 3, cases: [case-004, case-005, case-006] }
+    - { property: whitespace, direction: up, weight: 1, cases: [case-004] }
+  opposes: quality-subtle
+- id: quality-subtle
+  label: 차분한
+  realized_by:
+    - { property: type-scale, direction: down, weight: 1, cases: [case-004] }
+  opposes: quality-bold

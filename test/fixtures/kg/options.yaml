@@ -1,0 +1,6 @@
+- id: option-001
+  question: 카드 모서리 처리
+  scope: { component: card }
+  choices:
+    - { label: 라운드 8px, when: 친근·모바일, recommended: true, cases: [case-007] }
+    - { label: 직각, when: 정보 밀도·데스크톱, cases: [case-007] }
