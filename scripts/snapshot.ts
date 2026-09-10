@@ -30,6 +30,23 @@ function readElement(el: Element, props: string[], state: string) {
   if (/rgba\(\d+, \d+, \d+, 0\)|transparent/.test(style["background-color"])) {
     style["background-color"] = "rgb(255, 255, 255)";
   }
+  // oklch() 같은 색 표기는 그대로 두면 대비 계산이 NaN이 된다. 캔버스로 rgb/hex로 정규화한다.
+  // fillStyle 재직렬화는 legacy 색만 #rrggbb / rgba()로 되돌려 주고 oklch() · color()는 그대로
+  // 돌려주므로, 그때는 1px을 실제로 칠해 sRGB 값을 읽는다.
+  const cv = document.createElement("canvas").getContext("2d")!;
+  for (const p of ["color", "background-color", "outline-color"]) {
+    if (!style[p]) continue;
+    cv.fillStyle = style[p];
+    const normalized = cv.fillStyle as string;
+    if (/^#|^rgba?\(/.test(normalized)) {
+      style[p] = normalized;
+      continue;
+    }
+    cv.clearRect(0, 0, 1, 1);
+    cv.fillRect(0, 0, 1, 1);
+    const [r, g, b] = cv.getImageData(0, 0, 1, 1).data;
+    style[p] = `rgb(${r}, ${g}, ${b})`;
+  }
   const ctx = el.closest("[data-context]")?.getAttribute("data-context") ?? "any";
   return {
     ui: el.getAttribute("data-ui")!,

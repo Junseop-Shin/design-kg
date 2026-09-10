@@ -10,7 +10,12 @@ export function num(s: string | undefined): number {
 
 function parseRgb(s: string): [number, number, number] | null {
   const m = /rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/.exec(s);
-  return m ? [Number(m[1]), Number(m[2]), Number(m[3])] : null;
+  if (m) return [Number(m[1]), Number(m[2]), Number(m[3])];
+  // #rgb · #rrggbb · #rrggbbaa (알파는 rgba()와 마찬가지로 무시한다)
+  const h = /^#([0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$/i.exec(s.trim());
+  if (!h) return null;
+  const d = h[1].length === 3 ? [...h[1]].map((c) => c + c).join("") : h[1];
+  return [0, 2, 4].map((i) => Number.parseInt(d.slice(i, i + 2), 16)) as [number, number, number];
 }
 
 function luminance([r, g, b]: [number, number, number]): number {
@@ -44,6 +49,14 @@ export type CheckResult = {
   evaluated: number;
 };
 
+// 파싱 못 하는 색은 NaN 비교로 조용히 위반이 되는 대신 오류로 올라가야 한다.
+// 내보낸 contrastRatio의 NaN 계약은 그대로 두고 여기서만 감싼다.
+function strictContrast(fg: string, bg: string): number {
+  const r = contrastRatio(fg, bg);
+  if (Number.isNaN(r)) throw new Error(`unparsable color: ${fg} / ${bg}`);
+  return r;
+}
+
 type CheckFn = (el: SnapshotElement, n: typeof num, contrast: typeof contrastRatio) => unknown;
 type Compiled = { fn: CheckFn } | { error: Error };
 
@@ -65,7 +78,7 @@ function compile(src: string): Compiled {
 function evalCheck(rule: Rule, el: SnapshotElement): boolean {
   const c = compile(rule.check!);
   if ("error" in c) throw c.error;
-  return Boolean(c.fn(el, num, contrastRatio));
+  return Boolean(c.fn(el, num, strictContrast));
 }
 
 export function check(kg: Kg, snapshot: Snapshot): CheckResult {

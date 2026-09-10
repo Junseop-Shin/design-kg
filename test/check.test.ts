@@ -32,6 +32,11 @@ describe("contrastRatio", () => {
   it("is symmetric and ignores alpha", () => {
     expect(contrastRatio("rgba(255, 255, 255, 0.5)", "rgb(0, 0, 0)")).toBeCloseTo(21, 1);
   });
+  it("parses hex colors", () => {
+    expect(contrastRatio("#000000", "#ffffff")).toBeCloseTo(21, 1);
+    expect(contrastRatio("#000", "#fff")).toBeCloseTo(21, 1);
+    expect(contrastRatio("#000000ff", "#ffffffff")).toBeCloseTo(21, 1);
+  });
   it("returns NaN for unparsable input", () => {
     expect(Number.isNaN(contrastRatio("transparent", "rgb(0,0,0)"))).toBe(true);
   });
@@ -68,6 +73,15 @@ describe("check", () => {
     expect(r.judgments).toHaveLength(1);
     expect(r.judgments[0].rule).toBe("rule-003");
     expect(r.judgments[0].cases.map((c) => c.id)).toEqual(["case-004"]);
+  });
+
+  it("reports an unparsable color as an error, not a violation", () => {
+    const oklch = el({ style: { color: "oklch(0.5 0.1 200)", "background-color": "oklch(1 0 0)" } });
+    const r = check(kg, snap([oklch]));
+    expect(r.violations).toEqual([]);
+    expect(r.errors).toEqual([
+      { rule: "rule-002", message: "unparsable color: oklch(0.5 0.1 200) / oklch(1 0 0)" },
+    ]);
   });
 
   it("reports a broken check expression instead of throwing", () => {
