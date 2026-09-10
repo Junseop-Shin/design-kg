@@ -1,0 +1,143 @@
+- id: case-1901
+  source: { video: YNDhbNQo_io, t: "1:24" }
+  scope:
+    component: any
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: whitespace
+  direction: up
+  problem: "화면 전체 여백이 굉장히 타이트해서 촘촘하고 빡빡해 보이고, 가독성이 떨어지고 콘텐츠 간 그룹핑도 전혀 되어 보이지 않는다."
+  fix: "여백은 너무 타이트하게 잡기보다는 넓게, 널찍하게 뛴다. 처음부터 좁게 뛰고 넓히기보다는 애초에 과감하게 넓게 뛴 다음 조금씩 좁혀 가는 방식이 낫다."
+  rationale: "적절한 여백을 주면 답답함이 풀리고 널찍하고 시원한 공간감이 생기며, 그에 따라 콘텐츠 간 그룹핑도 만들 수 있다."
+  stance: PREFERRED
+  quote: "여백은 너무 타이트하기보다는 조금 넓게 넓게 넓직 널찍 뛰시는게 좋습니다."
+  qualities: ["답답한→시원한"]
+  evidence: .evidence/YNDhbNQo_io/058.png
+
+- id: case-1902
+  source: { video: YNDhbNQo_io, t: "1:59" }
+  scope:
+    component: list
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: spacing
+  direction: other
+  problem: "접고 펼치기(아코디언) 구조에서 펼쳐진 콘텐츠의 시작 지점과 끝 지점의 여백을 똑같이 통일시키면, 안에 있는 콘텐츠가 가운데 붕 떠 보인다."
+  fix: "시작(타이틀) 쪽 여백은 조금 더 좁게, 끝(하단) 쪽 여백은 조금 더 넓게 잡아 콘텐츠가 하나의 그룹으로 감싸져 보이게 한다."
+  rationale: "여백이 똑같으면 콘텐츠가 위아래 어느 쪽에도 속하지 않는 것처럼 붕 떠 보인다."
+  stance: OPTION
+  quote: "그것보다는 밑에 부분에 여백이 위에보다는 조금 더 넓어야지 하나의 그룹핑으로 감싸져 보이는 겁니다."
+  qualities: []
+  evidence: .evidence/YNDhbNQo_io/152.png
+
+- id: case-1903
+  source: { video: YNDhbNQo_io, t: "2:52" }
+  scope:
+    component: list
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: touch-target
+  direction: up
+  problem: "연관 검색어 텍스트 자체가 클릭 영역인데, 이 클릭 영역의 여백을 너무 촘촘하게 잡으면 손가락으로 클릭할 때 바로 아래 항목과 겹쳐 눌려서 클릭 에러가 발생한다."
+  fix: "손가락 두께를 고려해서 검색어 항목 사이의 여백을 널찍하게 띄워 준다."
+  rationale: ""
+  stance: PREFERRED
+  quote: "그래서이 손가락 두께를 고려해서 널찍널찍하게 여백을 띄워 주시는게 좋아요."
+  qualities: []
+  evidence: .evidence/YNDhbNQo_io/233.png
+
+- id: case-1904
+  source: { video: YNDhbNQo_io, t: "3:43" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: whitespace
+  direction: up
+  problem: "카드 모듈 안에서 상단과 하단(혹은 좌우) 여백이 좁아 콘텐츠가 여백 없이 꽉 차게 들어가면 시각적으로 답답하고 빡빡해 보인다."
+  fix: "카드 모듈 안의 상하단(또는 좌우) 여백을 충분히 확보해 여유로운 디자인이 나오게 한다."
+  rationale: "여백 없이 꽉 차게 들어가면 여유로운 디자인이 나오지 않는다."
+  stance: OPTION
+  quote: "앞에 지금 화면 보이면 어때요 상단과 하단이 여백이 좁죠 카드 UI 자체가 상당과 하단 혹은 좌우도 될 수가 있겠죠 여백 없이 꽉 차게 들어가면 시각적으로 답답해 보이고 너무 빡빡해 보입니다 그래서 여유로운 디자인이 나오지 않아요."
+  qualities: []
+  evidence: .evidence/YNDhbNQo_io/343.png
+
+- id: case-1905
+  source: { video: YNDhbNQo_io, t: "4:49" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: alignment
+  direction: other
+  problem: "카드 모서리에 라운드를 준 상태에서 텍스트나 오브젝트가 썸네일 좌측이나 우측 끝에 딱 붙어 있으면, 정렬이 안 맞아 보이고 텍스트가 튀어나오는 것처럼 아슬아슬하고 불안해 보인다."
+  fix: "라운드가 들어간 카드에서는 텍스트나 오브젝트를 좌우 끝에 딱 붙이지 말고 약간 안쪽으로 살짝 들여 쓴다."
+  rationale: "그래야 하나의 카드 안에서 그룹핑이 완벽하게 잘 되어 보인다."
+  stance: PREFERRED
+  quote: "약간 안쪽으로 살짝 들여 써 주시는게 좋습니다 너무 끝에 딱 붙으면 정렬이 안 맞아 보이는 시각적인 느낌이 있어서 텍스트가 튀어나오는 것 같아서 아슬아슬하고 불안해 보이는듯한 느낌을 가져갑니다."
+  qualities: []
+  evidence: .evidence/YNDhbNQo_io/449.png
+
+- id: case-1906
+  source: { video: YNDhbNQo_io, t: "5:44" }
+  scope:
+    component: list
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: whitespace
+  direction: up
+  problem: "쇼핑몰 상품 썸네일이 1단·2단·3단으로 쭉쭉 나열될 때 각 썸네일 단 사이의 여백이 너무 촘촘하면 상품명과 가격이 위 상품 것인지 아래 상품 것인지 그룹핑이 전혀 되어 보이지 않는다."
+  fix: "1단과 2단 썸네일 사이의 여백 값을 충분히 확보해 준다."
+  rationale: "정지 화면으로 볼 때는 좁아도 인지가 되는 것 같아도, 실제로 스크롤하며 빠르게 훑어볼 때는 전혀 인지가 되지 않는다. 고객의 스크롤 패턴이나 UX 흐름까지 고려해야 한다."
+  stance: PREFERRED
+  quote: "그래서 이런 문제를 해결하기 위해서 위에 1단과 2단의 썸네일을 넓이 여백 값을 충분히 확보를 해주시는게 좋습니다."
+  qualities: []
+  evidence: .evidence/YNDhbNQo_io/530.png
+
+- id: case-1907
+  source: { video: YNDhbNQo_io, t: "6:52" }
+  scope:
+    component: layout
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: whitespace
+  direction: up
+  problem: "카드로 감싸지 않고 텍스트를 바닥에 바로 뿌리는 디자인에서 여백이 촘촘하면 텍스트 계층 구조의 그룹핑이 전혀 되어 보이지 않아 답답하고 빡빡해 보인다."
+  fix: "라인으로 그룹핑을 주거나, 여백만으로 그룹핑을 꼭 반드시 확보해 준다."
+  rationale: "그래야 콘텐츠가 정확하게 읽힌다. 이런 여백 기반 그룹핑은 카드 UI보다 난이도가 높아 초보자보다는 숙련자에게 권한다."
+  stance: PRESCRIPTIVE
+  quote: "여백으로 그룹핑을 꼭 반드시 확보해줘야 됩니다."
+  qualities: []
+  evidence: .evidence/YNDhbNQo_io/700.png
+
+- id: case-1908
+  source: { video: YNDhbNQo_io, t: "8:14" }
+  scope:
+    component: layout
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: whitespace
+  direction: up
+  problem: "타이틀, 본문, 하단 버튼이 여백 없이 촘촘하게 붙어 있으면 그룹핑이 전혀 되어 보이지 않고 하나의 뭉텅이로 보여, 정작 사용자가 보고자 하는 타이틀과 버튼을 빠르게 찾지 못하고 혼란을 겪는다."
+  fix: "타이틀과 본문과 버튼 사이의 여백을 충분히 확보해서, 사용자가 보고자 하는 부분(타이틀 → 버튼)만 딱딱 짚어 볼 수 있도록 그룹핑해 준다."
+  rationale: "대부분의 사용자는 깨알같은 본문 폰트를 하나하나 읽지 않고 타이틀을 보고 바로 버튼을 찾는다."
+  stance: OPTION
+  quote: "그래서 이처럼 타이틀과 본문과 버튼에 대한 여백을 충분히 확보해서 사용자가 보고자 하는 부분만 딱딱 보게끔 우리가 그룹핑을 해주는 거예요."
+  qualities: []
+  evidence: .evidence/YNDhbNQo_io/805.png

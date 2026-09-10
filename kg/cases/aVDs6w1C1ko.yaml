@@ -1,0 +1,111 @@
+- id: case-1801
+  source: { video: aVDs6w1C1ko, t: "11:38" }
+  scope:
+    component: typo
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: spacing
+  direction: set
+  problem: "카드 안에서 폰트 사이즈가 14px인 텍스트와 18px인 텍스트 사이의 여백을 얼마로 둘지 기준이 없으면, 폰트 사이즈가 32px처럼 커졌을 때도 그대로 같은 여백만 떼도 되는지 판단하기 어렵다."
+  fix: "폰트 사이즈 14~18px 구간에서는 여백을 8px로 잡는다. 폰트 사이즈가 커지면(예: 32px) 8px만으로는 좁아 보일 수 있으므로 여백도 그에 맞게 늘려 잡는다."
+  rationale: ""
+  stance: OPTION
+  quote: "자 예를 들어서 여기 폰트 사이즈가 14에 지금 여기 폰트 사이즈는 18입니다 그럼 여백은 몇이야 8이 여기 만약에 폰트가 사이즈가 32하 이렇게 됐어 그럼 8만 떼서 될까 좁아 보이지 않을까 뭐 이런 생각을 하게 되는 거예요."
+  qualities: []
+  measured: { prop: spacing, value: 8, unit: px }
+  evidence: .evidence/aVDs6w1C1ko/1138.png
+
+- id: case-1802
+  source: { video: aVDs6w1C1ko, t: "12:26" }
+  scope:
+    component: typo
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: line-height
+  direction: set
+  problem: "폰트 사이즈마다 줄간격(행간) 기준이 조금씩 미세하게 달라 하나의 값으로 딱 정해 말하기 어렵다."
+  fix: "무난하게 갈 거면 줄간격은 120%와 140% 두 값만 반복적으로 쓴다. 지금 값이 너무 넓어 보이면 120%로, 좁아 보이면 140%로 바꿔가며 사용한다."
+  rationale: ""
+  stance: OPTION
+  quote: "그냥 무난하게 좀 하실 거면은 120% 40% 두 개 반복적으로 쓰세요."
+  qualities: []
+  measured: { prop: line-height, value: 140, unit: "%" }
+  evidence: .evidence/aVDs6w1C1ko/1230.png
+
+- id: case-1803
+  source: { video: aVDs6w1C1ko, t: "13:47" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: spacing
+  direction: set
+  problem: "카드 안 콘텐츠의 상하좌우 여백을 얼마로 잡을지 기준이 필요하다."
+  fix: "카드는 좌측 24px, 우측 24px, 상단 20px, 하단 24px 정도로 잡는다."
+  rationale: "이건 정답은 아니고 이 디자인에서 이렇게 잡았다는 것뿐이다."
+  stance: OPTION
+  quote: "카드로 한다고 하면 좌우는 보통 24를 잡고요 그럼 상하단은 몇을 잡냐 보통 20 정도 잡습니다 저는 하단은 24로 잡아요 그래서 보통 이제 상하단은 20에 24를 잡고 좌측 24 우측 24 이렇게 보통 잡긴 하거든요."
+  qualities: []
+  measured: { prop: spacing, value: 24, unit: px }
+  evidence: .evidence/aVDs6w1C1ko/1350.png
+
+- id: case-1804
+  source: { video: aVDs6w1C1ko, t: "14:00" }
+  scope:
+    component: layout
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: spacing
+  direction: other
+  problem: "360~375px 폭의 기본 프레임에서 좌우 마진을 얼마로 잡을지 기준이 필요하다."
+  fix: "360~375px 프레임 기준으로 좌우 마진을 16, 20, 24px 중에서 잡으면 대부분 해결된다."
+  rationale: ""
+  stance: OPTION
+  quote: "보통이 전체 프레임에서 좌우 마진 있잖아요 기본 프레임이라고 쳤을 때 375 프레임 360 프레임이라고 쳤을 때는 16 20 24 안에서 좌우 마진 잡으시면 아마 대부분 다 해결이 될 겁니다."
+  qualities: []
+  evidence: .evidence/aVDs6w1C1ko/1405.png
+
+- id: case-1805
+  source: { video: aVDs6w1C1ko, t: "16:38" }
+  scope:
+    component: typo
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: type-scale
+  direction: set
+  problem: "본문 텍스트는 14px, 타이틀 텍스트는 18px로 쓰고 있는데, 타이틀 사이즈를 얼마까지 키워도 되는지 기준이 필요하다."
+  fix: "타이틀은 보통 18~24px 사이에서 쓴다. 크게 쓸 때는 24px까지, 일반적으로는 18~20px 정도로 잡는다."
+  rationale: ""
+  stance: OPTION
+  quote: "지금 앞에 있는이 폰트 사이즈는 몇 사이즈일 14이 타이틀은 몇일까 18 타이틀은 보통 18에서 24 안쪽으로 왔다 갔다 합니다 좀 크게 쓴다면 24 일반적인 건 18에서 20 정도 왔다 갔다 한다고 보시면 될 거 같아요."
+  qualities: []
+  measured: { prop: type-scale, value: 18, unit: px }
+  evidence: .evidence/aVDs6w1C1ko/1645.png
+
+- id: case-1806
+  source: { video: aVDs6w1C1ko, t: "16:59" }
+  scope:
+    component: button
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: size
+  direction: other
+  problem: "모바일 버튼 사이즈를 얼마로 잡을지 기준이 필요하다."
+  fix: "모바일 버튼 사이즈는 52, 48, 40, 36, 24px 중에서 골라 쓰면 대부분 해결된다."
+  rationale: ""
+  stance: OPTION
+  quote: "버튼 사이즈는 제가 좀 추천 드릴 수 있는 거는 모바일에서 52 48 뭐 40 36 24요 정도 안에서 한번 해결해 보시기 바랍니다."
+  qualities: []
+  evidence: .evidence/aVDs6w1C1ko/1350.png

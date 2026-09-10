@@ -1,0 +1,125 @@
+- id: case-1701
+  source: { video: pCc9GspeYfg, t: "1:00" }
+  scope:
+    component: typo
+    platform: mobile
+    size: any
+    variant: any
+    context: hero
+  property: type-scale
+  direction: up
+  problem: "사용자가 접속하자마자 서비스가 무엇인지 단번에 이해해야 하는데, 타이틀 사이즈를 줄이거나 너무 얇게 쓰거나 낯선 폰트를 쓰면 오히려 안 넣느니만 못한 타이틀이 된다."
+  fix: "타이틀은 약간 투박해 보이더라도 큼지막하고 사용자 눈에 잘 보이도록, 크고 잘 읽히게 넣는다."
+  rationale: "그래야 사용자가 바로바로 이해를 한다."
+  stance: PRESCRIPTIVE
+  quote: "약간 투박해도 큼지막하고 사용자의 눈에 잘 보이도록 타이틀을 강하게 넣어 줘야 되는데요."
+  qualities: []
+  evidence: .evidence/pCc9GspeYfg/100.png
+
+- id: case-1702
+  source: { video: pCc9GspeYfg, t: "3:19" }
+  scope:
+    component: layout
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "랜딩 페이지의 각 섹션이 키워드·타이틀·본문·그래픽으로 이어지는 공통 모듈로 반복 구성되는데, 한 섹션에서 공통 구성 이외의 추가 정보가 들어오는 경우가 반드시 생긴다."
+  fix: "이럴 때 공통 기준이나 디자인 기준 자체를 깨지 말고, 추가 정보를 그 섹션 최하단에 덧붙이는 방식으로 공통 모듈을 처음부터 끝까지 유지한다."
+  rationale: "웬만한 예외 상황이 아니고서는 공통 모듈을 유지하면서 디자인이 쭉 내려오는 것이 랜딩 페이지의 핵심이다."
+  stance: OPTION
+  quote: "웬만한 예외 특정 상황 아니고서는 공통 모듈은 처음부터 끝까지 유지하면서 디자인이 쭉 내려오는게이 랜딩 페이지의 핵심이에요."
+  qualities: []
+  evidence: .evidence/pCc9GspeYfg/319.png
+
+- id: case-1703
+  source: { video: pCc9GspeYfg, t: "4:50" }
+  scope:
+    component: image
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: hierarchy
+  direction: other
+  problem: "그래픽을 만들 때 타이틀·본문 내용을 100% 그대로 직역해서 표현하면 과도한 디테일에 치우쳐 UI 정보의 위계를 해칠 수 있다."
+  fix: "핵심 형태와 상징성에 집중해 내용과 추상적 감성 사이에서 균형을 잡는다. 토스는 신용점수를 올려보라는 내용을 로켓이 하늘로 쭉 올라가는 그래픽으로, 증권 수수료를 손가락으로 표현하는 식으로 전체적인 의미와 감성으로 전달한다."
+  rationale: ""
+  stance: OPTION
+  quote: "토스 애시를 보면요. 신용 점수를 올려보라는 내용에서 그래픽은 로켓이 하늘로 쭉 올라간다거나 증권 수수료는 손가락으로 표현하는 등 내용의 너무 충실한 그래픽보다 전체적인 의미와 감성으로 내용과 연관에서 전달하고 있죠."
+  qualities: []
+  evidence: .evidence/pCc9GspeYfg/450.png
+
+- id: case-1704
+  source: { video: pCc9GspeYfg, t: "7:49" }
+  scope:
+    component: image
+    platform: any
+    size: any
+    variant: any
+    context: any
+  property: structure
+  direction: other
+  problem: "3D 그래픽 구도를 잡을 때 처음에는 단순하게 시작하더라도 요소를 하나둘 추가하다 보면 화면이 복잡해지고 정작 무엇을 강조하고 싶은지 불분명해지는 실수를 흔히 한다."
+  fix: "오브젝트 개수가 아니라 메인과 서브의 관계를 명확하게 설계하는 것이 중요하며, 메인 오브젝트를 중심으로 서브 오브젝트의 크기·위치·높이에 차이를 줘 삼각형(트라이앵글) 구도를 만드는 방법이 가장 안정적이다."
+  rationale: "삼각형의 흐름을 만들면 자연스럽게 시각적 위계가 형성되고 사용자의 시선을 메인 오브젝트로 유도할 수 있다."
+  stance: OPTION
+  quote: "가장 안정적으로 활용할 수 있는 방법 중 하나가 바로 플라이앵글이 삼각형 구도입니다."
+  qualities: ["불분명한→명확한"]
+  evidence: .evidence/pCc9GspeYfg/750.png
+
+- id: case-1705
+  source: { video: pCc9GspeYfg, t: "11:33" }
+  scope:
+    component: layout
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: whitespace
+  direction: up
+  problem: "스크롤 길이가 길어지는 것이 두려워서 여백을 좁히면 오히려 사용자는 혼란을 느끼고 정보를 더 못 읽게 된다."
+  fix: "모든 영역을 채우기보다 의도적으로 과감한 여백을 확보하고, 스크롤 길이에 대한 두려움을 갖지 않는다. 애플, 노션, 토스, 구글 같은 기업들도 스크롤을 두려워하지 않는다."
+  rationale: "여백이 있으면 주변에 방해되는 요소가 없어 중요한 내용이 한눈에 들어오고, 콘텐츠에 대한 집중도와 이해도가 올라간다."
+  stance: PRESCRIPTIVE
+  quote: "스크롤 길이에 두려움을 가지지 마세요."
+  qualities: []
+  evidence: .evidence/pCc9GspeYfg/1133.png
+
+- id: case-1706
+  source: { video: pCc9GspeYfg, t: "12:08" }
+  scope:
+    component: card
+    platform: mobile
+    size: any
+    variant: any
+    context: list
+  property: alignment
+  direction: other
+  problem: "여러 카드·요소의 정렬 기준과 카드 간 여백이 몇 픽셀씩 미세하게 어긋나 있으면, 그 작은 차이가 화면 전체에서 반복되면서 완성도가 떨어져 보인다."
+  fix: "작업 마지막 단계에서 화면 전체의 정렬과 간격의 일관성을 점검해, 요소들의 정렬 기준과 카드 간 여백이 동일한 규칙을 따르는지 확인한다."
+  rationale: ""
+  stance: OPTION
+  quote: "화면 전체의 정렬과 간격의 일간성을 한번 점검합니다. 요소들의 정렬과 기준과 카드간 여백이 동일한 규칙을 따르고 있는지 몇 픽셀의 작은 차이라도 이게 계속해서 반복이 되면 화면의 완성도가 떨어질 수가 있습니다."
+  qualities: []
+  evidence: .evidence/pCc9GspeYfg/1215.png
+
+- id: case-1707
+  source: { video: pCc9GspeYfg, t: "12:48" }
+  scope:
+    component: layout
+    platform: mobile
+    size: any
+    variant: any
+    context: any
+  property: color
+  direction: other
+  problem: "모든 섹션의 배경 컬러가 다 화이트로 통일되어 있으면 그 자체로는 특정 섹션을 강조하기 어렵다."
+  fix: "일관된 화이트 배경을 기본으로 유지하다가, 강조하고 싶은 하나의 섹션에만 다른 컬러를 깔아 주는 것만으로 곧바로 강조 효과를 낼 수 있다."
+  rationale: "일관성이 있을 때는 반대로 강조하기도 굉장히 쉬워진다."
+  stance: OPTION
+  quote: "모든 섹션의 백그라운드 컬러가 다 화이트로 돼 있는데 내가 강조하고자 하는 하나의 섹션에만 다른 피지 컬러를 깔아 줘도 곧바로 강조가 되기 시작합니다."
+  qualities: []
+  evidence: .evidence/pCc9GspeYfg/1250.png
