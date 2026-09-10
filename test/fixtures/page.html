@@ -1,0 +1,19 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  body { margin: 0; padding: 16px; background: #fff; color: #111; font: 16px/1.5 sans-serif; }
+  [data-ui="button"] { height: 44px; padding: 0 20px; border: 0; border-radius: 8px; background: #0071e3; color: #fff; }
+  [data-ui="button"][data-size="sm"] { height: 28px; padding: 0 12px; }
+  [data-ui="button"]:focus-visible { outline: 2px solid #0071e3; outline-offset: 2px; }
+  [data-ui="text"].muted { color: #9a9a9a; }
+  section[data-context="hero"] [data-ui="heading"] { font-size: 48px; }
+</style>
+<section data-context="hero">
+  <h1 data-ui="heading">Hero title</h1>
+  <button data-ui="button" data-variant="primary" data-size="md">Primary</button>
+</section>
+<section>
+  <button data-ui="button" data-variant="ghost" data-size="sm">Small</button>
+  <p data-ui="text" class="muted">Muted text</p>
+  <div>no data-ui, ignored</div>
+</section>
