@@ -85,7 +85,7 @@
   rationale: ""
   stance: OPTION
   quote: "장바구니의 십자가는 라인 두께도 다 다르게 하셔 가지고 너무 복잡해요"
-  qualities: []
+  qualities: ["복잡한→?"]
   evidence: .evidence/No0las_O0NY/1708.png
 
 - id: case-1206
@@ -178,7 +178,7 @@
   rationale: ""
   stance: OPTION
   quote: "프로필 이렇게 크게 들어갈 필요 없고 24로 확 줄이고요"
-  qualities: []
+  qualities: ["큰→?"]
   measured: { prop: size, value: 24, unit: px }
   evidence: .evidence/No0las_O0NY/736.png
 

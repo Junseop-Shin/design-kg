@@ -13,7 +13,7 @@
   rationale: ""
   stance: OPTION
   quote: "여기는 폰트 18 너무 커요. 14 정도로 가고"
-  qualities: []
+  qualities: ["큰→?"]
   measured: { prop: type-scale, value: 14, unit: px }
   evidence: .evidence/suzkaiYaAfg/023.png
 
@@ -212,7 +212,7 @@
   rationale: ""
   stance: OPTION
   quote: "지금 16 너무 크니까 14로 좀 줄여 줄게요"
-  qualities: []
+  qualities: ["큰→?"]
   measured: { prop: type-scale, value: 14, unit: px }
   evidence: .evidence/suzkaiYaAfg/644.png
 
@@ -249,7 +249,7 @@
   rationale: ""
   stance: PRESCRIPTIVE
   quote: "요거 사이즈 너무 커요. 줄여야 돼."
-  qualities: []
+  qualities: ["큰→?"]
   evidence: .evidence/suzkaiYaAfg/734.png
 
 - id: case-1615

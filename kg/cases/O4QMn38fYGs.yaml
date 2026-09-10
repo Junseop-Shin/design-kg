@@ -193,7 +193,7 @@
   rationale: ""
   stance: OPTION
   quote: "프로필 저는 너무 크기 때문에 좀 이렇게 확 줄여 주도록 하겠습니다"
-  qualities: []
+  qualities: ["큰→?"]
   evidence: .evidence/O4QMn38fYGs/630.png
 
 - id: case-1512
@@ -209,7 +209,7 @@
   problem: "'홈 트레이닝'/'전문 훈련' 태그 안 폰트가 10px로 작다."
   fix: "폰트 사이즈를 12는 돼야 되게 키운다."
   rationale: ""
-  stance: PRESCRIPTIVE
+  stance: PREFERRED
   quote: "폰트 사이즈가 12는 돼야 될 거 같아요"
   qualities: []
   measured: { prop: type-scale, value: 12, unit: px }
